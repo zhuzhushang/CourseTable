@@ -15,6 +15,7 @@ import com.example.administrator.coursetable.R;
 public class TabTwoFragment  extends BaseFragment{
 
     int i;
+    int jl
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
