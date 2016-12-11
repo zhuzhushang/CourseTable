@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--appbar专用-->
+    <item type="id" name="appbar_left_tv"/>
+    <item type="id" name="appbar_center_tv"/>
+    <item type="id" name="appbar_right_tv"/>
+    <item type="id" name="appbar_right_img"/>
+    <item type="id" name="appbar_right_linear"/>
+    <item type="id" name="appbar_container_relative"/>
+
+</resources>

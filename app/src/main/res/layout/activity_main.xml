@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_bg_light_blue"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/bg_gary"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_bg_gary" />
+
+        <RadioGroup
+            android:id="@+id/hp_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/homepage_tab_1"
+                style="@style/default_homepage_radiobutton"
+                android:drawableTop="@drawable/selector_homepage_tab_1"
+                android:text="@string/homepage_tab_1" />
+
+
+            <RadioButton
+                android:id="@+id/homepage_tab_2"
+                style="@style/default_homepage_radiobutton"
+                android:drawableTop="@drawable/selector_homepage_tab_2"
+                android:text="@string/homepage_tab_2" />
+
+            <RadioButton
+                android:id="@+id/homepage_tab_3"
+                style="@style/default_homepage_radiobutton"
+                android:drawableTop="@drawable/selector_homepage_tab_3"
+                android:checked="true"
+                android:text="@string/homepage_tab_3" />
+
+            <RadioButton
+                android:id="@+id/homepage_tab_4"
+                style="@style/default_homepage_radiobutton"
+                android:drawableTop="@drawable/selector_homepage_tab_4"
+                android:text="@string/homepage_tab_4" />
+
+            <RadioButton
+                android:id="@+id/homepage_tab_5"
+                style="@style/default_homepage_radiobutton"
+                android:drawableTop="@drawable/selector_homepage_tab_5"
+                android:text="@string/homepage_tab_5" />
+
+        </RadioGroup>
+
+
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/comtainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_container" />
+
+</RelativeLayout>

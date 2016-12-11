@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--首页-->
+    <string name="homepage_tab_1">星座</string>
+    <string name="homepage_tab_2">配对</string>
+    <string name="homepage_tab_3">首页</string>
+    <string name="homepage_tab_4">星座</string>
+    <string name="homepage_tab_5">笑话</string>
+
+
+</resources>
