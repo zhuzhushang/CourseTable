@@ -14,14 +14,14 @@ import com.example.administrator.coursetable.R;
 
 public class TabOneFragment  extends BaseFragment{
 
-
+   private TextView tv;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
         View view = inflater.inflate(R.layout.fragment_tab_1,container,false);
-
+       
         return view;
     }
 
