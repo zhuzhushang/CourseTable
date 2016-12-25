@@ -8,8 +8,8 @@ import android.widget.RadioGroup;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.fragment.TabFiveFragment;
-import com.example.administrator.coursetable.fragment.TabFourFragment;
 import com.example.administrator.coursetable.fragment.TabOneFragment;
+import com.example.administrator.coursetable.fragment.TabFourFragment;
 import com.example.administrator.coursetable.fragment.TabThreeFragment;
 import com.example.administrator.coursetable.fragment.TabTwoFragment;
 

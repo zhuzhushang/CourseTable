@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="今日运势"
+        android:id="@+id/text"
+        android:layout_marginLeft="60dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@mipmap/line"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"/>
+
+    <ImageButton
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/show"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"/>
+</RelativeLayout>

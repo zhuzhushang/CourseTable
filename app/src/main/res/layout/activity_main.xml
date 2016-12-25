@@ -30,7 +30,7 @@
                 android:id="@+id/homepage_tab_1"
                 style="@style/default_homepage_radiobutton"
                 android:drawableTop="@drawable/selector_homepage_tab_1"
-                android:text="@string/homepage_tab_1" />
+                android:text="翻译" />
 
 
             <RadioButton
