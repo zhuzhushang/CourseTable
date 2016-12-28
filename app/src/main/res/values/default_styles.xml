@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--activity全屏   AppTheme为appTheme-->
+    <style name="default_full_screen" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--首页的radiobutton-->
+    <style name="default_homepage_radiobutton">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:textColor">@color/color_text_light_black</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <!--appbar的容器-->
+    <style name="default_appbar_container_relative">
+        <item name="android:id">@id/appbar_container_relative</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <!--appbar位于左边的textview-->
+    <style name="default_appbar_left_tv">
+        <item name="android:id">@id/appbar_left_tv</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:textColor">@color/color_text_light_black</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+
+    </style>
+
+    <!--appbar位于右边边的imageview-->
+    <style name="default_appbar_right_img">
+        <item name="android:id">@id/appbar_right_img</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+
+    </style>
+
+    <!--appbar位于中间的textview-->
+    <style name="default_appbar_center_tv">
+        <item name="android:id">@id/appbar_center_tv</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_title</item>
+        <item name="android:textColor">@color/color_text_light_black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!--appbar位于右边的linearyout-->
+    <style name="default_appbar_right_linear">
+        <item name="android:id">@id/appbar_right_linear</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
+
+
+</resources>

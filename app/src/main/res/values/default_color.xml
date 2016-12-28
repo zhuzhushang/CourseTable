@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 半透明黑 -->
+    <color name="trans_black">#4f000000</color>
+    <!-- 半透明黑 -->
+    <color name="trans_black_2f">#1f000000</color>
+    <!-- 半透明白4f -->
+    <color name="trans_white">#4fffffff</color>
+    <!-- 半透明白8f -->
+    <color name="trans_white_8f">#8fffffff</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+</resources>

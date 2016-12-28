@@ -9,4 +9,16 @@
     <dimen name="textsize_max_plus">17sp</dimen>
     <dimen name="textsize_title">20sp</dimen>
 
+    <!--一格的宽度-->
+    <dimen name="base_width">68dp</dimen>
+    <!--一格的高度-->
+    <dimen name="base_heigth">48dp</dimen>
+    <!--时段内的宽度-->
+    <dimen name="time_interval_width">28dp</dimen>
+    <!--时间的宽度-->
+    <dimen name="time_width">88dp</dimen>
+    <!--星期课时的宽度-->
+    <dimen name="time_interval">80dp</dimen>
+    
+
 </resources>
