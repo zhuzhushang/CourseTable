@@ -70,16 +70,83 @@
                 >
                 
                 <LinearLayout
-                    android:layout_width=""
-                    android:layout_height=""></LinearLayout>
+                    android:id="@+id/time_interval_width"
+                    android:layout_width="@dimen/time_interval_width"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                    
+                    
+                </LinearLayout>
                 
-                
+                <LinearLayout
+                    android:layout_width="@dimen/time_width"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_1_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_2_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_3_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_4_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_5_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_6_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/xq_7_ll"
+                    style="@style/course_linear_contain">
+
+
+
+                </LinearLayout>
                 
 
 
             </LinearLayout>
-
-
 
         </HorizontalScrollView>
     </ScrollView>
