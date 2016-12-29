@@ -5,12 +5,17 @@
     <color name="colorAccent">#FF4081</color>
 
 
+    <!--背景颜色-->
     <color name="color_bg_gary">#abb8bc</color>
     <color name="color_bg_yellow">#fef000</color>
     <color name="color_bg_light_blue">#eff7f7</color>
 
+    <!--文字颜色-->
     <color name="color_text_light_black">#444c51</color>
+    <color name="color_text_black">#ff4d4d4e</color>
 
+    <!--divider颜色-->
+    <color name="color_divider_gray">#acb7bb</color>
 
 
 

@@ -19,6 +19,18 @@
     <dimen name="time_width">88dp</dimen>
     <!--星期课时的宽度-->
     <dimen name="week_class_width">80dp</dimen>
+
+    <!--一格的高度-->
+    <dimen name="base_heigth_x3">144dp</dimen>
+    <!--一格的高度-->
+    <dimen name="base_heigth_x2">96dp</dimen>
+    <!--一格的高度-->
+    <dimen name="base_heigth_x4">192dp</dimen>
+
+    <!--中间间隔的高-->
+    <dimen name="divider_heigth">16dp</dimen>
+    <!--时间段tv ems 的间隔-->
+    <dimen name="time_interval_tv_ems_margin">48dp</dimen>
     
 
 </resources>

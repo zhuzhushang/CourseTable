@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
 
     <RelativeLayout
         style="@style/default_appbar_container_relative"
-        android:background="@mipmap/appbar_header"
         android:layout_height="48dp"
+        android:background="@mipmap/appbar_header"
         >
 
         <android.support.v7.widget.AppCompatTextView
             style="@style/default_appbar_left_tv"
+            android:layout_marginLeft="10dp"
             android:text="距离上课还有10分钟哦"
             android:textSize="@dimen/textsize_small"
-            android:layout_marginLeft="10dp"
             />
 
         <android.support.v7.widget.AppCompatTextView
@@ -26,7 +27,7 @@
 
         <LinearLayout
             style="@style/default_appbar_right_linear">
-            
+
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/appbar_change"
                 style="@style/appbar_right_img"
@@ -42,16 +43,16 @@
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/appbar_edit"
                 style="@style/appbar_right_img"
-                android:src="@mipmap/appbar_edit"
                 android:paddingRight="10dp"
+                android:src="@mipmap/appbar_edit"
                 />
-            
-            
+
+
         </LinearLayout>
 
     </RelativeLayout>
-    
-    
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -65,10 +66,12 @@
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal"
 
                 >
-                
+
                 <LinearLayout
                     android:id="@+id/time_interval_width"
                     android:layout_width="@dimen/time_interval_width"
@@ -76,10 +79,46 @@
                     android:orientation="vertical"
 
                     >
-                    
-                    
+
+                    <TextView
+                        style="@style/time_interval_tv"
+                        android:text="晨   读"
+
+                        />
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        style="@style/time_interval_tv"
+                        android:layout_height="@dimen/base_heigth_x4"
+                        android:text="上   午"
+
+                        />
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        style="@style/time_interval_tv"
+                        android:text="下   午"
+                        />
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        style="@style/time_interval_tv"
+                        android:layout_height="@dimen/base_heigth_x2"
+                        android:text="晚   上"
+                        />
+
+
                 </LinearLayout>
-                
+
                 <LinearLayout
                     android:layout_width="@dimen/time_width"
                     android:layout_height="wrap_content"
@@ -93,13 +132,11 @@
                     style="@style/course_linear_contain">
 
 
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_2_ll"
                     style="@style/course_linear_contain">
-
 
 
                 </LinearLayout>
@@ -109,13 +146,11 @@
                     style="@style/course_linear_contain">
 
 
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_4_ll"
                     style="@style/course_linear_contain">
-
 
 
                 </LinearLayout>
@@ -125,13 +160,11 @@
                     style="@style/course_linear_contain">
 
 
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_6_ll"
                     style="@style/course_linear_contain">
-
 
 
                 </LinearLayout>
@@ -141,9 +174,7 @@
                     style="@style/course_linear_contain">
 
 
-
                 </LinearLayout>
-                
 
 
             </LinearLayout>

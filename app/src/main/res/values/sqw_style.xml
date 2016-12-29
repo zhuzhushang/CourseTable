@@ -10,6 +10,24 @@
     </style>
 
 
+    <!--时间段里面的textview-->
+    <style name="time_interval_tv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_heigth_x3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ems">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">@dimen/time_interval_tv_ems_margin</item>
+        <item name="android:background">@drawable/shape_line</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+    </style>
+
+    <style name="course_divider_all">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_heigth</item>
+
+    </style>
 
 
 </resources>
