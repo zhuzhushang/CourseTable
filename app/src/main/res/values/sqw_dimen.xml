@@ -16,7 +16,7 @@
     <!--时段内的宽度-->
     <dimen name="time_interval_width">28dp</dimen>
     <!--时间的宽度-->
-    <dimen name="time_width">88dp</dimen>
+    <dimen name="time_width">92dp</dimen>
     <!--星期课时的宽度-->
     <dimen name="week_class_width">80dp</dimen>
 

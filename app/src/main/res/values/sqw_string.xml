@@ -9,4 +9,9 @@
     <string name="homepage_tab_5">笑话</string>
 
 
+    <!---->
+    <string name="history">历史</string>
+    <string name="math">数学</string>
+    <string name="chemistry">化学</string>
+
 </resources>

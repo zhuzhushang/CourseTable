@@ -125,11 +125,159 @@
                     android:orientation="vertical"
                     >
 
+                    <TextView
+                        android:id="@+id/time_title"
+                        android:text="课程/星期"
+                        style="@style/time_tv"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/morning_reading_1"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/morning_reading_2"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/morning_1"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/morning_2"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/morning_3"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/morning_4"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/afternoon_1"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/afternoon_2"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/afternoon_3"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/evening_1"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
+                    <TextView
+                        android:id="@+id/evening_2"
+                        android:text="07:00-07:30"
+                        style="@style/time_tv"/>
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_1_ll"
                     style="@style/course_linear_contain">
+
+                    <TextView
+                        android:id="@+id/xq_tv_1"
+                        style="@style/week_tv"
+                        android:text="星期一"
+                        />
+
+                    <TextView
+                        android:id="@+id/mon_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_mor_read_tv_2"
+                        android:text="@string/math"
+                        
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/mon_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/mon_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/mon_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/mon_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
 
 
                 </LinearLayout>
@@ -138,12 +286,163 @@
                     android:id="@+id/xq_2_ll"
                     style="@style/course_linear_contain">
 
+                    <TextView
+                        android:id="@+id/xq_tv_2"
+                        style="@style/week_tv"
+                        android:text="星期二"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tues_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/tues_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/tues_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/tues_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/tues_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_3_ll"
                     style="@style/course_linear_contain">
+
+                    <TextView
+                        android:id="@+id/xq_tv_3"
+                        style="@style/week_tv"
+                        android:text="星期三"
+                        />
+
+                    <TextView
+                        android:id="@+id/wed_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/wed_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/wed_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/wed_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/wed_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
 
 
                 </LinearLayout>
@@ -152,12 +451,160 @@
                     android:id="@+id/xq_4_ll"
                     style="@style/course_linear_contain">
 
+                    <TextView
+                        android:id="@+id/xq_tv_4"
+                        style="@style/week_tv"
+                        android:text="星期四"
+                        />
+
+                    <TextView
+                        android:id="@+id/thur_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/thur_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/thur_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/thur_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/thur_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_5_ll"
                     style="@style/course_linear_contain">
+
+                    <TextView
+                        android:id="@+id/xq_tv_5"
+                        style="@style/week_tv"
+                        android:text="星期五"
+                        />
+
+                    <TextView
+                        android:id="@+id/fri_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/fri_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/fri_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/fri_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/fri_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
 
 
                 </LinearLayout>
@@ -166,12 +613,160 @@
                     android:id="@+id/xq_6_ll"
                     style="@style/course_linear_contain">
 
+                    <TextView
+                        android:id="@+id/xq_tv_6"
+                        style="@style/week_tv"
+                        android:text="星期六"
+                        />
+
+                    <TextView
+                        android:id="@+id/sat_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sat_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sat_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sat_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sat_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/xq_7_ll"
                     style="@style/course_linear_contain">
+
+                    <TextView
+                        android:id="@+id/xq_tv_7"
+                        style="@style/week_tv"
+                        android:text="星期日"
+                        />
+
+                    <TextView
+                        android:id="@+id/sun_mor_read_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_mor_read_tv_2"
+                        android:text="@string/math"
+
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sun_morning_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_morning_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_morning_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_morning_tv_4"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sun_afternoon_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_afternoon_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_afternoon_tv_3"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <View
+                        style="@style/course_divider_all"
+                        />
+
+                    <TextView
+                        android:id="@+id/sun_evening_tv_1"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
+
+                    <TextView
+                        android:id="@+id/sun_evening_tv_2"
+                        android:text="@string/math"
+                        style="@style/class_tv"/>
 
 
                 </LinearLayout>
