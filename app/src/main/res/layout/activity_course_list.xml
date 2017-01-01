@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        style="@style/default_appbar_container_relative"
+        android:layout_height="48dp"
+        android:background="@mipmap/appbar_header">
+
+        <TextView
+            style="@style/default_appbar_left_tv_arrow"
+            android:text="笔记"
+            />
+
+        <ImageView
+            style="@style/default_appbar_right_img"
+            android:src="@mipmap/add_course"
+            />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

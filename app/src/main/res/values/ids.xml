@@ -9,5 +9,7 @@
     <item type="id" name="appbar_right_img"/>
     <item type="id" name="appbar_right_linear"/>
     <item type="id" name="appbar_container_relative"/>
+    <item name="appbar_left_tv_arrow" type="id"/>
+
 
 </resources>

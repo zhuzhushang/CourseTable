@@ -26,6 +26,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-    compile files('G:/TDDOWNLOAD/CourseTable/libs/okhttputils-2.3.8-sources.jar')
-    compile files('G:/TDDOWNLOAD/CourseTable/libs/gson-2.1.jar')
+
 }
