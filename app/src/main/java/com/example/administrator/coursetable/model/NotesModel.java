@@ -4,7 +4,7 @@ package com.example.administrator.coursetable.model;
  * Created by Administrator on 2017/1/1.
  */
 
-public class CourseListDataModel {
+public class NotesModel {
 
     private String YTD;
     private int weekPosition;

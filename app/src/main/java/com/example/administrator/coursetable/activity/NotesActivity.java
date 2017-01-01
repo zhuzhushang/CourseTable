@@ -8,7 +8,7 @@ import com.example.administrator.coursetable.R;
  * Created by Administrator on 2017/1/1.
  */
 
-public class CourseListActivity extends BaseActivity{
+public class NotesActivity extends BaseActivity{
 
 
 
