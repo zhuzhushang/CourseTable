@@ -32,7 +32,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"/>
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:background="@mipmap/kuang"
