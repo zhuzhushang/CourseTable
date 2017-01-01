@@ -108,15 +108,15 @@ public class TabFiveFragment extends BaseFragment{
 
     private void initData() {
         // 1、直接new 一个线程类，传入参数实现Runnable接口的对象（new Runnable），相当于方法二
-       // new Thread(new Runnable() {
-        //    @Override
-          //  public void run() {
+        new Thread(new Runnable() {
+          @Override
+          public void run() {
                 // 读文件
                 for (int i = 0; i < rawId.length; i++){
                     loadxiaohuaFile(rawId[i]);
                 }
-          //  }
-     //   }).start();
+           }
+       }).start();
 
 
 
@@ -128,7 +128,7 @@ public class TabFiveFragment extends BaseFragment{
         super.onResume();
         IntentFilter filter = new IntentFilter();
           //向过滤器中添加action
-         filter.addAction("com.android.shang");
+         filter.addAction("com.eee");
         getActivity().registerReceiver(receiver, filter);
     }
 
@@ -136,12 +136,15 @@ public class TabFiveFragment extends BaseFragment{
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        int n = rand.nextInt(file.size());
-        textView1.setText(file.get(n));
-        Log.e("11111",file.get(n));
-        n  = rand.nextInt(file.size());
-        textView2.setText(file.get(n));
-        Log.e("22222",file.get(n));
+
+
+
+        int n = rand.nextInt(file.size() -1);
+    //    textView1.setText(file.get(n));
+        Log.e("11111",file.get(n)+"111111");
+         n  = rand.nextInt(file.size());
+//        textView2.setText(file.get(n));
+        Log.e("22222",file.get(n)+"");
     }
 };
 

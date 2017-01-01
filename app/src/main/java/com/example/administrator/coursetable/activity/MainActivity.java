@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.homepage_tab_5:
                 Intent intent = new Intent();
-                intent.setAction("com.android.shang");
+                intent.setAction("com.eee");
                   //发送广播
                 sendBroadcast(intent);
 
