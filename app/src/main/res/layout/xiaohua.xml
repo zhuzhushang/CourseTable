@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@mipmap/header_01"
+        android:text="笑话"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:id="@+id/title" />
+
+
+    <TextView
+        android:id="@+id/xiaohua1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="18sp"
+
+        android:textColor="#000000"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/fengexian_03"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <TextView
+        android:id="@+id/xiaohua2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="18sp"
+
+        android:textColor="#000000"/>
+
+</LinearLayout>

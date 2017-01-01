@@ -20,7 +20,7 @@ public class TabOneFragment extends BaseFragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_tab_4,container,false);
+        View view = inflater.inflate(R.layout.first_fragment,container,false);
 
         return view;
     }

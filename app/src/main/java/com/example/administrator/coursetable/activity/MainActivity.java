@@ -1,5 +1,6 @@
 package com.example.administrator.coursetable.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -115,6 +116,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
                 break;
             case R.id.homepage_tab_5:
+                Intent intent = new Intent();
+                intent.setAction("com.android.shang");
+                  //发送广播
+                sendBroadcast(intent);
 
                 index = 4;
                 break;
