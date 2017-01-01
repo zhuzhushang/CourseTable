@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,6 +86,7 @@ public class TabFiveFragment extends BaseFragment{
             String line = null;
             int index = 0;
             while ((line = br.readLine()) != null) {
+                if(line.length() > 0)
                 file.add(line);
             }
 
@@ -139,12 +139,12 @@ public class TabFiveFragment extends BaseFragment{
 
 
 
-        int n = rand.nextInt(file.size() -1);
-    //    textView1.setText(file.get(n));
-        Log.e("11111",file.get(n)+"111111");
-         n  = rand.nextInt(file.size());
-//        textView2.setText(file.get(n));
-        Log.e("22222",file.get(n)+"");
+          int n = rand.nextInt(file.size() );
+          textView1.setText(file.get(rand.nextInt(file.size() )));
+
+
+          textView2.setText(file.get(rand.nextInt(file.size() )));
+
     }
 };
 

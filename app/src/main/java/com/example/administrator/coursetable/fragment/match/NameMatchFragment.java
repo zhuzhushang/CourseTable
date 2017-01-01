@@ -78,12 +78,10 @@ public class NameMatchFragment extends BaseFragment{
             @Override
             public void onClick(View v) {
                 match();
-                getFragmentManager().beginTransaction().hide(NameMatchFragment.this);
-                getFragmentManager().beginTransaction().addToBackStack(null).show(new NameMatchResultFragment()).commit();
+                NameDialog dialog = new NameDialog(getActivity());
 
-//                Intent intent = new Intent();
-//                intent.setClass(getActivity(),NameMatchResultActivity.class );
-//                startActivity(intent);
+                dialog.show();
+
 
             }
         });

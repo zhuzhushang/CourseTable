@@ -14,8 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/girl"
-        android:layout_marginLeft="66dp"
-        android:layout_marginTop="48dp"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"/>
 
 
     <ImageView
@@ -23,77 +23,79 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/boy"
         android:layout_below="@+id/t3"
-        android:layout_marginLeft="285dp"
-        android:layout_marginTop="48dp"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"/>
 
 
     <ImageView
         android:id="@+id/gril"
-        android:layout_width="170dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:src="@mipmap/edit_text"
         android:layout_below="@+id/t1"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
         android:scaleType="centerInside"/>
 
 
 
 
-    <EditText
+    <TextView
         android:id="@+id/edit_gril"
         android:layout_width="90dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="165dp"
         android:background="@null"
-        android:text="英一"/>
+        />
+
 
     <ImageButton
         android:id="@+id/allow_gril"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/allow"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="219dp"/>
-
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="178dp"/>
 
     <ImageView
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:src="@mipmap/contact"
-        android:layout_marginLeft="175dp"
+        android:layout_toRightOf="@+id/gril"
         android:scaleType="centerInside"
-        android:layout_marginTop="230dp"/>
+        android:layout_marginTop="180dp"/>
 
     <ImageView
         android:id="@+id/boy"
-        android:layout_width="170dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:src="@mipmap/edit_text"
         android:layout_below="@+id/t3"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="120dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
         android:scaleType="centerInside"/>
 
 
-    <EditText
+    <TextView
         android:id="@+id/edit_boy"
         android:layout_width="90dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="274dp"
-        android:layout_marginTop="204dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="33dp"
+        android:layout_marginTop="165dp"
         android:background="@null"
-        android:text="小明"/>
+        />
 
     <ImageButton
         android:id="@+id/allow_boy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/allow"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="219dp"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+
+        android:layout_marginTop="178dp"/>
 
 
     <ImageButton
@@ -102,9 +104,11 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/match_button"
         android:layout_below="@+id/boy"
-        android:layout_marginLeft="123dp"
+        android:layout_centerHorizontal="true"
 
         android:layout_marginTop="45dp"/>
+
+
 
 
 
