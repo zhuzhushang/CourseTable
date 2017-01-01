@@ -8,8 +8,8 @@ import android.widget.RadioGroup;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.fragment.TabFiveFragment;
-import com.example.administrator.coursetable.fragment.TabOneFragment;
 import com.example.administrator.coursetable.fragment.TabFourFragment;
+import com.example.administrator.coursetable.fragment.TabOneFragment;
 import com.example.administrator.coursetable.fragment.TabThreeFragment;
 import com.example.administrator.coursetable.fragment.TabTwoFragment;
 
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
     }
-
+    FragmentTransaction transAction;
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             return;
         }
 
-        FragmentTransaction transAction = getSupportFragmentManager().beginTransaction();
+         transAction = getSupportFragmentManager().beginTransaction();
 
         int index = 2;
 
@@ -126,5 +126,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         currentCheckId = i;
 
     }
+
+
 }
 

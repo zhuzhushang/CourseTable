@@ -26,6 +26,12 @@
         </activity>
 
         <activity android:name=".fragment.constellation.FortuneActivity"/>
+
+        <activity android:name=".fragment.match.nameMatchActivity"/>
+        <activity android:name=".fragment.match.constellMatchActivity"/>
+        <activity android:name=".fragment.match.NameMatchResultActivity" />
+
+
     </application>
 
 </manifest>
