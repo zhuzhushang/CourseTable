@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private RadioGroup hp_rg;
 
     /**当前选中的id*/
-    private int currentCheckId = R.id.homepage_tab_2;
+    private int currentCheckId = R.id.homepage_tab_3;
     /**当前选中的下标*/
     private int currentIndex = 2;
 
