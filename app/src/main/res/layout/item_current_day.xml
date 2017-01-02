@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/class_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="英语"
+        android:textSize="@dimen/textsize_max"
+        android:textColor="#1f2423"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/course_margin_left_right"
+        />
+
+    <TextView
+        android:id="@+id/up_class_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上课地点：南楼"
+        android:textSize="@dimen/textsize_max"
+        android:textColor="#bac2c7"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="@dimen/course_margin_left_right"
+
+        />
+
+    <TextView
+        android:id="@+id/up_class_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_middle_plus"
+        android:textStyle="bold"
+        android:textColor="#abb8bc"
+        android:text="07:30-08:00"
+        android:layout_marginTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_marginLeft="@dimen/course_margin_left_right"
+        />
+
+
+</LinearLayout>

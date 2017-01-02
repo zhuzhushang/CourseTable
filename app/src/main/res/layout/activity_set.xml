@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/about_us"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        />
+
+
+    <RelativeLayout
+        style="@style/default_appbar_container_relative"
+        android:layout_height="48dp"
+        android:background="@mipmap/appbar_header">
+
+        <TextView
+            style="@style/default_appbar_left_tv_arrow"
+            android:text="设置" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/course_margin_left_right"
+        android:layout_marginTop="@dimen/course_margin_top"
+        android:paddingRight="@dimen/course_margin_left_right">
+
+
+        <RelativeLayout
+            android:id="@+id/up_class_tip"
+            style="@style/course_set_relative"
+            >
+
+            <TextView
+                android:id="@+id/tv_left"
+                style="@style/course_set_tv"
+                android:paddingBottom="3dp"
+                android:text="上课提醒" />
+
+            <TextView
+                style="@style/course_set_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/tv_left"
+                android:paddingBottom="3dp"
+                android:text="在上课前，会在通知栏通知"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/textsize_small"
+
+                />
+
+            <CheckBox
+                android:id="@+id/up_class_tip_checkbox"
+                style="@style/course_set_checkbox" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/up_class_time_set"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="上课事件设置" />
+
+            <ImageView style="@style/course_set_imageview_arrow" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/gone"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="隐藏" />
+
+            <ImageView style="@style/course_set_imageview_arrow" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/test_tip"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="考试提醒" />
+
+
+            <CheckBox
+                android:id="@+id/test_tip_checkbox"
+                style="@style/course_set_checkbox" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/test_time_set"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="考试时间设置" />
+
+            <ImageView style="@style/course_set_imageview_arrow" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/auto_add_bg_color"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="自动添加课程背景色" />
+
+
+            <CheckBox
+                android:id="@+id/auto_add_bg_color_checkbox"
+                style="@style/course_set_checkbox" />
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/about"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="关于" />
+
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/exit"
+            style="@style/course_set_relative">
+
+            <TextView
+                style="@style/course_set_tv"
+                android:text="退出" />
+
+
+            <View style="@style/course_set_divider" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

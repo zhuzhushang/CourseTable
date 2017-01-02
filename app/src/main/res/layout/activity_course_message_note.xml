@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eff7f7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/default_appbar_container_relative"
+        android:layout_height="48dp"
+        android:background="@mipmap/appbar_header">
+
+        <TextView
+            style="@style/default_appbar_left_tv_arrow"
+            android:text="课程信息/笔记" />
+
+        <ImageView
+            android:id="@+id/appbar_right_img"
+            style="@style/default_appbar_right_img"
+            android:src="@mipmap/delete" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/selector_tv_drawable_bottom"
+            android:drawablePadding="5dp"
+
+            android:gravity="center"
+            android:text="详细"
+            android:textColor="#494c4b"
+            android:textSize="@dimen/textsize_max" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/selector_tv_drawable_bottom"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="笔记"
+            android:textColor="#494c4b"
+            android:textSize="@dimen/textsize_max" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/note_ll"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/note_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#7d8080"
+                android:text="2016.06.29    周三"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="@dimen/textsize_max"
+                />
+
+            <EditText
+                android:id="@+id/note_record"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:padding="6dp"
+                android:gravity="left"
+                android:background="@drawable/shape_detail_note"
+                android:textSize="@dimen/textsize_middle_plus"
+                android:textColor="@color/color_text_black"
+                android:hint="    请输入笔记..."
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/detail_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_detail_note"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/course_margin_left_right"
+                android:paddingRight="@dimen/course_margin_left_right">
+
+                <LinearLayout style="@style/course_message_note_linear">
+
+                    <TextView
+                        style="@style/course_message_note_tv"
+                        android:text="课名:" />
+
+                    <EditText
+                        android:id="@+id/class_name"
+                        style="@style/course_message_note_et"
+                        android:hint="请输入课名" />
+                </LinearLayout>
+
+                <View style="@style/course_message_note_divider" />
+
+                <LinearLayout style="@style/course_message_note_linear">
+
+                    <TextView
+                        style="@style/course_message_note_tv"
+                        android:text="地点:" />
+
+                    <EditText
+                        android:id="@+id/class_place"
+                        style="@style/course_message_note_et"
+                        android:hint="请输入地点" />
+                </LinearLayout>
+
+                <View style="@style/course_message_note_divider" />
+
+                <LinearLayout style="@style/course_message_note_linear">
+
+                    <TextView
+                        style="@style/course_message_note_tv"
+                        android:text="课时:" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/course_margin_left_right"
+                        android:gravity="bottom|center">
+
+                        <ImageView
+                            android:id="@+id/reduce_img"
+                            style="@style/reduce_img" />
+
+                        <TextView
+                            android:id="@+id/num_plus_reduce_tv"
+                            style="@style/num_plus_reduce_tv"
+                            android:layout_gravity="center"
+                            android:text="1" />
+
+
+                        <ImageView
+                            android:id="@+id/plus_img"
+                            style="@style/plus_img" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View style="@style/course_message_note_divider" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_detail_note"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/course_margin_left_right"
+                android:paddingRight="@dimen/course_margin_left_right">
+
+                <LinearLayout style="@style/course_message_note_linear">
+
+                    <TextView
+                        style="@style/course_message_note_tv"
+                        android:text="课时背景色："
+
+                        android:textSize="@dimen/textsize_max_plus" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="8dp"
+                        android:src="@mipmap/color_1_1_random" />
+
+
+                </LinearLayout>
+
+                <View style="@style/course_message_note_divider" />
+
+                <LinearLayout style="@style/course_message_note_choice_color_linear">
+
+                    <ImageView
+                        android:id="@+id/color_1_1_random"
+                        style="@style/course_message_note_choice_color_img"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/color_1_1_random" />
+
+                    <ImageView
+                        android:id="@+id/color_1_2"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_1_2" />
+
+                    <ImageView
+                        android:id="@+id/color_1_3"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_1_3" />
+
+                    <ImageView
+                        android:id="@+id/color_1_4"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_1_4" />
+
+                    <ImageView
+                        android:id="@+id/color_1_5"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_1_5" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/course_message_note_choice_color_linear">
+
+                    <ImageView
+                        android:id="@+id/color_2_1"
+                        style="@style/course_message_note_choice_color_img"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/color_2_1" />
+
+                    <ImageView
+                        android:id="@+id/color_2_2"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_2_2" />
+
+                    <ImageView
+                        android:id="@+id/color_2_3"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_2_3" />
+
+                    <ImageView
+                        android:id="@+id/color_2_4"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_2_4" />
+
+                    <ImageView
+                        android:id="@+id/color_2_5"
+                        style="@style/course_message_note_choice_color_img"
+                        android:src="@mipmap/color_2_5" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/course_message_note_choice_color_linear"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/course_message_note_duidui_chacha_img"
+            android:src="@mipmap/cancel" />
+
+
+        <ImageView
+            style="@style/course_message_note_duidui_chacha_img"
+            android:src="@mipmap/confirm" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

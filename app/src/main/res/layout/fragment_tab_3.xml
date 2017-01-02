@@ -19,6 +19,7 @@
             />
 
         <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/appbar_center_tv"
             style="@style/default_appbar_center_tv"
             android:text="总表"
 
@@ -32,6 +33,7 @@
                 android:id="@+id/appbar_change"
                 style="@style/appbar_right_img"
                 android:src="@mipmap/appbar_change"
+                android:clickable="true"
                 />
 
             <android.support.v7.widget.AppCompatImageView
@@ -41,18 +43,60 @@
                 />
 
             <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/appbar_edit"
+                android:id="@+id/appbar_more"
                 style="@style/appbar_right_img"
                 android:paddingRight="10dp"
                 android:src="@mipmap/appbar_edit"
                 />
-
-
         </LinearLayout>
 
     </RelativeLayout>
 
 
+    <!--当天-->
+
+    <LinearLayout
+        android:id="@+id/current_day_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/course_margin_left_right"
+        android:paddingLeft="@dimen/course_margin_left_right"
+        android:layout_marginTop="@dimen/course_margin_top"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/week_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周三"
+            android:textSize="20sp"
+            android:textColor="#1f2423"
+            android:layout_marginLeft="@dimen/course_margin_left_right"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#8095a1"
+            />
+
+        <ListView
+            android:id="@+id/current_day_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#8095a1"
+            android:dividerHeight="1dp"
+
+            ></ListView>
+
+    </LinearLayout>
+
+
+
+
+    <!--课程表-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -778,5 +822,10 @@
 
         </HorizontalScrollView>
     </ScrollView>
+
+
+
+
+
 
 </LinearLayout>

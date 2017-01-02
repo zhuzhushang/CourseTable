@@ -21,6 +21,16 @@
             />
     </RelativeLayout>
 
+    <ListView
+        android:id="@+id/note_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#6a8490"
+        android:dividerHeight="0.6dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        ></ListView>
 
 
 
