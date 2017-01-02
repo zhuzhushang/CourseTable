@@ -224,6 +224,103 @@
         <item name="android:textColor">@color/color_text_black</item>
     </style>
 
+    <!--有框框的linear-->
+    <style name="kuangkuang_linear">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/shape_detail_note</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">@dimen/course_margin_left_right</item>
+        <item name="android:paddingRight">@dimen/course_margin_left_right</item>
+    </style>
+
+
+    <!--上课时间设置-->
+    <style name="set_time_relative">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+
+    </style>
+
+    <!--上课时间设置-->
+    <style name="set_time_tv">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/course_margin_left_right</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:drawableLeft">@mipmap/set_time_off</item>
+        <item name="android:drawablePadding">6dp</item>
+    </style>
+
+    <!--上课时间设置-->
+    <style name="set_time_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.8dp</item>
+        <item name="android:background">#627781</item>
+    </style>
+
+   <!--上课时间设置  linear-->
+    <style name="set_time_linear_plus_reduce">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/course_margin_left_right</item>
+        <item name="android:gravity">bottom|center</item>
+
+    </style>
+
+    <!--上课时间设置  linear-->
+    <style name="set_time_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/course_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/course_margin_left_right</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <!--上课时间设置  -->
+    <style name="set_time_class_num_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textColor">@color/color_text_black</item>
+
+    </style>
+
+    <!--上课时间设置  -->
+    <style name="set_time_class_time_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/shape_set_time_tv</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+
+
 
 
 

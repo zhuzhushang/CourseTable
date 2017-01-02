@@ -109,16 +109,7 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/shape_detail_note"
-                android:orientation="vertical"
-                android:paddingBottom="10dp"
-                android:paddingLeft="@dimen/course_margin_left_right"
-                android:paddingRight="@dimen/course_margin_left_right">
+                style="@style/kuangkuang_linear">
 
                 <LinearLayout style="@style/course_message_note_linear">
 
@@ -187,16 +178,7 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/shape_detail_note"
-                android:orientation="vertical"
-                android:paddingBottom="10dp"
-                android:paddingLeft="@dimen/course_margin_left_right"
-                android:paddingRight="@dimen/course_margin_left_right">
+                style="@style/kuangkuang_linear">
 
                 <LinearLayout style="@style/course_message_note_linear">
 

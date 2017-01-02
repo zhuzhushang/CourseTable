@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eff7f7"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/default_appbar_container_relative"
+            android:layout_height="48dp"
+            android:background="@mipmap/appbar_header">
+
+            <TextView
+                style="@style/default_appbar_left_tv_arrow"
+                android:text="上课时间设置"
+                />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            style="@style/kuangkuang_linear">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                style="@style/set_time_relative">
+
+                <TextView
+                    style="@style/set_time_tv"
+                    android:text="晨读"
+                    />
+
+
+                <LinearLayout
+                    style="@style/set_time_linear_plus_reduce">
+
+                    <ImageView
+                        android:id="@+id/mor_read_reduce_img"
+                        style="@style/reduce_img" />
+
+                    <TextView
+                        android:id="@+id/mor_read_num_plus_reduce_tv"
+                        style="@style/num_plus_reduce_tv"
+                        android:layout_gravity="center"
+                        android:text="1" />
+
+
+                    <ImageView
+                        android:id="@+id/mor_read_plus_img"
+                        style="@style/plus_img" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    android:id="@+id/class_mor_read_1"
+                    style="@style/set_time_class_num_tv"
+                    android:text="第一节"
+                    />
+
+                <TextView
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第二节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_mor_read_2"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+
+
+        </LinearLayout>
+
+        <!--上午-->
+        <LinearLayout
+            style="@style/kuangkuang_linear">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                style="@style/set_time_relative">
+
+                <TextView
+                    style="@style/set_time_tv"
+                    android:text="上午"
+                    />
+
+
+                <LinearLayout
+                    style="@style/set_time_linear_plus_reduce">
+
+                    <ImageView
+                        android:id="@+id/mor_reduce_img"
+                        style="@style/reduce_img" />
+
+                    <TextView
+                        android:id="@+id/mor_num_plus_reduce_tv"
+                        style="@style/num_plus_reduce_tv"
+                        android:layout_gravity="center"
+                        android:text="1" />
+
+
+                    <ImageView
+                        android:id="@+id/mor_plus_img"
+                        style="@style/plus_img" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    android:id="@+id/class_mor_1"
+                    style="@style/set_time_class_num_tv"
+                    android:text="第一节"
+                    />
+
+                <TextView
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第二节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_mor_2"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第三节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_mor_3"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第四节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_mor_4"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+            <View
+                style="@style/set_time_divider"
+                />
+        </LinearLayout>
+
+        <!--下午-->
+        <LinearLayout
+            style="@style/kuangkuang_linear">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                style="@style/set_time_relative">
+
+                <TextView
+                    style="@style/set_time_tv"
+                    android:text="下午"
+                    />
+
+
+                <LinearLayout
+                    style="@style/set_time_linear_plus_reduce">
+
+                    <ImageView
+                        android:id="@+id/afternoon_reduce_img"
+                        style="@style/reduce_img" />
+
+                    <TextView
+                        android:id="@+id/afternoon_num_plus_reduce_tv"
+                        style="@style/num_plus_reduce_tv"
+                        android:layout_gravity="center"
+                        android:text="1" />
+
+
+                    <ImageView
+                        android:id="@+id/afternoon_plus_img"
+                        style="@style/plus_img" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+
+                    style="@style/set_time_class_num_tv"
+                    android:text="第一节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_afternoon_1"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第二节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_afternoon_2"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第三节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_afternoon_3"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+        </LinearLayout>
+
+        <!--晚自习-->
+        <LinearLayout
+            style="@style/kuangkuang_linear">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                style="@style/set_time_relative">
+
+                <TextView
+                    style="@style/set_time_tv"
+                    android:text="晚习"
+                    />
+
+
+                <LinearLayout
+                    style="@style/set_time_linear_plus_reduce">
+
+                    <ImageView
+                        android:id="@+id/evening_reduce_img"
+                        style="@style/reduce_img" />
+
+                    <TextView
+                        android:id="@+id/evening_num_plus_reduce_tv"
+                        style="@style/num_plus_reduce_tv"
+                        android:layout_gravity="center"
+                        android:text="1" />
+
+
+                    <ImageView
+                        android:id="@+id/evening_plus_img"
+                        style="@style/plus_img" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+
+                    style="@style/set_time_class_num_tv"
+                    android:text="第一节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_evening_1"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+            <LinearLayout
+                style="@style/set_time_linear">
+
+                <TextView
+                    style="@style/set_time_class_num_tv"
+                    android:text="第二节"
+                    />
+
+                <TextView
+                    android:id="@+id/class_evening_2"
+                    style="@style/set_time_class_time_tv"
+                    android:text="7：00-07:30"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/set_time_divider"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

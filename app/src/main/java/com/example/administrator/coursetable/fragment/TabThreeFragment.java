@@ -70,7 +70,16 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private TextView sunTvArray[] = {sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2};
     private int sunTvArrayID[] = {R.id.sun_mor_read_tv_1, R.id.sun_mor_read_tv_2, R.id.sun_morning_tv_1, R.id.sun_morning_tv_2, R.id.sun_morning_tv_3, R.id.sun_morning_tv_4, R.id.sun_afternoon_tv_1, R.id.sun_afternoon_tv_2, R.id.sun_afternoon_tv_3, R.id.sun_evening_tv_1, R.id.sun_evening_tv_2};
 
+    /**二维数组*/
     private TextView qrArray[][] = {monTvArray,tuesTvArray,wedTvArray,thurTvArray,friTvArray,satTvArray,sunTvArray};
+
+    /**/
+    private TextView morning_reading_1,morning_reading_2,morning_1,morning_2,morning_3,morning_4,afternoon_1,afternoon_2,afternoon_3,evening_1,evening_2;
+    private TextView classTimeTvArray[] = {morning_reading_1,morning_reading_2,morning_1,morning_2,morning_3,morning_4,afternoon_1,afternoon_2,afternoon_3,evening_1,evening_2};
+    private int classTimeTvArrayID[] ={ R.id.morning_reading_1,R.id.morning_reading_2,R.id.morning_1,R.id.morning_2,R.id.morning_3,R.id.morning_4,R.id.afternoon_1,R.id.afternoon_2,R.id.afternoon_3,R.id.evening_1,R.id.evening_2};
+
+
+
 
     @Nullable
     @Override
