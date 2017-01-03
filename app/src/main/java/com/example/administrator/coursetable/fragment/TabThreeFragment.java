@@ -15,6 +15,7 @@ import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.activity.CourseMessageNoteActivity;
 import com.example.administrator.coursetable.activity.NotesActivity;
 import com.example.administrator.coursetable.activity.SetActivity;
+import com.example.administrator.coursetable.activity.SetTimeActivity;
 import com.example.administrator.coursetable.adapter.CurrentDayAdapter;
 import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.model.CurrentDayModel;
@@ -70,15 +71,15 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private TextView sunTvArray[] = {sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2};
     private int sunTvArrayID[] = {R.id.sun_mor_read_tv_1, R.id.sun_mor_read_tv_2, R.id.sun_morning_tv_1, R.id.sun_morning_tv_2, R.id.sun_morning_tv_3, R.id.sun_morning_tv_4, R.id.sun_afternoon_tv_1, R.id.sun_afternoon_tv_2, R.id.sun_afternoon_tv_3, R.id.sun_evening_tv_1, R.id.sun_evening_tv_2};
 
-    /**二维数组*/
-    private TextView qrArray[][] = {monTvArray,tuesTvArray,wedTvArray,thurTvArray,friTvArray,satTvArray,sunTvArray};
+    /**
+     * 二维数组
+     */
+    private TextView qrArray[][] = {monTvArray, tuesTvArray, wedTvArray, thurTvArray, friTvArray, satTvArray, sunTvArray};
 
-    /**/
-    private TextView morning_reading_1,morning_reading_2,morning_1,morning_2,morning_3,morning_4,afternoon_1,afternoon_2,afternoon_3,evening_1,evening_2;
-    private TextView classTimeTvArray[] = {morning_reading_1,morning_reading_2,morning_1,morning_2,morning_3,morning_4,afternoon_1,afternoon_2,afternoon_3,evening_1,evening_2};
-    private int classTimeTvArrayID[] ={ R.id.morning_reading_1,R.id.morning_reading_2,R.id.morning_1,R.id.morning_2,R.id.morning_3,R.id.morning_4,R.id.afternoon_1,R.id.afternoon_2,R.id.afternoon_3,R.id.evening_1,R.id.evening_2};
-
-
+    /*上课时间设置*/
+    private TextView morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2;
+    private TextView classTimeTvArray[] = {morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2};
+    private int classTimeTvArrayID[] = {R.id.morning_reading_1, R.id.morning_reading_2, R.id.morning_1, R.id.morning_2, R.id.morning_3, R.id.morning_4, R.id.afternoon_1, R.id.afternoon_2, R.id.afternoon_3, R.id.evening_1, R.id.evening_2};
 
 
     @Nullable
@@ -122,6 +123,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             friTvArray[i] = (TextView) view.findViewById(friTvArrayID[i]);
             satTvArray[i] = (TextView) view.findViewById(satTvArrayID[i]);
             sunTvArray[i] = (TextView) view.findViewById(sunTvArrayID[i]);
+            classTimeTvArray[i] = (TextView) view.findViewById(classTimeTvArrayID[i]);
 
             monTvArray[i].setOnClickListener(this);
             tuesTvArray[i].setOnClickListener(this);
@@ -130,6 +132,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             friTvArray[i].setOnClickListener(this);
             satTvArray[i].setOnClickListener(this);
             sunTvArray[i].setOnClickListener(this);
+            classTimeTvArray[i].setOnClickListener(this);
 
         }
     }
@@ -194,328 +197,374 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                 startActivity(new Intent(getActivity(), SetActivity.class));
 
                 break;
+            //========上课时间================================
+            case R.id.morning_reading_1:
+
+                onUpClassTimeClick(0);
+
+                break;
+            case R.id.morning_reading_2:
+                onUpClassTimeClick(1);
+                break;
+            case R.id.morning_1:
+                onUpClassTimeClick(2);
+                break;
+            case R.id.morning_2:
+                onUpClassTimeClick(3);
+                break;
+            case R.id.morning_3:
+                onUpClassTimeClick(4);
+                break;
+            case R.id.morning_4:
+                onUpClassTimeClick(5);
+                break;
+            case R.id.afternoon_1:
+                onUpClassTimeClick(6);
+                break;
+            case R.id.afternoon_2:
+                onUpClassTimeClick(7);
+                break;
+            case R.id.afternoon_3:
+                onUpClassTimeClick(8);
+                break;
+            case R.id.evening_1:
+                onUpClassTimeClick(9);
+                break;
+            case R.id.evening_2:
+                onUpClassTimeClick(10);
+                break;
+
             //====================================
             case R.id.mon_mor_read_tv_1:
 
-                onWeekClick(0,0);
+                onWeekClick(0, 0);
                 break;
             case R.id.mon_mor_read_tv_2:
-                onWeekClick(0,1);
+                onWeekClick(0, 1);
                 break;
             case R.id.mon_morning_tv_1:
-                onWeekClick(0,2);
+                onWeekClick(0, 2);
 
                 break;
             case R.id.mon_morning_tv_2:
 
-                onWeekClick(0,3);
+                onWeekClick(0, 3);
                 break;
             case R.id.mon_morning_tv_3:
 
-                onWeekClick(0,4);
+                onWeekClick(0, 4);
                 break;
             case R.id.mon_morning_tv_4:
 
-                onWeekClick(0,5);
+                onWeekClick(0, 5);
                 break;
             case R.id.mon_afternoon_tv_1:
 
-                onWeekClick(0,6);
+                onWeekClick(0, 6);
                 break;
             case R.id.mon_afternoon_tv_2:
 
-                onWeekClick(0,7);
+                onWeekClick(0, 7);
                 break;
             case R.id.mon_afternoon_tv_3:
 
-                onWeekClick(0,8);
+                onWeekClick(0, 8);
                 break;
             case R.id.mon_evening_tv_1:
 
-                onWeekClick(0,9);
+                onWeekClick(0, 9);
                 break;
             case R.id.mon_evening_tv_2:
 
-                onWeekClick(0,10);
+                onWeekClick(0, 10);
                 break;
             //===================================
             case R.id.tues_mor_read_tv_1:
 
-                onWeekClick(1,0);
+                onWeekClick(1, 0);
                 break;
             case R.id.tues_mor_read_tv_2:
-                onWeekClick(1,1);
+                onWeekClick(1, 1);
                 break;
             case R.id.tues_morning_tv_1:
-                onWeekClick(1,2);
+                onWeekClick(1, 2);
 
                 break;
             case R.id.tues_morning_tv_2:
 
-                onWeekClick(1,3);
+                onWeekClick(1, 3);
                 break;
             case R.id.tues_morning_tv_3:
 
-                onWeekClick(1,4);
+                onWeekClick(1, 4);
                 break;
             case R.id.tues_morning_tv_4:
 
-                onWeekClick(1,5);
+                onWeekClick(1, 5);
                 break;
             case R.id.tues_afternoon_tv_1:
 
-                onWeekClick(1,6);
+                onWeekClick(1, 6);
                 break;
             case R.id.tues_afternoon_tv_2:
 
-                onWeekClick(1,7);
+                onWeekClick(1, 7);
                 break;
             case R.id.tues_afternoon_tv_3:
 
-                onWeekClick(1,8);
+                onWeekClick(1, 8);
                 break;
             case R.id.tues_evening_tv_1:
 
-                onWeekClick(1,9);
+                onWeekClick(1, 9);
                 break;
             case R.id.tues_evening_tv_2:
 
-                onWeekClick(1,10);
+                onWeekClick(1, 10);
                 break;
             //========================
             case R.id.wed_mor_read_tv_1:
 
-                onWeekClick(2,0);
+                onWeekClick(2, 0);
                 break;
             case R.id.wed_mor_read_tv_2:
-                onWeekClick(2,1);
+                onWeekClick(2, 1);
                 break;
             case R.id.wed_morning_tv_1:
-                onWeekClick(2,2);
+                onWeekClick(2, 2);
 
                 break;
             case R.id.wed_morning_tv_2:
 
-                onWeekClick(2,3);
+                onWeekClick(2, 3);
                 break;
             case R.id.wed_morning_tv_3:
 
-                onWeekClick(2,4);
+                onWeekClick(2, 4);
                 break;
             case R.id.wed_morning_tv_4:
 
-                onWeekClick(2,5);
+                onWeekClick(2, 5);
                 break;
             case R.id.wed_afternoon_tv_1:
 
-                onWeekClick(2,6);
+                onWeekClick(2, 6);
                 break;
             case R.id.wed_afternoon_tv_2:
 
-                onWeekClick(2,7);
+                onWeekClick(2, 7);
                 break;
             case R.id.wed_afternoon_tv_3:
 
-                onWeekClick(2,8);
+                onWeekClick(2, 8);
                 break;
             case R.id.wed_evening_tv_1:
 
-                onWeekClick(2,9);
+                onWeekClick(2, 9);
                 break;
             case R.id.wed_evening_tv_2:
 
-                onWeekClick(2,10);
+                onWeekClick(2, 10);
                 break;
 
             //========================
             case R.id.thur_mor_read_tv_1:
 
-                onWeekClick(3,0);
+                onWeekClick(3, 0);
                 break;
             case R.id.thur_mor_read_tv_2:
-                onWeekClick(3,1);
+                onWeekClick(3, 1);
                 break;
             case R.id.thur_morning_tv_1:
-                onWeekClick(3,2);
+                onWeekClick(3, 2);
 
                 break;
             case R.id.thur_morning_tv_2:
 
-                onWeekClick(3,3);
+                onWeekClick(3, 3);
                 break;
             case R.id.thur_morning_tv_3:
 
-                onWeekClick(3,4);
+                onWeekClick(3, 4);
                 break;
             case R.id.thur_morning_tv_4:
 
-                onWeekClick(3,5);
+                onWeekClick(3, 5);
                 break;
             case R.id.thur_afternoon_tv_1:
 
-                onWeekClick(3,6);
+                onWeekClick(3, 6);
                 break;
             case R.id.thur_afternoon_tv_2:
 
-                onWeekClick(3,7);
+                onWeekClick(3, 7);
                 break;
             case R.id.thur_afternoon_tv_3:
 
-                onWeekClick(3,8);
+                onWeekClick(3, 8);
                 break;
             case R.id.thur_evening_tv_1:
 
-                onWeekClick(3,9);
+                onWeekClick(3, 9);
                 break;
             case R.id.thur_evening_tv_2:
 
-                onWeekClick(3,10);
+                onWeekClick(3, 10);
                 break;
 
             //========================
             case R.id.fri_mor_read_tv_1:
 
-                onWeekClick(4,0);
+                onWeekClick(4, 0);
                 break;
             case R.id.fri_mor_read_tv_2:
-                onWeekClick(4,1);
+                onWeekClick(4, 1);
                 break;
             case R.id.fri_morning_tv_1:
-                onWeekClick(4,2);
+                onWeekClick(4, 2);
 
                 break;
             case R.id.fri_morning_tv_2:
 
-                onWeekClick(4,3);
+                onWeekClick(4, 3);
                 break;
             case R.id.fri_morning_tv_3:
 
-                onWeekClick(4,4);
+                onWeekClick(4, 4);
                 break;
             case R.id.fri_morning_tv_4:
 
-                onWeekClick(4,5);
+                onWeekClick(4, 5);
                 break;
             case R.id.fri_afternoon_tv_1:
 
-                onWeekClick(4,6);
+                onWeekClick(4, 6);
                 break;
             case R.id.fri_afternoon_tv_2:
 
-                onWeekClick(4,7);
+                onWeekClick(4, 7);
                 break;
             case R.id.fri_afternoon_tv_3:
 
-                onWeekClick(4,8);
+                onWeekClick(4, 8);
                 break;
             case R.id.fri_evening_tv_1:
 
-                onWeekClick(4,9);
+                onWeekClick(4, 9);
                 break;
             case R.id.fri_evening_tv_2:
 
-                onWeekClick(4,10);
+                onWeekClick(4, 10);
                 break;
 
             //========================
             case R.id.sat_mor_read_tv_1:
 
-                onWeekClick(5,0);
+                onWeekClick(5, 0);
                 break;
             case R.id.sat_mor_read_tv_2:
-                onWeekClick(5,1);
+                onWeekClick(5, 1);
                 break;
             case R.id.sat_morning_tv_1:
-                onWeekClick(5,2);
+                onWeekClick(5, 2);
 
                 break;
             case R.id.sat_morning_tv_2:
 
-                onWeekClick(5,3);
+                onWeekClick(5, 3);
                 break;
             case R.id.sat_morning_tv_3:
 
-                onWeekClick(5,4);
+                onWeekClick(5, 4);
                 break;
             case R.id.sat_morning_tv_4:
 
-                onWeekClick(5,5);
+                onWeekClick(5, 5);
                 break;
             case R.id.sat_afternoon_tv_1:
 
-                onWeekClick(5,6);
+                onWeekClick(5, 6);
                 break;
             case R.id.sat_afternoon_tv_2:
 
-                onWeekClick(5,7);
+                onWeekClick(5, 7);
                 break;
             case R.id.sat_afternoon_tv_3:
 
-                onWeekClick(5,8);
+                onWeekClick(5, 8);
                 break;
             case R.id.sat_evening_tv_1:
 
-                onWeekClick(5,9);
+                onWeekClick(5, 9);
                 break;
             case R.id.sat_evening_tv_2:
 
-                onWeekClick(5,10);
+                onWeekClick(5, 10);
                 break;
 
             //========================
             case R.id.sun_mor_read_tv_1:
 
-                onWeekClick(6,0);
+                onWeekClick(6, 0);
                 break;
             case R.id.sun_mor_read_tv_2:
-                onWeekClick(6,1);
+                onWeekClick(6, 1);
                 break;
             case R.id.sun_morning_tv_1:
-                onWeekClick(6,2);
+                onWeekClick(6, 2);
 
                 break;
             case R.id.sun_morning_tv_2:
 
-                onWeekClick(6,3);
+                onWeekClick(6, 3);
                 break;
             case R.id.sun_morning_tv_3:
 
-                onWeekClick(6,4);
+                onWeekClick(6, 4);
                 break;
             case R.id.sun_morning_tv_4:
 
-                onWeekClick(6,5);
+                onWeekClick(6, 5);
                 break;
             case R.id.sun_afternoon_tv_1:
 
-                onWeekClick(6,6);
+                onWeekClick(6, 6);
                 break;
             case R.id.sun_afternoon_tv_2:
 
-                onWeekClick(6,7);
+                onWeekClick(6, 7);
                 break;
             case R.id.sun_afternoon_tv_3:
 
-                onWeekClick(6,8);
+                onWeekClick(6, 8);
                 break;
             case R.id.sun_evening_tv_1:
 
-                onWeekClick(6,9);
+                onWeekClick(6, 9);
                 break;
             case R.id.sun_evening_tv_2:
 
-                onWeekClick(6,10);
+                onWeekClick(6, 10);
                 break;
-            
+
         }
+
     }
 
-    private void onWeekClick(int groupPosition,int postion){
+    private void onWeekClick(int groupPosition, int postion) {
 
         Intent intent = new Intent(getActivity(), CourseMessageNoteActivity.class);
-        intent.putExtra(Constants.CLASS_NAME_NOTE_POSITION,postion);
-        intent.putExtra(Constants.CLASS_NAME_NOTE_ARRAY_POSITION,groupPosition);
-        startActivityForResult(intent,Constants.CLASS_NAME_NOTE_REQUEST_CODE);
+        intent.putExtra(Constants.CLASS_NAME_NOTE_POSITION, postion);
+        intent.putExtra(Constants.CLASS_NAME_NOTE_ARRAY_POSITION, groupPosition);
+        startActivityForResult(intent, Constants.CLASS_NAME_NOTE_REQUEST_CODE);
+
+    }
+
+    private void onUpClassTimeClick(int position) {
+
+        Intent intent = new Intent(getActivity(), SetTimeActivity.class);
+        intent.putExtra(Constants.UP_CLASS_TIME_ARRAY_POSITION, position);
+        startActivityForResult(intent, Constants.CLASS_NAME_NOTE_REQUEST_CODE);
 
     }
 
@@ -524,12 +573,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == Constants.CLASS_NAME_NOTE_REQUEST_CODE)
+        if (requestCode == Constants.CLASS_NAME_NOTE_REQUEST_CODE) {
+
+
+        }else if(requestCode == Constants.UP_CLASS_TIME_POSITION)
         {
 
 
         }
-
 
 
     }

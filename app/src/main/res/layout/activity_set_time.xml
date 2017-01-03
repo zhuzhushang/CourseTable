@@ -157,12 +157,13 @@
                 style="@style/set_time_linear">
 
                 <TextView
-                    android:id="@+id/class_mor_1"
+
                     style="@style/set_time_class_num_tv"
                     android:text="第一节"
                     />
 
                 <TextView
+                    android:id="@+id/class_mor_1"
                     style="@style/set_time_class_time_tv"
                     android:text="7：00-07:30"
                     />

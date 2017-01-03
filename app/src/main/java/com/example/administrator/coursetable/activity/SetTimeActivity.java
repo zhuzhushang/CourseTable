@@ -15,7 +15,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_set_time);
         ViewInit();
         dataInit();
         eventInit();

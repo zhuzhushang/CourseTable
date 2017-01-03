@@ -45,6 +45,11 @@
             android:screenOrientation="portrait"
             />
 
+        <!--设置上课时间-->
+        <activity android:name=".activity.SetTimeActivity"
+                  android:screenOrientation="portrait"
+            />
+
 
 
 
