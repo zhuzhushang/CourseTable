@@ -32,6 +32,7 @@
                 style="@style/set_time_relative">
 
                 <TextView
+                    android:id="@+id/mor_read"
                     style="@style/set_time_tv"
                     android:text="晨读"
                     />
@@ -69,12 +70,13 @@
                 style="@style/set_time_linear">
 
                 <TextView
-                    android:id="@+id/class_mor_read_1"
+
                     style="@style/set_time_class_num_tv"
                     android:text="第一节"
                     />
 
                 <TextView
+                    android:id="@+id/class_mor_read_1"
                     style="@style/set_time_class_time_tv"
                     android:text="7：00-07:30"
                     />
@@ -120,6 +122,7 @@
                 style="@style/set_time_relative">
 
                 <TextView
+                    android:id="@+id/morning"
                     style="@style/set_time_tv"
                     android:text="上午"
                     />
@@ -247,6 +250,7 @@
                 style="@style/set_time_relative">
 
                 <TextView
+                    android:id="@+id/afternoon"
                     style="@style/set_time_tv"
                     android:text="下午"
                     />
@@ -347,13 +351,16 @@
 
         <!--晚自习-->
         <LinearLayout
-            style="@style/kuangkuang_linear">
+            style="@style/kuangkuang_linear"
+            android:layout_marginBottom="15dp"
+            >
 
             <RelativeLayout
                 android:layout_marginTop="10dp"
                 style="@style/set_time_relative">
 
                 <TextView
+                    android:id="@+id/evening"
                     style="@style/set_time_tv"
                     android:text="晚习"
                     />

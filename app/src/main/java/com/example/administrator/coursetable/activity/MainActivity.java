@@ -4,17 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
 import com.example.administrator.coursetable.R;
+import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.fragment.TabFiveFragment;
 import com.example.administrator.coursetable.fragment.TabFourFragment;
 import com.example.administrator.coursetable.fragment.TabOneFragment;
 import com.example.administrator.coursetable.fragment.TabThreeFragment;
 import com.example.administrator.coursetable.fragment.TabTwoFragment;
+import com.example.administrator.coursetable.model.UpClassTimeModel;
+import com.example.administrator.coursetable.sqlite.MySqliteHelper;
+import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener{
 
 
     private TabOneFragment mTabOneFragment;
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         transAction.show(fragmentArray[2]);
         transAction.commit();
 
+
+
+
+
     }
 
     private void eventInit() {
@@ -129,6 +136,59 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         transAction.show(fragmentArray[index]).hide(fragmentArray[currentIndex]).commit();
         currentIndex = index;
         currentCheckId = i;
+
+    }
+
+
+    private String startTimeArray[] = {"07:30","","08:10","09:05","10:15","11:10","14:30","15:25","16:20","17:25",""};
+    private String endTimeArray[] = {"08:00","","08:55","09:50","11:00","11:55","15:15","16:10","17:05","18:10",""};
+
+
+
+    /**
+     * 添加默认上课时间数据
+     */
+    private void addUpClassTimeData()
+    {
+        boolean isAdd = (boolean) SharedPreferencesUtils.getParam(context, Constants.IS_ONCE_ADD_UP_CLASS_TIME_DATA,false);
+
+        if(!isAdd)
+        {
+            addTimeData();
+        }
+    }
+
+
+    /**
+     * 添加数据
+     */
+    private void addTimeData()
+    {
+
+        MySqliteHelper mySqliteHelper = new MySqliteHelper(context,Constants.DB_NAME,null,Constants.DB_VERSION);
+
+        for (int i = 0; i < startTimeArray.length; i++) {
+
+            UpClassTimeModel model = new UpClassTimeModel();
+            model.setStartTime(startTimeArray[i]);
+            model.setEndTime(endTimeArray[i]);
+
+            if(i == 0 || i == 1)
+            {
+                model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MOR_READ);
+            }else if(i > 1 && i < 6)
+            {
+                model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MORNING);
+            }else if(i > 5 && i < 9)
+            {
+                model.setTimeType(Constants.UP_CLASS_TIME_TYPE_AFTERNOON);
+            }else if(i > 8 && i < 11)
+            {
+                model.setTimeType(Constants.UP_CLASS_TIME_TYPE_EVENING);
+            }
+
+            mySqliteHelper.addUpClassTime(model);
+        }
 
     }
 

@@ -81,6 +81,8 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private TextView classTimeTvArray[] = {morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2};
     private int classTimeTvArrayID[] = {R.id.morning_reading_1, R.id.morning_reading_2, R.id.morning_1, R.id.morning_2, R.id.morning_3, R.id.morning_4, R.id.afternoon_1, R.id.afternoon_2, R.id.afternoon_3, R.id.evening_1, R.id.evening_2};
 
+    /***/
+//    private
 
     @Nullable
     @Override

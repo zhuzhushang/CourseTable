@@ -14,4 +14,9 @@
     <string name="math">数学</string>
     <string name="chemistry">化学</string>
 
+
+    <!--setTimeActivity-->
+    <string name="already_to_max">已到最大值</string>
+    <string name="already_to_min">已到最小值</string>
+
 </resources>
