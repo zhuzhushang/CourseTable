@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+
     <color name="colorAccent">#FF4081</color>
 
 
@@ -16,6 +15,12 @@
 
     <!--divider颜色-->
     <color name="color_divider_gray">#acb7bb</color>
+    <color name="background_color_black">#bb000000</color>
+
+    <color name="outside_color_trans">#00000000</color>
+    <color name="outside_color_gray">#66444444</color>
+    <color name="outside_color_pink">#66E7b8f1</color>
+
 
 
 

@@ -50,9 +50,9 @@ public class shengxiaoFragment extends BaseFragment {
     public View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            MyDialog dialog = new MyDialog(getActivity(), list);
-
-            dialog.show();
+//            MyDialog dialog = new MyDialog(getActivity(), list);
+//
+//            dialog.show();
 
 
         }

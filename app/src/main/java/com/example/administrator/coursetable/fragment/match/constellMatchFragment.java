@@ -49,9 +49,9 @@ public class constellMatchFragment extends BaseFragment {
         @Override
         public void onClick(View v) {
 
-            MyDialog dialog = new MyDialog(getActivity(), list);
-
-            dialog.show();
+//            MyDialog dialog = new MyDialog(getActivity(), list);
+//
+//            dialog.show();
 
 
         }

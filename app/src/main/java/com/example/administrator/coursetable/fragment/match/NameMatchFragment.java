@@ -55,6 +55,7 @@ public class NameMatchFragment extends BaseFragment{
 
           initData();
 
+
     }
 
 
@@ -78,9 +79,9 @@ public class NameMatchFragment extends BaseFragment{
             @Override
             public void onClick(View v) {
                 match();
-                NameDialog dialog = new NameDialog(getActivity());
 
-                dialog.show();
+
+
 
 
             }
