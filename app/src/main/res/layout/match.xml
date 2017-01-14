@@ -47,7 +47,7 @@
             android:layout_marginLeft="33dp"
             android:layout_marginTop="165dp"
             android:background="@null"
-            android:text="英一"/>
+           />
 
 
         <ImageView
@@ -77,7 +77,7 @@
             android:layout_marginRight="33dp"
             android:layout_marginTop="165dp"
             android:background="@null"
-            android:text="小明"/>
+         />
 
 
     <ImageButton

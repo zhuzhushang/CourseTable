@@ -3,12 +3,12 @@ package com.example.administrator.coursetable.fragment.match;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.fragment.BaseFragment;
@@ -66,21 +66,24 @@ public class NameMatchFragment extends BaseFragment{
         edit_boy = (EditText) view.findViewById(R.id.edit_boy);
         edit_gril = (EditText) view.findViewById(R.id.edit_gril);
 
-        gril = edit_gril.getText().toString();
-        boy = edit_boy.getText().toString();
 
 
-        final TextView result = (TextView) view.findViewById(R.id.result);
 
 
          match = (ImageButton) view.findViewById(R.id.match);
 
-        match.setOnClickListener(new View.OnClickListener() {
+         match.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                boy = edit_boy.getText().toString();
+                gril = edit_gril.getText().toString();
+
                 match();
 
-
+                TakePhotoPopWin takePhotoPopWin = new TakePhotoPopWin(getActivity(),content);
+                //showAtLocation(View parent, int gravity, int x, int y)
+                takePhotoPopWin.showAtLocation(match, Gravity.BOTTOM, 0, 0);
 
 
 
@@ -161,7 +164,7 @@ public class NameMatchFragment extends BaseFragment{
 
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "GBK"));
             String line = null;
-            int index = 0;
+
             while ((line = br.readLine()) != null) {
                 rule.add(line);
             }
@@ -180,4 +183,9 @@ public class NameMatchFragment extends BaseFragment{
 
         }
     }
+
+
+
+
+
 }
