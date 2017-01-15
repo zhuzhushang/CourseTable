@@ -15,7 +15,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.fragment.BaseFragment;
@@ -177,7 +176,7 @@ public class constellMatchFragment extends BaseFragment {
             else
                 edit_boy.setText(list[position]);
 
-            Toast.makeText(getActivity(),"你选中了"+ list[position] + "座", Toast.LENGTH_SHORT).show();
+
         }
     };
 

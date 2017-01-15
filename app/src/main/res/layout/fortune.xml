@@ -37,31 +37,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="18dp">
+            android:layout_marginTop="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="总体运势"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:paddingBottom="3dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="爱情运势"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:paddingBottom="3dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="健康运势"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:paddingBottom="3dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="财气运势"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:paddingBottom="3dp"/>
         </LinearLayout>
 
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:numColumns="5"
             android:verticalSpacing="10dip"
-            android:layout_marginLeft="10dp"></GridView>
+            android:layout_marginLeft="5dp"></GridView>
     </LinearLayout>
 
 
@@ -80,8 +80,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@mipmap/line"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+   />
 
     <ListView
         android:id="@+id/listView"
@@ -90,7 +91,8 @@
         android:dividerHeight="20dp"
         android:divider="@null"
         android:layout_marginTop="20dp"
-        android:layout_weight="1"></ListView>
+        android:layout_weight="1"
+        android:scrollbars="none"></ListView>
 
 
 
