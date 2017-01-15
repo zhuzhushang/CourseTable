@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
  * @Description: 类描述
  */
 public class BaseActivity extends AppCompatActivity {
-
     public Context context;
 
     @Override
