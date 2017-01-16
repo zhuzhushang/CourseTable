@@ -318,9 +318,41 @@
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:paddingTop">4dp</item>
+        <item name="android:minWidth">70dp</item>
     </style>
 
+    <!--上课时间设置  -->
+    <style name="set_time_class_time_tv_end">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/shape_set_time_tv</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
 
+    <!--上课时间设置  -->
+    <style name="set_time_class_time_tv_divider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textsize_max</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">-</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
 
 
 
