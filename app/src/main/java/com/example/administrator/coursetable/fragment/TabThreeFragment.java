@@ -19,6 +19,8 @@ import com.example.administrator.coursetable.activity.SetTimeActivity;
 import com.example.administrator.coursetable.adapter.CurrentDayAdapter;
 import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.model.CurrentDayModel;
+import com.example.administrator.coursetable.model.UpClassTimeModel;
+import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,8 +83,9 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private TextView classTimeTvArray[] = {morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2};
     private int classTimeTvArrayID[] = {R.id.morning_reading_1, R.id.morning_reading_2, R.id.morning_1, R.id.morning_2, R.id.morning_3, R.id.morning_4, R.id.afternoon_1, R.id.afternoon_2, R.id.afternoon_3, R.id.evening_1, R.id.evening_2};
 
-    /***/
-//    private
+
+    private MySqliteHelper mySqliteHelper;
+    private List<UpClassTimeModel> mlist;
 
     @Nullable
     @Override
@@ -139,7 +142,11 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         }
     }
 
+
+
     private void dataInit() {
+
+        mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME,null,Constants.DB_VERSION);
 
         mList = new ArrayList<>();
         listInit();
@@ -147,6 +154,46 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
         current_day_listview.setAdapter(mAdapter);
 
+
+    }
+
+    /**设置时间和课时*/
+    private void setUpClassTimeData()
+    {
+        mlist = mySqliteHelper.queryUpClassTimeAllData();
+
+        for (int i = 0; i < mlist.size(); i++) {
+
+            UpClassTimeModel model = mlist.get(i);
+            int startHour = model.getStartHour();
+            int endHour = model.getEndHour();
+            int startMinute = model.getStartMinute();
+            int endMinute = model.getEndMinute();
+
+            if(startHour != -1)
+            {
+                classTimeTvArray[i].setText(formatTime(startHour) + ":"+ formatTime(startMinute)+" - "+formatTime(endHour)+":"+formatTime(endMinute));
+            }else
+            {
+                classTimeTvArray[i].setText("");
+            }
+        }
+
+    }
+
+    /**
+     * @param i
+     * @return  格式化时间，不足两位补0
+     */
+    private String formatTime(int i)
+    {
+
+        if(i < 10)
+        {
+            return "0"+i;
+        }
+
+        return ""+i;
     }
 
     private void listInit() {
@@ -168,6 +215,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         appbar_note.setOnClickListener(this);
         appbar_change.setOnClickListener(this);
         appbar_more.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        setUpClassTimeData();
 
     }
 

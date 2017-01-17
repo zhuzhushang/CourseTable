@@ -14,6 +14,50 @@ public class UpClassTimeModel {
     /*所属类型  晨读、上午、下午、晚上*/
     private int timeType;
 
+    private int startHour,endHour,startMinute,endMinute;
+
+    /**课程数量*/
+    private int classNum;
+
+    public int getClassNum() {
+        return classNum;
+    }
+
+    public void setClassNum(int classNum) {
+        this.classNum = classNum;
+    }
+
+    public int getEndHour() {
+        return endHour;
+    }
+
+    public void setEndHour(int endHour) {
+        this.endHour = endHour;
+    }
+
+    public int getEndMinute() {
+        return endMinute;
+    }
+
+    public void setEndMinute(int endMinute) {
+        this.endMinute = endMinute;
+    }
+
+    public int getStartHour() {
+        return startHour;
+    }
+
+    public void setStartHour(int startHour) {
+        this.startHour = startHour;
+    }
+
+    public int getStartMinute() {
+        return startMinute;
+    }
+
+    public void setStartMinute(int startMinute) {
+        this.startMinute = startMinute;
+    }
 
     public int getTimeType() {
         return timeType;

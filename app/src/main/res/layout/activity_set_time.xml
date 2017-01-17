@@ -78,7 +78,7 @@
                 <TextView
                     android:id="@+id/class_mor_read_1"
                     style="@style/set_time_class_time_tv"
-                    android:text="7：00"
+                    android:text="7：00 - 07:30"
                     />
 
                 <TextView
@@ -192,7 +192,7 @@
                 <TextView
                     android:id="@+id/class_mor_1"
                     style="@style/set_time_class_time_tv"
-                    android:text="08:10"
+                    android:text="08:10 - 08:55"
                     />
 
                 <TextView
@@ -223,7 +223,7 @@
                 <TextView
                     android:id="@+id/class_mor_2"
                     style="@style/set_time_class_time_tv"
-                    android:text="09:05"
+                    android:text="09:05 - 09:50"
                     />
 
                 <TextView
@@ -255,7 +255,7 @@
                 <TextView
                     android:id="@+id/class_mor_3"
                     style="@style/set_time_class_time_tv"
-                    android:text="10:15"
+                    android:text="10:15 - 11:00"
                     />
 
                 <TextView
@@ -286,7 +286,7 @@
                 <TextView
                     android:id="@+id/class_mor_4"
                     style="@style/set_time_class_time_tv"
-                    android:text="11:10"
+                    android:text="11:10 - 11:55"
                     />
 
                 <TextView
@@ -361,7 +361,7 @@
                 <TextView
                     android:id="@+id/class_afternoon_1"
                     style="@style/set_time_class_time_tv"
-                    android:text="14:30"
+                    android:text="14:30 - 15:15"
                     />
 
                 <TextView
@@ -392,7 +392,7 @@
                 <TextView
                     android:id="@+id/class_afternoon_2"
                     style="@style/set_time_class_time_tv"
-                    android:text="15:25"
+                    android:text="15:25 - 16:10"
                     />
 
                 <TextView
@@ -423,7 +423,7 @@
                 <TextView
                     android:id="@+id/class_afternoon_3"
                     style="@style/set_time_class_time_tv"
-                    android:text="16:20"
+                    android:text="16:20 - 17:05"
                     />
 
                 <TextView
@@ -501,7 +501,7 @@
                 <TextView
                     android:id="@+id/class_evening_1"
                     style="@style/set_time_class_time_tv"
-                    android:text="17:25"
+                    android:text="17:25 - 18:10"
                     />
 
                 <TextView

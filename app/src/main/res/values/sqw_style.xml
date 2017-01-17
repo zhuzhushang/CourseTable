@@ -318,7 +318,7 @@
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:paddingTop">4dp</item>
-        <item name="android:minWidth">70dp</item>
+        <item name="android:minWidth">132dp</item>
     </style>
 
     <!--上课时间设置  -->
@@ -352,6 +352,21 @@
         <item name="android:text">-</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:visibility">gone</item>
+    </style>
+
+
+    <!-- dialog样式 -->
+    <style name="set_up_class_time" parent="MyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!-- 屏幕背景不变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
 

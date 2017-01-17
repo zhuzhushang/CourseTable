@@ -56,6 +56,9 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     private void dataInit() {
 
+        /**第一步就添加数据*/
+        addUpClassTimeData();
+
         mTabOneFragment = new TabOneFragment();
         mTabTwoFragment = new TabTwoFragment();
         mTabThreeFragment = new TabThreeFragment();
@@ -70,15 +73,10 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
             transAction.add(R.id.comtainer,fragmentArray[i]);
             transAction.hide(fragmentArray[i]);
-
         }
 
         transAction.show(fragmentArray[2]);
         transAction.commit();
-
-
-
-
 
     }
 
@@ -144,6 +142,13 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     private String endTimeArray[] = {"08:00","","08:55","09:50","11:00","11:55","15:15","16:10","17:05","18:10",""};
 
 
+    private int startHourArray[] = {7,-1,8,9,10,11,14,15,16,17,-1};
+    private int startMinuteArray[] = {30,-1,10,5,15,10,30,25,20,25,-1};
+    private int endHourArray[] = {8,-1,8,9,11,11,15,16,17,18,-1};
+    private int endMinuteArray[] = {0,-1,55,50,0,55,15,10,5,10,-1};
+    /**课程数量*/
+    private int classNumArray[] = {2,0,1,1,1,1,1,1,1,2,0};
+
 
     /**
      * 添加默认上课时间数据
@@ -155,6 +160,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         if(!isAdd)
         {
             addTimeData();
+            SharedPreferencesUtils.putParam(context,Constants.IS_ONCE_ADD_UP_CLASS_TIME_DATA,true);
         }
     }
 
@@ -170,8 +176,13 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         for (int i = 0; i < startTimeArray.length; i++) {
 
             UpClassTimeModel model = new UpClassTimeModel();
-            model.setStartTime(startTimeArray[i]);
-            model.setEndTime(endTimeArray[i]);
+
+            model.setEndHour(endHourArray[i]);
+            model.setEndMinute(endMinuteArray[i]);
+            model.setStartHour(startHourArray[i]);
+            model.setStartMinute(startMinuteArray[i]);
+            model.setClassNum(classNumArray[i]);
+
 
             if(i == 0 || i == 1)
             {
@@ -189,7 +200,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
             mySqliteHelper.addUpClassTime(model);
         }
-
     }
 
 

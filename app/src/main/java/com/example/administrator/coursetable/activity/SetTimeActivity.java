@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.constants.Constants;
+import com.example.administrator.coursetable.dialog.SetUpClassTimeDialog;
+import com.example.administrator.coursetable.interfaces.OnUpClassTimeSetListener;
 import com.example.administrator.coursetable.model.UpClassTimeModel;
 import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 import com.example.administrator.coursetable.utils.ToastUtils;
@@ -18,7 +20,7 @@ import java.util.List;
  * Created by Administrator on 2017/1/2.
  */
 
-public class SetTimeActivity extends BaseActivity implements View.OnClickListener {
+public class SetTimeActivity extends BaseActivity implements View.OnClickListener,OnUpClassTimeSetListener {
 
     private List<UpClassTimeModel> mlist;
 
@@ -40,8 +42,11 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
 
     private TextView upClassStartTime[] = {class_mor_read_1,class_mor_read_2,class_mor_1,class_mor_2,class_mor_3,class_mor_4,class_afternoon_1,class_afternoon_2,class_afternoon_3,class_evening_1,class_evening_2};
     private TextView upClassEndTime[] = {class_mor_read_1_end,class_mor_read_2_end,class_mor_1_end,class_mor_2_end,class_mor_3_end,class_mor_4_end,class_afternoon_1_end,class_afternoon_2_end,class_afternoon_3_end,class_evening_1_end,class_evening_2_end};
-
     private final int MOR_READ_MAX = 2;
+
+    private int upClassStartTimeID[] = {R.id.class_mor_read_1,R.id.class_mor_read_2,R.id.class_mor_1,R.id.class_mor_2,R.id.class_mor_3,R.id.class_mor_4,R.id.class_afternoon_1,R.id.class_afternoon_2,R.id.class_afternoon_3,R.id.class_evening_1,R.id.class_evening_2};
+
+
     private final int MOR_MAX = 4;
     private final int AFTERNOON_MAX = 3;
     private final int EVENING_MAX = 2;
@@ -80,9 +85,12 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
         afternoon_num_plus_reduce_tv = (TextView) findViewById(R.id.afternoon_num_plus_reduce_tv);
         evening_num_plus_reduce_tv = (TextView) findViewById(R.id.evening_num_plus_reduce_tv);
 
+        for (int i = 0; i < upClassStartTimeID.length; i++) {
 
+            upClassStartTime[i] = (TextView) findViewById(upClassStartTimeID[i]);
+        }
 
-        class_mor_read_1 = (TextView) findViewById(R.id.class_mor_read_1);
+        /*class_mor_read_1 = (TextView) findViewById(R.id.class_mor_read_1);
         class_mor_read_2 = (TextView) findViewById(R.id.class_mor_read_2);
         class_mor_1 = (TextView) findViewById(R.id.class_mor_1);
         class_mor_2 = (TextView) findViewById(R.id.class_mor_2);
@@ -92,7 +100,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
         class_afternoon_2 = (TextView) findViewById(R.id.class_afternoon_2);
         class_afternoon_3 = (TextView) findViewById(R.id.class_afternoon_3);
         class_evening_1 = (TextView) findViewById(R.id.class_evening_1);
-        class_evening_2 = (TextView) findViewById(R.id.class_evening_2);
+        class_evening_2 = (TextView) findViewById(R.id.class_evening_2);*/
 
 
         class_mor_read_1_end = (TextView) findViewById(R.id.class_mor_read_1_end);
@@ -123,6 +131,13 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
         mlist = new ArrayList<>();
         mySqliteHelper = new MySqliteHelper(context, Constants.DB_NAME,null,Constants.DB_VERSION);
 
+        setUpClassTimeData();
+
+        mor_read_num_plus_reduce_tv.setText(""+mor_read_count);
+        mor_num_plus_reduce_tv.setText(""+mor_count);
+        afternoon_num_plus_reduce_tv.setText(""+afternoon_count);
+        evening_num_plus_reduce_tv.setText(""+evening_count);
+
     }
 
     private void eventInit() {
@@ -139,14 +154,35 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
 
         for (int i = 0; i < upClassStartTime.length; i++) {
 
-            upClassStartTime[i].setOnClickListener(this);
-            upClassEndTime[i].setOnClickListener(this);
+            upClassStartTime[i].setOnClickListener(onClickListenerSetUpClassTime);
+//            upClassEndTime[i].setOnClickListener(this);
 
         }
-
-
-
     }
+
+    /**单独给设置时间设置一个onclicklistener*/
+    private View.OnClickListener onClickListenerSetUpClassTime = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            for (int i = 0; i < upClassStartTimeID.length; i++) {
+
+                if(view.getId() == upClassStartTimeID[i])
+                {
+                    UpClassTimeModel model = mlist.get(i);
+                    SetUpClassTimeDialog dialog = new SetUpClassTimeDialog(context,SetTimeActivity.this,i,model.getStartHour(),model.getStartMinute(),model.getEndHour(),model.getEndMinute());
+                    dialog.show();
+
+                    break;
+                }
+
+            }
+
+        }
+    };
+
+
+
 
     @Override
     public void onClick(View view) {
@@ -257,28 +293,65 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
 
                 break;
 
+
         }
     }
 
     /**设置时间和课时*/
-    private void setTimeData()
+    private void setUpClassTimeData()
     {
         mlist = mySqliteHelper.queryUpClassTimeAllData();
 
         for (int i = 0; i < mlist.size(); i++) {
 
             UpClassTimeModel model = mlist.get(i);
-            upClassEndTime[i].setText(model.getEndTime());
-            upClassStartTime[i].setText(model.getStartTime());
+            int startHour = model.getStartHour();
+            int endHour = model.getEndHour();
+            int startMinute = model.getStartMinute();
+            int endMinute = model.getEndMinute();
+
+            if(startHour != -1)
+            {
+
+                upClassStartTime[i].setText(formatTime(startHour) + ":"+ formatTime(startMinute)+" - "+formatTime(endHour)+":"+formatTime(endMinute));
+            }else
+            {
+                upClassStartTime[i].setText("");
+            }
         }
 
+    }
 
+    @Override
+    public void OnUpClassTimeSet(int tvIndex, int startHour,int startMinute,int endHour,int endMinute) {
 
+        upClassStartTime[tvIndex].setText(formatTime(startHour) + ":"+ formatTime(startMinute)+" - "+formatTime(endHour)+":"+formatTime(endMinute));
 
+        mlist.get(tvIndex).getId();
+        UpClassTimeModel model = mlist.get(tvIndex);
+        model.setStartHour(startHour);
+        model.setStartMinute(startMinute);
+        model.setEndHour(endHour);
+        model.setEndMinute(endMinute);
+
+        mySqliteHelper.updateUpClassTime(model);
 
 
     }
 
+    /**
+     * @param i
+     * @return  格式化时间，不足两位补0
+     */
+    private String formatTime(int i)
+    {
 
+        if(i < 10)
+        {
+            return "0"+i;
+        }
+
+        return ""+i;
+    }
 
 }
