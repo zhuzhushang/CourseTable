@@ -1,5 +1,6 @@
 package com.example.administrator.coursetable.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -630,15 +631,13 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == Constants.CLASS_NAME_NOTE_REQUEST_CODE) {
+        if (requestCode == Constants.CLASS_NAME_NOTE_REQUEST_CODE && requestCode == Activity.RESULT_OK) {
 
 
-        }else if(requestCode == Constants.UP_CLASS_TIME_POSITION)
+        }else if(requestCode == Constants.UP_CLASS_TIME_POSITION && requestCode == Activity.RESULT_OK)
         {
 
 
         }
-
-
     }
 }

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.administrator.coursetable.constants.Constants;
+import com.example.administrator.coursetable.model.CourseTableModel;
 import com.example.administrator.coursetable.model.UpClassTimeModel;
 
 import java.util.ArrayList;
@@ -37,7 +38,6 @@ public class MySqliteHelper extends SQLiteOpenHelper{
 //    private final String VALUE_start_time = "start_time";
 
 
-
     private final String CREATE_UP_CLASS_TIME = "create table "+TABLE_NAME_UP_CLASS+"("+VALUE_ID+" integer primary key,"+
             VALUE_START_TIME +  " text,"+
             VALUE_END_TIME + " text,"+
@@ -47,6 +47,39 @@ public class MySqliteHelper extends SQLiteOpenHelper{
             VALUE_END_HOUR + " integer,"+
             VALUE_END_MINUTE + " integer,"+
             VALUE_CLASS_NUM + " integer"+
+            ")";
+
+
+    //=======================定义课时===========================================================================
+
+    private final String TABLE_NAME_COURSE_TABLE = "course_table";
+
+    private final String VALUE_CLASS_NAME = "class_name";
+    private final String VALUE_ADDRESS = "address";
+    private final String VALUE_NOTE = "note";
+
+
+    /**判断是第几节课*/
+    private final String VALUE_CLASS_INDEX = "class_index";
+    private final String VALUE_CLASS_NUM_ = "class_num";
+    private final String VALUE_BG_COLOR = "bg_color";
+    private final String VALUE_DAY_OF_WEEK = "day_of_week";
+    private final String VALUE_GROUP_POSITION = "group_position";
+    private final String VALUE_CHILD_POSITION = "child_position";
+
+
+
+    private final String CREATE_COURSE_TABLE = "create table "+TABLE_NAME_COURSE_TABLE+"("+VALUE_ID+" integer primary key,"+
+            VALUE_CLASS_NAME + " text,"+
+            VALUE_ADDRESS + " text,"+
+            VALUE_NOTE + " text,"+
+            VALUE_CLASS_INDEX + " integer,"+
+            VALUE_CLASS_NUM_ + " integer,"+
+            VALUE_BG_COLOR + " integer,"+
+            VALUE_TIME_TYPE + " integer,"+
+            VALUE_DAY_OF_WEEK + " integer,"+
+            VALUE_GROUP_POSITION+ " integer,"+
+            VALUE_CHILD_POSITION+ " integer"+
             ")";
 
 
@@ -62,6 +95,7 @@ public class MySqliteHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         sqLiteDatabase.execSQL(CREATE_UP_CLASS_TIME);
+        sqLiteDatabase.execSQL(CREATE_COURSE_TABLE);
 
     }
 
@@ -70,6 +104,75 @@ public class MySqliteHelper extends SQLiteOpenHelper{
 
     }
 
+
+    //===========================课程表设置==============================================================================
+
+    /**
+     * @param model  添加课程表数据
+     */
+    public void addCourseTable(CourseTableModel model)
+    {
+        ContentValues values = new ContentValues();
+        values.put(VALUE_CLASS_NAME,model.getClassNum());
+        values.put(VALUE_ADDRESS,model.getAddress());
+        values.put(VALUE_NOTE,model.getNote());
+        values.put(VALUE_CLASS_INDEX,model.getClassIndex());
+        values.put(VALUE_CLASS_NUM_,model.getClassNum());
+        values.put(VALUE_BG_COLOR,model.getBgColor());
+        values.put(VALUE_TIME_TYPE,model.getTimeType());
+        values.put(VALUE_DAY_OF_WEEK,model.getDayOfWeek());
+        values.put(VALUE_GROUP_POSITION,model.getGroupPosition());
+        values.put(VALUE_CHILD_POSITION,model.getChildPosition());
+
+
+        getWritableDatabase().insert(TABLE_NAME_COURSE_TABLE,null,values);
+
+    }
+
+
+    public List<CourseTableModel> queryCourseTableAllData()
+    {
+
+        List<CourseTableModel> list = new ArrayList<>();
+        Cursor cursor = getWritableDatabase().query(TABLE_NAME_COURSE_TABLE,null,null,null,null,null,null,null);
+
+        cursor.moveToFirst();
+        for (int i = 0; i < cursor.getCount(); i++) {
+
+            String className = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
+            String address = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
+            String note = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
+            int classIndex = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_INDEX));
+            int classNum = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_NUM_));
+            int bgColor = cursor.getInt(cursor.getColumnIndex(VALUE_BG_COLOR));
+            int timeType = cursor.getInt(cursor.getColumnIndex(VALUE_TIME_TYPE));
+            int dayOfWeek = cursor.getInt(cursor.getColumnIndex(VALUE_DAY_OF_WEEK));
+            int groupPosition = cursor.getInt(cursor.getColumnIndex(VALUE_GROUP_POSITION));
+            int childPosition = cursor.getInt(cursor.getColumnIndex(VALUE_CHILD_POSITION));
+
+            CourseTableModel model = new CourseTableModel();
+            model.setClassName(className);
+            model.setAddress(address);
+            model.setNote(note);
+            model.setClassNum(classNum);
+            model.setClassIndex(classIndex);
+            model.setBgColor(bgColor);
+            model.setTimeType(timeType);
+            model.setDayOfWeek(dayOfWeek);
+            model.setGroupPosition(groupPosition);
+            model.setChildPosition(childPosition);
+
+            list.add(model);
+            cursor.moveToNext();
+        }
+
+
+        return list;
+    }
+
+
+
+    //===========================上课时间设置========================================================================
 
     public void addUpClassTime(String startTime ,String endTime)
     {
