@@ -113,7 +113,7 @@ public class MySqliteHelper extends SQLiteOpenHelper{
     public void addCourseTable(CourseTableModel model)
     {
         ContentValues values = new ContentValues();
-        values.put(VALUE_CLASS_NAME,model.getClassNum());
+        values.put(VALUE_CLASS_NAME,model.getClassName());
         values.put(VALUE_ADDRESS,model.getAddress());
         values.put(VALUE_NOTE,model.getNote());
         values.put(VALUE_CLASS_INDEX,model.getClassIndex());
@@ -139,6 +139,7 @@ public class MySqliteHelper extends SQLiteOpenHelper{
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
 
+            int id = cursor.getInt(cursor.getColumnIndex(VALUE_ID));
             String className = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
             String address = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
             String note = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
@@ -151,7 +152,15 @@ public class MySqliteHelper extends SQLiteOpenHelper{
             int childPosition = cursor.getInt(cursor.getColumnIndex(VALUE_CHILD_POSITION));
 
             CourseTableModel model = new CourseTableModel();
-            model.setClassName(className);
+            if(className == null ||  "0".equals(className) || "".equals(className))
+            {
+                model.setClassName("");
+            }else
+            {
+                model.setClassName(className);
+            }
+
+            model.setId(id);
             model.setAddress(address);
             model.setNote(note);
             model.setClassNum(classNum);
@@ -166,10 +175,95 @@ public class MySqliteHelper extends SQLiteOpenHelper{
             cursor.moveToNext();
         }
 
+        cursor.close();
 
         return list;
     }
 
+    public void chageCourseTableData(CourseTableModel model)
+    {
+
+        ContentValues values = new ContentValues();
+        values.put(VALUE_CLASS_NAME,model.getClassName());
+        values.put(VALUE_ADDRESS,model.getAddress());
+        values.put(VALUE_NOTE,model.getNote());
+        values.put(VALUE_CLASS_INDEX,model.getClassIndex());
+        values.put(VALUE_CLASS_NUM_,model.getClassNum());
+        values.put(VALUE_BG_COLOR,model.getBgColor());
+        values.put(VALUE_TIME_TYPE,model.getTimeType());
+        values.put(VALUE_DAY_OF_WEEK,model.getDayOfWeek());
+        values.put(VALUE_GROUP_POSITION,model.getGroupPosition());
+        values.put(VALUE_CHILD_POSITION,model.getChildPosition());
+
+
+        getWritableDatabase().update(TABLE_NAME_COURSE_TABLE,values,VALUE_ID+"=?",new String[]{""+model.getId()});
+
+    }
+
+
+    /**
+     * 添加课程表所有默认数据
+     */
+    public void addCourseTableAllData()
+    {
+
+        for (int i = 0; i < 7; i++) {
+
+            for (int j = 0; j < 11 ;j++)
+            {
+                CourseTableModel model = new CourseTableModel();
+                model.setGroupPosition(i);
+                model.setChildPosition(j);
+                model.setClassIndex(j);
+                model.setDayOfWeek(i+1);
+                model.setBgColor(-1);
+                model.setClassNum(1);
+                model.setClassName("");
+                model.setAddress("");
+
+                if(j== 0 || j== 1)
+                {
+                    model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MOR_READ);
+                }else if(j> 1 && j< 6)
+                {
+                    model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MORNING);
+                }else if(j> 5 && j< 9)
+                {
+                    model.setTimeType(Constants.UP_CLASS_TIME_TYPE_AFTERNOON);
+                }else if(j> 8 && j< 11)
+                {
+                    model.setTimeType(Constants.UP_CLASS_TIME_TYPE_EVENING);
+                }
+
+                addCourseTable(model);
+
+            }
+
+        }
+    }
+
+    public void deleteCourseTableAllData()
+    {
+
+        if(IsTableExist())
+        {
+            getWritableDatabase().delete(TABLE_NAME_COURSE_TABLE,null,null);
+        }
+
+    }
+
+    //判断表是否存在
+    private boolean IsTableExist() {
+        boolean isTableExist=true;
+
+        Cursor c=getWritableDatabase().rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='course_table'", null);
+        if (c.getInt(0)==0) {
+            isTableExist=false;
+        }
+        c.close();
+        close();
+        return isTableExist;
+    }
 
 
     //===========================上课时间设置========================================================================
@@ -263,6 +357,8 @@ public class MySqliteHelper extends SQLiteOpenHelper{
             list.add(model);
             cursor.moveToNext();
         }
+
+        cursor.close();
 
         return list;
     }

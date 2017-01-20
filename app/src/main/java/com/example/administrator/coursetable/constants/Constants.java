@@ -7,9 +7,9 @@ package com.example.administrator.coursetable.constants;
 public class Constants {
 
     /**跳转到课程信息/笔记界面传递位置*/
-    public final static String CLASS_NAME_NOTE_POSITION = "class_name_note_position";
+    public final static String CLASS_NAME_NOTE_CHILD_POSITION = "class_name_note_child_position";
     /**跳转到课程信息/笔记界面传递数组*/
-    public final static String CLASS_NAME_NOTE_ARRAY_POSITION = "class_name_note_array_position";
+    public final static String CLASS_NAME_NOTE_GROUP_POSITION = "class_name_note_group_position";
     /**跳转到课程信息/笔记界面  */
     public final static int CLASS_NAME_NOTE_REQUEST_CODE = 0x1001;
 
@@ -37,9 +37,26 @@ public class Constants {
     public final static int UP_CLASS_TIME_TYPE_EVENING = 0x1004;
 
 
+    /*颜色定义*/
+    public final static int COLOR_DEFAULT = -1;
+    public final static int COLOR_RANDOM = 1;
+    public final static int COLOR_2 = 2;
+    public final static int COLOR_3 = 3;
+    public final static int COLOR_4 = 4;
+    public final static int COLOR_5 = 5;
+    public final static int COLOR_6 = 6;
+    public final static int COLOR_7 = 7;
+    public final static int COLOR_8 = 8;
+    public final static int COLOR_9 = 9;
+    public final static int COLOR_10 = 10;
+
+
+
     //perfence
     /*是否是第一次添加数据*/
     public final static String IS_ONCE_ADD_UP_CLASS_TIME_DATA = "is_once_add_up_class_time_data";
+    public final static String IS_ONCE_ADD_COURSE_TABLE_DATA = "is_once_add_course_table_data";
+
 
 
 

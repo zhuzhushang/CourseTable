@@ -21,8 +21,8 @@ public class CourseTableModel implements Serializable{
     private int dayOfWeek;
     /**时间类型  早读  上午  下午  晚上  4种*/
     private int timeType;
-    private int classNum;
-    private int bgColor;
+    private int classNum = 1;
+    private int bgColor = -1;
 
     private int groupPosition;
     private int childPosition;

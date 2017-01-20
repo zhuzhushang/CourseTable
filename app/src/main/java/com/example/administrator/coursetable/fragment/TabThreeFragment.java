@@ -19,18 +19,22 @@ import com.example.administrator.coursetable.activity.SetActivity;
 import com.example.administrator.coursetable.activity.SetTimeActivity;
 import com.example.administrator.coursetable.adapter.CurrentDayAdapter;
 import com.example.administrator.coursetable.constants.Constants;
+import com.example.administrator.coursetable.model.CourseTableModel;
 import com.example.administrator.coursetable.model.CurrentDayModel;
 import com.example.administrator.coursetable.model.UpClassTimeModel;
 import com.example.administrator.coursetable.sqlite.MySqliteHelper;
+import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Administrator on 2016/12/11.
  */
 
 public class TabThreeFragment extends BaseFragment implements View.OnClickListener {
+
 
     private AppCompatImageView appbar_note, appbar_change, appbar_more;
     private LinearLayout current_day_ll;
@@ -40,6 +44,8 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private CurrentDayAdapter mAdapter;
 
     private TextView appbar_center_tv;
+
+    private List<CourseTableModel> mListCourseTable;
 
     //课程表控件
     private TextView mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2;
@@ -87,6 +93,16 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     private MySqliteHelper mySqliteHelper;
     private List<UpClassTimeModel> mlist;
+
+    private Random random;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        random = new Random();
+
+    }
 
     @Nullable
     @Override
@@ -224,7 +240,108 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         super.onResume();
 
         setUpClassTimeData();
+        setCourseTableData();
 
+    }
+
+    /**
+     *设置课程表数据
+     */
+    private void setCourseTableData() {
+
+        mListCourseTable = mySqliteHelper.queryCourseTableAllData();
+
+        if (mListCourseTable == null || mListCourseTable.size() == 0)
+        {
+            addCourseTableData();
+            mListCourseTable = mySqliteHelper.queryCourseTableAllData();
+        }
+
+        for (int i = 0; i < qrArray.length ; i++) {
+
+            for (int j = 0 ; j < qrArray[i].length ; j++)
+            {
+                CourseTableModel model = getGroupChildPositionData(i,j);
+                qrArray[i][j].setText(model.getClassName());
+                setTvBg(qrArray[i][j],model.getBgColor());
+
+//                if(i == 0 && j == 0)
+//                {
+//                    qrArray[i][j].setText("数学");
+//                }
+
+            }
+        }
+    }
+
+    /*颜色列表*/
+    private int ctBgColor[] = {R.color.ct_bg_color_2,R.color.ct_bg_color_3,R.color.ct_bg_color_4,R.color.ct_bg_color_5,R.color.ct_bg_color_6,R.color.ct_bg_color_7,R.color.ct_bg_color_8,R.color.ct_bg_color_9,R.color.ct_bg_color_10};
+    private int colorDrawable[] = {R.drawable.shape_choice_color_2,R.drawable.shape_choice_color_3,R.drawable.shape_choice_color_4,R.drawable.shape_choice_color_5,R.drawable.shape_choice_color_6,R.drawable.shape_choice_color_7,R.drawable.shape_choice_color_8,R.drawable.shape_choice_color_9,R.drawable.shape_choice_color_10};
+
+    private void setTvBg(TextView textView, int bgColor) {
+
+        switch (bgColor)
+        {
+            case Constants.COLOR_DEFAULT:
+
+                textView.setBackgroundResource(R.drawable.shape_line);
+
+                break;
+            case Constants.COLOR_RANDOM:
+
+                textView.setBackgroundResource(colorDrawable[random.nextInt(ctBgColor.length)]);
+
+                break;
+            case Constants.COLOR_2:
+            case Constants.COLOR_3:
+            case Constants.COLOR_4:
+            case Constants.COLOR_5:
+            case Constants.COLOR_6:
+            case Constants.COLOR_7:
+            case Constants.COLOR_8:
+            case Constants.COLOR_9:
+
+                textView.setBackgroundResource(colorDrawable[bgColor - 2]);
+                break;
+
+        }
+
+    }
+
+
+    private CourseTableModel getGroupChildPositionData(int groupPosition,int childPosotion)
+    {
+        for (int i = 0; i < mListCourseTable.size(); i++) {
+
+            CourseTableModel model = mListCourseTable.get(i);
+
+            if(model.getGroupPosition() == groupPosition && model.getChildPosition() == childPosotion)
+            {
+
+                return model;
+            }
+        }
+
+        return null;
+
+    }
+
+
+
+    /**
+     * 添加默认课程表数据
+     */
+    private void addCourseTableData() {
+
+        MySqliteHelper mySqliteHelper = new MySqliteHelper(getActivity(),Constants.DB_NAME,null,Constants.DB_VERSION);
+
+        boolean isAdd = (boolean) SharedPreferencesUtils.getParam(getActivity(),Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,false);
+        if(!isAdd)
+        {
+            mySqliteHelper.deleteCourseTableAllData();
+            mySqliteHelper.addCourseTableAllData();
+            SharedPreferencesUtils.putParam(getActivity(),Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,true);
+        }
     }
 
     @Override
@@ -612,8 +729,8 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private void onWeekClick(int groupPosition, int postion) {
 
         Intent intent = new Intent(getActivity(), CourseMessageNoteActivity.class);
-        intent.putExtra(Constants.CLASS_NAME_NOTE_POSITION, postion);
-        intent.putExtra(Constants.CLASS_NAME_NOTE_ARRAY_POSITION, groupPosition);
+        intent.putExtra(Constants.CLASS_NAME_NOTE_CHILD_POSITION, postion);
+        intent.putExtra(Constants.CLASS_NAME_NOTE_GROUP_POSITION, groupPosition);
         startActivityForResult(intent, Constants.CLASS_NAME_NOTE_REQUEST_CODE);
 
     }

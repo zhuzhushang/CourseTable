@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="ct_bg_color_default">#eff7f7</color>
+    <color name="ct_bg_color_2">#97e7b3</color>
+    <color name="ct_bg_color_3">#ace5f1</color>
+    <color name="ct_bg_color_4">#8bd9d6</color>
+    <color name="ct_bg_color_5">#cce2c6</color>
+    <color name="ct_bg_color_6">#f8d58e</color>
+    <color name="ct_bg_color_7">#fda06f</color>
+    <color name="ct_bg_color_8">#ec9b97</color>
+    <color name="ct_bg_color_9">#93b1bc</color>
+    <color name="ct_bg_color_10">#c7d4a1</color>
 
 
 

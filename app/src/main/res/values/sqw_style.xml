@@ -51,10 +51,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/base_heigth</item>
         <item name="android:gravity">center</item>
-        <item name="android:lineSpacingExtra">@dimen/time_interval_tv_ems_margin</item>
         <item name="android:background">@drawable/shape_line</item>
         <item name="android:textSize">@dimen/textsize_middle</item>
         <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
 
@@ -148,13 +149,15 @@
     <!--课程信息笔记-->
     <style name="course_message_note_et">
 
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:layout_marginLeft">6dp</item>
         <item name="android:textSize">@dimen/textsize_middle_plus</item>
-        <item name="android:textColor">#bac2c7</item>
+        <item name="android:textColorHint">#bac2c7</item>
+        <item name="android:textColor">@color/color_text_black</item>
         <item name="android:background">#eff7f7</item>
+
 
     </style>
     <!--课程信息笔记-->

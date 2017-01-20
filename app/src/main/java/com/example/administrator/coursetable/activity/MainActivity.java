@@ -56,8 +56,10 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     private void dataInit() {
 
-        /**第一步就添加数据*/
+        /*第一步就添加上课时间数据*/
         addUpClassTimeData();
+        /*添加课程表数据*/
+        addCourseTableData();
 
         mTabOneFragment = new TabOneFragment();
         mTabTwoFragment = new TabTwoFragment();
@@ -79,6 +81,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         transAction.commit();
 
     }
+
+
 
     private void eventInit() {
 
@@ -164,6 +168,22 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         }
     }
 
+    /**
+     * 添加默认课程表数据
+     */
+    private void addCourseTableData() {
+
+        MySqliteHelper mySqliteHelper = new MySqliteHelper(context,Constants.DB_NAME,null,Constants.DB_VERSION);
+
+        boolean isAdd = (boolean) SharedPreferencesUtils.getParam(context,Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,false);
+        if(!isAdd)
+        {
+//            mySqliteHelper.deleteCourseTableAllData();
+            mySqliteHelper.addCourseTableAllData();
+            SharedPreferencesUtils.putParam(context,Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,true);
+        }
+    }
+
 
     /**
      * 添加数据
@@ -200,6 +220,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
             mySqliteHelper.addUpClassTime(model);
         }
+
+        mySqliteHelper.close();
     }
 
 

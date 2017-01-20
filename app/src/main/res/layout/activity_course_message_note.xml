@@ -94,8 +94,6 @@
                 />
 
 
-
-
         </LinearLayout>
 
 
@@ -189,6 +187,7 @@
                         android:textSize="@dimen/textsize_max_plus" />
 
                     <ImageView
+                        android:id="@+id/img_choice_change"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingBottom="3dp"
@@ -266,11 +265,13 @@
         android:layout_marginTop="20dp">
 
         <ImageView
+            android:id="@+id/cancel"
             style="@style/course_message_note_duidui_chacha_img"
             android:src="@mipmap/cancel" />
 
 
         <ImageView
+            android:id="@+id/confirm"
             style="@style/course_message_note_duidui_chacha_img"
             android:src="@mipmap/confirm" />
 
