@@ -61,10 +61,14 @@ public class TabFiveFragment extends BaseFragment{
          textView2 = (TextView) view.findViewById(R.id.xiaohua2);
 
 
-        textView1.setText(file.get(rand.nextInt(file.size())));
+        if(file.size() > 0)
+        {
+            textView1.setText(file.get(rand.nextInt(file.size())));
 
 
-        textView2.setText(file.get(rand.nextInt(file.size())));
+            textView2.setText(file.get(rand.nextInt(file.size())));
+        }
+
         return view;
     }
 

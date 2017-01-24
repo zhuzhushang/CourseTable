@@ -15,7 +15,7 @@ public class CourseTableModel implements Serializable{
     private String note;
 
 
-    /**判断是第几节课*/
+    /**判断是第几节课  从0开始*/
     private int classIndex;
     /**判断是星期几*/
     private int dayOfWeek;

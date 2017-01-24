@@ -130,6 +130,58 @@ public class MySqliteHelper extends SQLiteOpenHelper{
     }
 
 
+    /**
+     * @param queryId   查询数据的id
+     * @return     id所对应的数据
+     */
+    public CourseTableModel queryCourseTableOneData(int queryId)
+    {
+
+        Cursor cursor = getWritableDatabase().query(TABLE_NAME_COURSE_TABLE,new String[]{VALUE_ID,VALUE_CLASS_NAME,VALUE_ADDRESS,VALUE_NOTE,VALUE_CLASS_INDEX,VALUE_CLASS_NUM_,VALUE_BG_COLOR,VALUE_TIME_TYPE,VALUE_DAY_OF_WEEK,VALUE_GROUP_POSITION,VALUE_CHILD_POSITION},VALUE_ID+"=?",new String[]{""+queryId},null,null,null);
+
+        if(cursor.getCount() > 0){
+            cursor.moveToFirst();
+            int id = cursor.getInt(cursor.getColumnIndex(VALUE_ID));
+            String className = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
+            String address = cursor.getString(cursor.getColumnIndex(VALUE_ADDRESS));
+            String note = cursor.getString(cursor.getColumnIndex(VALUE_NOTE));
+            int classIndex = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_INDEX));
+            int classNum = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_NUM_));
+            int bgColor = cursor.getInt(cursor.getColumnIndex(VALUE_BG_COLOR));
+            int timeType = cursor.getInt(cursor.getColumnIndex(VALUE_TIME_TYPE));
+            int dayOfWeek = cursor.getInt(cursor.getColumnIndex(VALUE_DAY_OF_WEEK));
+            int groupPosition = cursor.getInt(cursor.getColumnIndex(VALUE_GROUP_POSITION));
+            int childPosition = cursor.getInt(cursor.getColumnIndex(VALUE_CHILD_POSITION));
+
+            CourseTableModel model = new CourseTableModel();
+            if(className == null ||  "0".equals(className) || "".equals(className))
+            {
+                model.setClassName("");
+            }else
+            {
+                model.setClassName(className);
+            }
+
+            model.setId(id);
+            model.setAddress(address);
+            model.setNote(note);
+            model.setClassNum(classNum);
+            model.setClassIndex(classIndex);
+            model.setBgColor(bgColor);
+            model.setTimeType(timeType);
+            model.setDayOfWeek(dayOfWeek);
+            model.setGroupPosition(groupPosition);
+            model.setChildPosition(childPosition);
+
+            return model;
+        }
+
+        return null;
+
+    }
+
+
+
     public List<CourseTableModel> queryCourseTableAllData()
     {
 
@@ -141,8 +193,8 @@ public class MySqliteHelper extends SQLiteOpenHelper{
 
             int id = cursor.getInt(cursor.getColumnIndex(VALUE_ID));
             String className = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
-            String address = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
-            String note = cursor.getString(cursor.getColumnIndex(VALUE_CLASS_NAME));
+            String address = cursor.getString(cursor.getColumnIndex(VALUE_ADDRESS));
+            String note = cursor.getString(cursor.getColumnIndex(VALUE_NOTE));
             int classIndex = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_INDEX));
             int classNum = cursor.getInt(cursor.getColumnIndex(VALUE_CLASS_NUM_));
             int bgColor = cursor.getInt(cursor.getColumnIndex(VALUE_BG_COLOR));
@@ -220,6 +272,18 @@ public class MySqliteHelper extends SQLiteOpenHelper{
                 model.setClassNum(1);
                 model.setClassName("");
                 model.setAddress("");
+                model.setNote("");
+
+                if(j == 1 || j == 10)
+                {
+                    model.setClassNum(0);
+                }
+
+                if(j == 0 || j == 9)
+                {
+                    model.setClassNum(2);
+                }
+
 
                 if(j== 0 || j== 1)
                 {
@@ -242,6 +306,26 @@ public class MySqliteHelper extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 重置某一条数据
+     */
+    public void resetCourseTableOneData(CourseTableModel resetModel)
+    {
+
+        resetModel.setBgColor(-1);
+//        resetModel.setClassNum(1);
+        resetModel.setClassName("");
+        resetModel.setAddress("");
+        resetModel.setNote("");
+
+        chageCourseTableData(resetModel);
+
+    }
+
+
+    /**
+     * 删除所有数据
+     */
     public void deleteCourseTableAllData()
     {
 

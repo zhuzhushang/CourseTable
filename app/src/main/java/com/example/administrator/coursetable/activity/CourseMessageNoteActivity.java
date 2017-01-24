@@ -1,8 +1,10 @@
 package com.example.administrator.coursetable.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +41,7 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
     private EditText class_place;
     private TextView num_plus_reduce_tv;
     private int currentClassNum;
-    private int maxClassNum = -1;
+    private int maxClassNum = 1;
 
     private TextView note_time;
     private TextView note_record;
@@ -53,7 +55,7 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
 
     /**选择颜色*/
     private int choiceColor = Constants.COLOR_RANDOM;
-    private int choiceColorTag[] = {Constants.COLOR_RANDOM,Constants.COLOR_2,Constants.COLOR_3,Constants.COLOR_4,Constants.COLOR_5,Constants.COLOR_6,Constants.COLOR_7,Constants.COLOR_8,Constants.COLOR_9};
+    private int choiceColorTag[] = {Constants.COLOR_RANDOM,Constants.COLOR_2,Constants.COLOR_3,Constants.COLOR_4,Constants.COLOR_5,Constants.COLOR_6,Constants.COLOR_7,Constants.COLOR_8,Constants.COLOR_9,Constants.COLOR_10};
 
     private ImageView cancel,confirm;
 
@@ -64,14 +66,23 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
 
     private MySqliteHelper mySqliteHelper;
 
+
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
         setContentView(R.layout.activity_course_message_note);
+        appbatInit();
         ViewInit();
         dataInit();
         eventInit();
+
+    }
+
+    private void appbatInit() {
+
+        appbar_right_img = (ImageView) findViewById(R.id.appbar_right_img);
+        appbar_right_img.setOnClickListener(this);
 
     }
 
@@ -138,7 +149,7 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
             class_place.setText(model.getAddress());
             num_plus_reduce_tv.setText(""+model.getClassNum());
             currentClassNum = model.getClassNum();
-            maxClassNum = getTimeTypeMax(model.getTimeType());
+            maxClassNum = getAvailableMax(model);
 
         }
 
@@ -185,8 +196,68 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
             return 2;
         }
 
-        return -1;
+        return 0;
     }
+
+
+    /**
+     * @return 得到可设置的最大课时
+     */
+    private int getAvailableMax(CourseTableModel model)
+    {
+        int whatPosition = model.getClassIndex();
+
+        int num = 1;
+
+        switch (whatPosition)
+        {
+            case 0:
+
+                num = 2;
+
+                break;
+            case 1:
+                num = 1;
+                break;
+            case 2:
+
+                num = 4;
+
+                break;
+            case 3:
+                num = 3;
+                break;
+            case 4:
+                num = 2;
+                break;
+            case 5:
+                num = 1;
+                break;
+            case 6:
+
+                num = 3;
+                break;
+            case 7:
+                num = 2;
+                break;
+            case 8:
+                num = 1;
+                break;
+            case 9:
+                num = 2;
+                break;
+            case 10:
+                num = 1;
+                break;
+        }
+
+
+
+
+        return num;
+    }
+
+
 
     /**
      * @param dayOfWeek
@@ -285,7 +356,9 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
     };
 
 
-
+    /**
+     * @param view
+     */
     @Override
     public void onClick(View view) {
 
@@ -294,6 +367,33 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
             case R.id.appbar_left_tv_arrow:
 
                 finish();
+                break;
+            case R.id.appbar_right_img:
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("提示");
+                builder.setMessage("你确定删除这些信息吗？");
+                builder.setNegativeButton("取消",new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                    dialogInterface.dismiss();
+                   }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        mySqliteHelper.resetCourseTableOneData(model);
+                        dialogInterface.dismiss();
+                        CourseMessageNoteActivity.this.finish();
+                    }
+                });
+
+
+                builder.show();
+
+
                 break;
             case R.id.detail:
                 if(detail_ll.getVisibility() != View.VISIBLE)
@@ -329,6 +429,41 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
 
 
                 mySqliteHelper.chageCourseTableData(model);
+
+                //先计算出 有几节课需要置为0
+                int needReset = model.getClassNum() - 1;
+
+                for (int i = 0; i < maxClassNum - 1; i++) {
+                    //把需要置为0的课程置为0
+                    if(i < needReset)
+                    {
+                        CourseTableModel tempModel = mySqliteHelper.queryCourseTableOneData(model.getId()+i+1);
+                        if(tempModel != null)
+                        {
+                            tempModel.setClassNum(0);
+                            mySqliteHelper.chageCourseTableData(tempModel);
+                        }
+                    }else
+                    {
+                        CourseTableModel tempModel = mySqliteHelper.queryCourseTableOneData(model.getId()+i+1);
+                        if(tempModel != null)
+                        {
+                            if(tempModel.getClassNum() > 1)
+                            {
+                                break;
+
+                            }else
+                            {
+                                tempModel.setClassNum(1);
+                                mySqliteHelper.chageCourseTableData(tempModel);
+                            }
+
+                        }
+
+                    }
+
+                }
+
 
                 Intent intent = new Intent(context,MainActivity.class);
                 intent.putExtra(Constants.CLASS_NAME_NOTE_CHILD_POSITION, childPosition);

@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.administrator.coursetable.R;
-import com.example.administrator.coursetable.model.CurrentDayModel;
+import com.example.administrator.coursetable.model.CourseTableModel;
 
 import java.util.List;
 
@@ -23,10 +23,10 @@ public class CurrentDayAdapter   extends BaseAdapter {
 
     private Context context;
     private LayoutInflater inflater;
-    private List<CurrentDayModel> list;
+    private List<CourseTableModel> list;
     private int layoutID;
 
-    public  CurrentDayAdapter(Context context,List<CurrentDayModel> list,int layoutID)
+    public  CurrentDayAdapter(Context context,List<CourseTableModel> list,int layoutID)
     {
         this.context = context;
         this.list = list;
@@ -36,12 +36,12 @@ public class CurrentDayAdapter   extends BaseAdapter {
     }
 
 
-    public List<CurrentDayModel> getList() {
+    public List<CourseTableModel> getList() {
         return list;
     }
 
 
-    public void setList(List<CurrentDayModel> list) {
+    public void setList(List<CourseTableModel> list) {
         this.list = list;
 
         notifyDataSetChanged();
@@ -72,7 +72,7 @@ public class CurrentDayAdapter   extends BaseAdapter {
 
 
         ViewHolder viewHolder;
-        CurrentDayModel model = list.get(position);
+        CourseTableModel model = list.get(position);
 
         if(convertView == null)
         {
@@ -91,9 +91,9 @@ public class CurrentDayAdapter   extends BaseAdapter {
         }
 
 
-        viewHolder.class_name.setText(""+model.getClass_name());
-        viewHolder.up_class_place.setText("上课地点:"+model.getUp_class_place());
-        viewHolder.up_class_time.setText(model.getStartTime()+"-"+model.getEndTime());
+        viewHolder.class_name.setText(""+model.getClassName());
+        viewHolder.up_class_place.setText("上课地点:"+model.getAddress());
+//        viewHolder.up_class_time.setText(model.getStartTime()+"-"+model.getEndTime());
 
 
 
