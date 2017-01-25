@@ -42,7 +42,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private LinearLayout current_day_ll;
     private TextView week_position;
     private ListView current_day_listview;
-    private List<CourseTableModel> mList;
+    private List<CourseTableModel> mListCurrentDay;
     private CurrentDayAdapter mAdapter;
 
     private TextView appbar_center_tv;
@@ -96,7 +96,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
 
     private MySqliteHelper mySqliteHelper;
-    private List<UpClassTimeModel> mlist;
+    private List<UpClassTimeModel> mListUpClassTime;
 
     private Random random;
 
@@ -170,9 +170,9 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         baseHeigth = getActivity().getResources().getDimensionPixelOffset(R.dimen.base_heigth);
         mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME,null,Constants.DB_VERSION);
 
-        mList = new ArrayList<>();
+        mListCurrentDay = new ArrayList<>();
 //        listInit();
-        mAdapter = new CurrentDayAdapter(getActivity(), mList, R.layout.item_current_day);
+        mAdapter = new CurrentDayAdapter(getActivity(), mListCurrentDay, R.layout.item_current_day);
 
         current_day_listview.setAdapter(mAdapter);
 
@@ -182,11 +182,11 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     /**设置时间和课时*/
     private void setUpClassTimeData()
     {
-        mlist = mySqliteHelper.queryUpClassTimeAllData();
+        mListUpClassTime = mySqliteHelper.queryUpClassTimeAllData();
 
-        for (int i = 0; i < mlist.size(); i++) {
+        for (int i = 0; i < mListUpClassTime.size(); i++) {
 
-            UpClassTimeModel model = mlist.get(i);
+            UpClassTimeModel model = mListUpClassTime.get(i);
             int startHour = model.getStartHour();
             int endHour = model.getEndHour();
             int startMinute = model.getStartMinute();
@@ -227,7 +227,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             model.setEndTime("07:00");
             model.setStartTime("07:30");
             model.setUp_class_place("南楼");
-//            mList.add(model);
+//            mListCurrentDay.add(model);
 
         }
     }
@@ -287,14 +287,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                     qrArray[i][j].setLayoutParams(params);
                 }
 
-                if(dow == i)
-                {
-                    if(!"".equals(model.getClassName())){
-
-                        mList.add(model);
-                    }
-
-                }
+//                if(dow == i)
+//                {
+//                    if(!"".equals(model.getClassName())){
+//
+//                        mListCurrentDay.add(model);
+//                    }
+//
+//                }
             }
         }
     }
@@ -421,10 +421,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                     current_day_ll.setVisibility(View.VISIBLE);
                     appbar_center_tv.setText("当天");
 
+                    getListDataAgain();
+
                 } else {
                     appbar_center_tv.setText("总表");
                     current_day_ll.setVisibility(View.GONE);
                 }
+
+
 
 
                 break;
@@ -785,6 +789,18 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
         }
 
+    }
+
+    /**
+     * 获取当天课程数据
+     */
+    private void getListDataAgain() {
+
+        int dayOfWeek = transformWeek(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+
+        mListCurrentDay = mySqliteHelper.queryCurrentDayData(dayOfWeek);
+
+        mAdapter.setList(mListCurrentDay);
     }
 
     private void onWeekClick(int groupPosition, int postion) {

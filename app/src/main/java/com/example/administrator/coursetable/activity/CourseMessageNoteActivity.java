@@ -16,6 +16,7 @@ import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.model.CourseTableModel;
 import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
+import com.example.administrator.coursetable.utils.StringUtils;
 import com.example.administrator.coursetable.utils.ToastUtils;
 
 import java.util.List;
@@ -149,15 +150,11 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
             class_place.setText(model.getAddress());
             num_plus_reduce_tv.setText(""+model.getClassNum());
             currentClassNum = model.getClassNum();
-            maxClassNum = getAvailableMax(model);
+            maxClassNum = getExactClassNum(model);
 
         }
 
     }
-
-
-
-
 
 
     private void eventInit() {
@@ -198,6 +195,36 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
 
         return 0;
     }
+
+
+    /**
+     *   但下面还有课时时  不能覆盖下面的课时 返回最准确的课时
+     *
+     */
+    private int getExactClassNum(CourseTableModel model){
+
+        int num = 1;
+
+        int maxP = getAvailableMax(model) - 1;
+
+        for (int i = 1; i <= maxP; i++) {
+
+            CourseTableModel model_4 = mySqliteHelper.queryCourseTableOneData(model.getId()+i);
+
+            if(StringUtils.isEmpty(model_4.getClassName()))
+            {
+                num++;
+
+            }else
+            {
+                break;
+            }
+        }
+
+        return num;
+    }
+
+
 
 
     /**
@@ -423,9 +450,25 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
             case R.id.confirm:
 
 
-                model.setNote(note_record.getText().toString());
-                model.setClassName(class_name.getText().toString());
-                model.setAddress(class_place.getText().toString());
+                String noteRecord = note_record.getText().toString();
+                String className = class_name.getText().toString().trim();
+                String address = class_place.getText().toString().trim();
+
+                if(StringUtils.isEmpty(className))
+                {
+                    ToastUtils.show(context,"课程名不能为空");
+                    return;
+                }
+
+                if(StringUtils.isEmpty(address))
+                {
+                    ToastUtils.show(context,"上课地址不能为空");
+                    return;
+                }
+
+                model.setNote(noteRecord);
+                model.setClassName(className);
+                model.setAddress(address);
 
 
                 mySqliteHelper.chageCourseTableData(model);
