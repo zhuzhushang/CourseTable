@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
@@ -40,12 +42,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private LinearLayout current_day_ll;
     private TextView week_position;
     private ListView current_day_listview;
-    private List<CurrentDayModel> mList;
+    private List<CourseTableModel> mList;
     private CurrentDayAdapter mAdapter;
 
     private TextView appbar_center_tv;
 
     private List<CourseTableModel> mListCourseTable;
+
+    private int baseHeigth;
 
     //课程表控件
     private TextView mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2;
@@ -163,10 +167,11 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     private void dataInit() {
 
+        baseHeigth = getActivity().getResources().getDimensionPixelOffset(R.dimen.base_heigth);
         mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME,null,Constants.DB_VERSION);
 
         mList = new ArrayList<>();
-        listInit();
+//        listInit();
         mAdapter = new CurrentDayAdapter(getActivity(), mList, R.layout.item_current_day);
 
         current_day_listview.setAdapter(mAdapter);
@@ -222,7 +227,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             model.setEndTime("07:00");
             model.setStartTime("07:30");
             model.setUp_class_place("南楼");
-            mList.add(model);
+//            mList.add(model);
 
         }
     }
@@ -257,24 +262,79 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             mListCourseTable = mySqliteHelper.queryCourseTableAllData();
         }
 
+        Calendar calendar = Calendar.getInstance();
+        int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
+
         for (int i = 0; i < qrArray.length ; i++) {
 
             for (int j = 0 ; j < qrArray[i].length ; j++)
             {
+
+
                 CourseTableModel model = getGroupChildPositionData(i,j);
                 qrArray[i][j].setText(model.getClassName());
                 setTvBg(qrArray[i][j],model.getBgColor());
+                if(model.getClassNum()  < 1)
+                {
+                    qrArray[i][j].setVisibility(View.GONE);
+                }else
+                {
+                    qrArray[i][j].setVisibility(View.VISIBLE);
 
-//                if(i == 0 && j == 0)
-//                {
-//                    qrArray[i][j].setText("数学");
-//                }
+                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) qrArray[i][j].getLayoutParams();
+                    params.height = baseHeigth * model.getClassNum();
+                    params.gravity = Gravity.CENTER;
+                    qrArray[i][j].setLayoutParams(params);
+                }
 
+                if(dow == i)
+                {
+                    if(!"".equals(model.getClassName())){
+
+                        mList.add(model);
+                    }
+
+                }
             }
         }
     }
 
+
+    private int transformWeek(int  dayOf)
+    {
+        int week = 0;
+
+        switch (dayOf)
+        {
+            case 1:
+                week = 6;
+                break;
+            case 2:
+                week = 0;
+                break;
+            case 3:
+                week = 2;
+                break;
+            case 4:
+                week = 3;
+                break;
+            case 5:
+                week = 4;
+                break;
+            case 6:
+                week = 5;
+                break;
+            case 7:
+                week = 6;
+                break;
+        }
+
+        return week;
+    }
+
+
     /*颜色列表*/
+
     private int ctBgColor[] = {R.color.ct_bg_color_2,R.color.ct_bg_color_3,R.color.ct_bg_color_4,R.color.ct_bg_color_5,R.color.ct_bg_color_6,R.color.ct_bg_color_7,R.color.ct_bg_color_8,R.color.ct_bg_color_9,R.color.ct_bg_color_10};
     private int colorDrawable[] = {R.drawable.shape_choice_color_2,R.drawable.shape_choice_color_3,R.drawable.shape_choice_color_4,R.drawable.shape_choice_color_5,R.drawable.shape_choice_color_6,R.drawable.shape_choice_color_7,R.drawable.shape_choice_color_8,R.drawable.shape_choice_color_9,R.drawable.shape_choice_color_10};
 
@@ -300,6 +360,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             case Constants.COLOR_7:
             case Constants.COLOR_8:
             case Constants.COLOR_9:
+            case Constants.COLOR_10:
 
                 textView.setBackgroundResource(colorDrawable[bgColor - 2]);
                 break;
