@@ -1,12 +1,15 @@
 package com.example.administrator.coursetable.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.adapter.NotesAdapter;
-import com.example.administrator.coursetable.model.NotesModel;
+import com.example.administrator.coursetable.constants.Constants;
+import com.example.administrator.coursetable.model.NoteModel;
+import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +24,26 @@ public class NotesActivity extends BaseActivity implements View.OnClickListener{
 
     private ListView note_listview;
     private NotesAdapter mAdapter;
-    private List<NotesModel> mList;
+    private List<NoteModel> mList;
 
     private Random random;
+    private MySqliteHelper mySqliteHelper;
 
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
         setContentView(R.layout.activity_course_list);
+        appbarInit();
         ViewInit();
         dataInit();
         eventInit();
+
+    }
+
+    private void appbarInit() {
+
+        findViewById(R.id.appbar_right_img).setOnClickListener(this);
 
     }
 
@@ -47,27 +58,15 @@ public class NotesActivity extends BaseActivity implements View.OnClickListener{
         random = new Random();
 
         mList = new ArrayList<>();
-        listInit();
+
         mAdapter = new NotesAdapter(context,mList,R.layout.item_note);
         note_listview.setAdapter(mAdapter);
 
-
-
-    }
-
-    private void listInit() {
-
-        for (int i = 0; i < 20; i++) {
-
-            NotesModel model = new NotesModel();
-            model.setExpan(false);
-            model.setNotepad("上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容上课笔记内容");
-            model.setWeekPosition(random.nextInt(7));
-            model.setYTD("2016.09.10");
-            mList.add(model);
-        }
+        mySqliteHelper = new MySqliteHelper(context, Constants.DB_NAME,null,Constants.DB_VERSION);
 
     }
+
+
 
     private void eventInit() {
 
@@ -77,6 +76,15 @@ public class NotesActivity extends BaseActivity implements View.OnClickListener{
 
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        mList =  mySqliteHelper.queryNoteAllData();
+        mAdapter.setList(mList);
+
+    }
+
+    @Override
     public void onClick(View view) {
 
         switch (view.getId())
@@ -84,6 +92,11 @@ public class NotesActivity extends BaseActivity implements View.OnClickListener{
             case R.id.appbar_left_tv_arrow:
 
                 finish();
+
+                break;
+            case R.id.appbar_right_img:
+
+                startActivity(new Intent(context,AddNoteActivity.class));
 
                 break;
         }

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.administrator.coursetable.R;
 import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.model.CourseTableModel;
+import com.example.administrator.coursetable.model.NoteModel;
 import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
 import com.example.administrator.coursetable.utils.StringUtils;
@@ -296,25 +297,25 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
 
         switch (dayOfWeek)
         {
-            case 1:
+            case 2:
                 wText = "一";
                 break;
-            case 2:
+            case 3:
                 wText = "二";
                 break;
-            case 3:
+            case 4:
                 wText = "三";
                 break;
-            case 4:
+            case 5:
                 wText = "四";
                 break;
-            case 5:
+            case 6:
                 wText = "五";
                 break;
-            case 6:
+            case 7:
                 wText = "六";
                 break;
-            case 7:
+            case 1:
                 wText = "日";
                 break;
         }
@@ -469,6 +470,15 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
                 model.setNote(noteRecord);
                 model.setClassName(className);
                 model.setAddress(address);
+
+                //保存笔记
+                if(!StringUtils.isEmpty(noteRecord))
+                {
+                    NoteModel noteModel = new NoteModel();
+                    noteModel.setNote(noteRecord);
+                    noteModel.setTime(System.currentTimeMillis());
+                    mySqliteHelper.addNote(noteModel);
+                }
 
 
                 mySqliteHelper.chageCourseTableData(model);

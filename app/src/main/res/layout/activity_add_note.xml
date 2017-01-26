@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        style="@style/default_appbar_container_relative"
+        android:layout_height="48dp"
+        android:background="@mipmap/appbar_header">
+
+        <TextView
+            style="@style/default_appbar_left_tv_arrow"
+            android:text="添加笔记"
+            />
+
+        <ImageView
+            style="@style/default_appbar_right_img"
+            android:src="@mipmap/confirm"
+            android:padding="6dp"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/note_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/note_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7d8080"
+            android:text="2016.06.29    周三"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="@dimen/textsize_max"
+            />
+
+        <EditText
+            android:id="@+id/note_record"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:padding="6dp"
+            android:gravity="left"
+            android:background="@drawable/shape_detail_note"
+            android:textSize="@dimen/textsize_middle_plus"
+            android:textColor="@color/color_text_black"
+            android:hint="    请输入笔记..."
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

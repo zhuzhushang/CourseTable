@@ -31,6 +31,10 @@
         <activity android:name=".fragment.match.constellMatchActivity"/>
         <activity android:name=".fragment.match.NameMatchResultActivity" />
 
+        <activity android:name=".activity.AddNoteActivity"
+                  android:screenOrientation="portrait"
+            />
+
         <!--笔记界面-->
         <activity android:name=".activity.NotesActivity"
             android:screenOrientation="portrait"

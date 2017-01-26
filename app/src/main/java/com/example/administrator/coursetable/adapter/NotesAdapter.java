@@ -9,8 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.coursetable.R;
-import com.example.administrator.coursetable.model.NotesModel;
+import com.example.administrator.coursetable.model.NoteModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,10 +28,10 @@ public class NotesAdapter   extends BaseAdapter {
 
     private Context context;
     private LayoutInflater inflater;
-    private List<NotesModel> list;
+    private List<NoteModel> list;
     private int layoutID;
 
-    public  NotesAdapter(Context context,List<NotesModel> list,int layoutID)
+    public  NotesAdapter(Context context,List<NoteModel> list,int layoutID)
     {
         this.context = context;
         this.list = list;
@@ -38,12 +41,12 @@ public class NotesAdapter   extends BaseAdapter {
     }
 
 
-    public List<NotesModel> getList() {
+    public List<NoteModel> getList() {
         return list;
     }
 
 
-    public void setList(List<NotesModel> list) {
+    public void setList(List<NoteModel> list) {
         this.list = list;
 
         notifyDataSetChanged();
@@ -74,7 +77,7 @@ public class NotesAdapter   extends BaseAdapter {
 
 
         ViewHolder viewHolder;
-        NotesModel model = list.get(position);
+        NoteModel model = list.get(position);
 
         if(convertView == null)
         {
@@ -90,8 +93,8 @@ public class NotesAdapter   extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.time.setText(""+model.getYTD()+"    "+weekArray[model.getWeekPosition()]);
-        viewHolder.note.setText(""+model.getNotepad());
+        viewHolder.time.setText(getYMD(model.getTime())+"  星期"+getDayOfWeek(model.getTime()));
+        viewHolder.note.setText(""+model.getNote());
 
         if(model.isExpan())
         {
@@ -156,5 +159,53 @@ public class NotesAdapter   extends BaseAdapter {
     }
 
 
+    /**
+     * @return  得到星期几
+     */
+    private String getDayOfWeek(long time )
+    {
+        Calendar calendar =  Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+
+        String wText = "一";
+
+        switch (dayOfWeek) {
+
+            case 2:
+                wText = "一";
+                break;
+            case 3:
+                wText = "二";
+                break;
+            case 4:
+                wText = "三";
+                break;
+            case 5:
+                wText = "四";
+                break;
+            case 6:
+                wText = "五";
+                break;
+            case 7:
+                wText = "六";
+                break;
+            case 1:
+                wText = "日";
+                break;
+
+        }
+        return wText;
+    }
+
+
+    private String getYMD(long time)
+    {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(new Date(time));
+
+    }
 
 }

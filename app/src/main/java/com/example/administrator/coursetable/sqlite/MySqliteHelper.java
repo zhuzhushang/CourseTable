@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.administrator.coursetable.constants.Constants;
 import com.example.administrator.coursetable.model.CourseTableModel;
+import com.example.administrator.coursetable.model.NoteModel;
 import com.example.administrator.coursetable.model.UpClassTimeModel;
 import com.example.administrator.coursetable.utils.StringUtils;
 
@@ -85,6 +86,20 @@ public class MySqliteHelper extends SQLiteOpenHelper {
             VALUE_CHILD_POSITION + " integer" +
             ")";
 
+    //==================定义笔记=====================================================================================
+    private final String TABLE_NAME_NOTE = "table_name_note";
+    private final String VALUE_TIME = "time";
+//    private final String VALUE_NOTE = "note";
+
+    private final String CREATE_NOTE = "create table "+TABLE_NAME_NOTE +"("+
+            VALUE_ID + " integer primary key,"+
+            VALUE_TIME + " integer,"+
+            VALUE_NOTE +" text"+
+            ")";
+
+    //==================================================================================================================
+
+
 
     public MySqliteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
 
@@ -97,6 +112,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(CREATE_UP_CLASS_TIME);
         sqLiteDatabase.execSQL(CREATE_COURSE_TABLE);
+        sqLiteDatabase.execSQL(CREATE_NOTE);
 
     }
 
@@ -104,6 +120,60 @@ public class MySqliteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+
+    //==============================笔记设置====================================================================================
+
+    /**
+     * @param model
+     *
+     * 添加笔记
+     */
+    public void addNote(NoteModel model)
+    {
+        ContentValues value = new ContentValues();
+        value.put(VALUE_TIME,model.getTime());
+        value.put(VALUE_NOTE,model.getNote());
+
+        getWritableDatabase().insert(TABLE_NAME_NOTE,null,value);
+    }
+
+    /**
+     * 修改笔记
+     */
+    public void updateNote(NoteModel model)
+    {
+        ContentValues value = new ContentValues();
+        value.put(VALUE_TIME,model.getTime());
+        value.put(VALUE_NOTE,model.getNote());
+
+        getWritableDatabase().update(TABLE_NAME_NOTE,value,VALUE_ID+"=?",new String[]{""+model.getId()});
+
+    }
+
+    /**
+     * @return
+     */
+    public List<NoteModel> queryNoteAllData()
+    {
+
+        Cursor cursor = getWritableDatabase().query(TABLE_NAME_NOTE,null,null,null,null,null,VALUE_ID+" desc");
+        List<NoteModel> list = new ArrayList<>();
+        cursor.moveToFirst();
+        for (int i = 0; i < cursor.getCount(); i++) {
+
+            NoteModel model = new NoteModel();
+            model.setId(cursor.getInt(cursor.getColumnIndex(VALUE_ID)));
+            model.setNote(cursor.getString(cursor.getColumnIndex(VALUE_NOTE)));
+            model.setTime(cursor.getLong(cursor.getColumnIndex(VALUE_TIME)));
+
+            list.add(model);
+            cursor.moveToNext();
+        }
+
+        return list;
+    }
+
 
 
     //===========================课程表设置==============================================================================
