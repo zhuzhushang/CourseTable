@@ -48,6 +48,11 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+    }
+
     private void ViewInit() {
 
         hp_rg = (RadioGroup) findViewById(R.id.hp_rg);

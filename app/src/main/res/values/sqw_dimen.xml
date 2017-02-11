@@ -30,7 +30,7 @@
     <!--中间间隔的高-->
     <dimen name="divider_heigth">16dp</dimen>
     <!--时间段tv ems 的间隔-->
-    <dimen name="time_interval_tv_ems_margin">48dp</dimen>
+    <dimen name="time_interval_tv_ems_margin">28dp</dimen>
 
 
     <!--课程表里面margin左右-->

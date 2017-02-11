@@ -57,7 +57,11 @@ public class Constants {
     public final static String IS_ONCE_ADD_UP_CLASS_TIME_DATA = "is_once_add_up_class_time_data";
     public final static String IS_ONCE_ADD_COURSE_TABLE_DATA = "is_once_add_course_table_data";
 
-
+    //exitStyle
+    /*exitStyle  退出时*/
+    public final static int EXIT_STYLE_EXIT = 0x1001;
+    /*exitStyle  删除时*/
+    public final static int EXIT_STYLE_DELETE = 0x1002;
 
 
 }

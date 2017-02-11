@@ -791,12 +791,18 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     }
 
+    private String WEEK_ARRAY[] = {"日","一","二","三","四","五","六"};
+
     /**
      * 获取当天课程数据
      */
     private void getListDataAgain() {
 
-        int dayOfWeek = transformWeek(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+
+        int dow = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        int dayOfWeek = transformWeek(dow);
+        week_position.setText("星期"+WEEK_ARRAY[dow - 1]);
+
 
         mListCurrentDay = mySqliteHelper.queryCurrentDayData(dayOfWeek);
 

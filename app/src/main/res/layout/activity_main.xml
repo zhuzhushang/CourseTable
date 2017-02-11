@@ -10,6 +10,7 @@
         android:id="@+id/tab_container"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:visibility="gone"
         android:background="@color/color_bg_light_blue"
         android:layout_alignParentBottom="true">
 

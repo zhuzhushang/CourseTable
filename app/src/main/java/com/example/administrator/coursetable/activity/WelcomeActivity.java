@@ -22,7 +22,7 @@ public class WelcomeActivity extends BaseActivity {
 
         mHandler = new Handler();
 
-        mHandler.postDelayed(runnable,5000);
+        mHandler.postDelayed(runnable,2000);
 
     }
 
