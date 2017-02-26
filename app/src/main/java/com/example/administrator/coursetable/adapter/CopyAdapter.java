@@ -6,3 +6,4 @@ package com.example.administrator.coursetable.adapter;
 
 public class CopyAdapter {
 }
+                                                  

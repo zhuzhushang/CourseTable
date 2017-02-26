@@ -6,3 +6,4 @@ package com.example.administrator.coursetable.sqlite;
 
 public class SqliteValue {
 }
+                                                  
