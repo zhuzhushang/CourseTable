@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.AppCompatTextView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +52,9 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private List<CourseTableModel> mListCourseTable;
 
     private int baseHeigth;
+
+    //还有多久时间上课
+    private AppCompatTextView how_long_up_class;
 
     //课程表控件
     private TextView mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2;
@@ -172,6 +176,8 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             classTimeTvArray[i].setOnClickListener(this);
 
         }
+
+        how_long_up_class = (AppCompatTextView) view.findViewById(R.id.how_long_up_class);
     }
 
 
@@ -258,8 +264,114 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         setUpClassTimeData();
         setCourseTableData();
         hideWeek();
+        setUpClassLong();
+
 
     }
+
+    /**
+     * 设置还有多久上课
+     */
+    private void setUpClassLong() {
+
+        mListCourseTable = mySqliteHelper.queryCourseTableAllData();
+        List<UpClassTimeModel> list = mySqliteHelper.queryUpClassTimeAllDataById();
+
+        if (mListCourseTable == null || mListCourseTable.size() == 0)
+        {
+            addCourseTableData();
+            mListCourseTable = mySqliteHelper.queryCourseTableAllData();
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
+
+        for (int i = 0; i < qrArray.length ; i++) {
+
+            for (int j = 0 ; j < qrArray[i].length ; j++)
+            {
+
+
+                CourseTableModel model = getGroupChildPositionData(i,j);
+                qrArray[i][j].setText(model.getClassName());
+                setTvBg(qrArray[i][j],model.getBgColor());
+                if(model.getClassNum()  < 1)
+                {
+                    qrArray[i][j].setVisibility(View.GONE);
+                }else
+                {
+                    qrArray[i][j].setVisibility(View.VISIBLE);
+
+                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) qrArray[i][j].getLayoutParams();
+                    params.height = baseHeigth * model.getClassNum();
+                    params.gravity = Gravity.CENTER;
+                    qrArray[i][j].setLayoutParams(params);
+
+                    //判断是否是今天，如果是，就设置最近一堂课距离的时间
+                    if(dow == i)
+                    {
+                        //得到这节课的上课时间
+                        for (int k = 0; k < list.size(); k++) {
+
+                            UpClassTimeModel upModel = list.get(k);
+                            if(model.getClassIndex() == upModel.getClassIndex())
+                            {
+                                long howlong = getUpClassTime(upModel.getStartHour(),upModel.getStartMinute());
+                                if( howlong > System.currentTimeMillis())
+                                {
+                                    String  uplong = millis2FitTimeSpan(howlong - System.currentTimeMillis(),3);
+                                    how_long_up_class.setText("距离上课还有"+uplong+"哦");
+                                    return;
+
+                                }
+                            }
+                        }
+
+                        how_long_up_class.setText("今日无课");
+
+                    }
+
+                }
+            }
+        }
+
+
+    }
+
+
+    /**
+     * 毫秒时间戳转合适时间长度
+     *
+     * @param millis    毫秒时间戳
+     *                  <p>小于等于0，返回null</p>
+     * @param precision 精度
+     *                  <ul>
+     *                  <li>precision = 0，返回null</li>
+     *                  <li>precision = 1，返回天</li>
+     *                  <li>precision = 2，返回天和小时</li>
+     *                  <li>precision = 3，返回天、小时和分钟</li>
+     *                  <li>precision = 4，返回天、小时、分钟和秒</li>
+     *                  <li>precision &gt;= 5，返回天、小时、分钟、秒和毫秒</li>
+     *                  </ul>
+     * @return 合适时间长度
+     */
+    public static String millis2FitTimeSpan(long millis, int precision) {
+        if (millis <= 0 || precision <= 0) return null;
+        StringBuilder sb = new StringBuilder();
+        String[] units = {"天", "小时", "分钟", "秒", "毫秒"};
+        int[] unitLen = {86400000, 3600000, 60000, 1000, 1};
+        precision = Math.min(precision, 5);
+        for (int i = 0; i < precision; i++) {
+            if (millis >= unitLen[i]) {
+                long mode = millis / unitLen[i];
+                millis -= mode * unitLen[i];
+                sb.append(mode).append(units[i]);
+            }
+        }
+        return sb.toString();
+    }
+
+
 
     private void hideWeek() {
 
@@ -294,6 +406,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private void setCourseTableData() {
 
         mListCourseTable = mySqliteHelper.queryCourseTableAllData();
+//        List<UpClassTimeModel> list = mySqliteHelper.queryUpClassTimeAllDataById();
 
         if (mListCourseTable == null || mListCourseTable.size() == 0)
         {
@@ -302,7 +415,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         }
 
         Calendar calendar = Calendar.getInstance();
-//        int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
+        int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
 
         for (int i = 0; i < qrArray.length ; i++) {
 
@@ -324,19 +437,46 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                     params.height = baseHeigth * model.getClassNum();
                     params.gravity = Gravity.CENTER;
                     qrArray[i][j].setLayoutParams(params);
-                }
 
-//                if(dow == i)
-//                {
-//                    if(!"".equals(model.getClassName())){
+                    //判断是否是今天，如果是，就设置最近一堂课距离的时间
+//                    if(dow == i)
+//                    {
+//                        //得到这节课的上课时间
+//                        for (int k = 0; k < list.size(); k++) {
 //
-//                        mListCurrentDay.add(model);
+//                            UpClassTimeModel upModel = list.get(k);
+//                            if(model.getClassIndex() == upModel.getClassIndex())
+//                            {
+//                                if(getUpClassTime(upModel.getStartHour(),upModel.getStartMinute()) > cu)
+//
+//                            }
+//                        }
+//
 //                    }
-//
-//                }
+
+                }
             }
         }
     }
+
+
+    /**
+     * 得到这节课的世界
+     */
+    private long getUpClassTime(int hour,int minute)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY,hour);
+        calendar.set(Calendar.MINUTE,minute);
+        calendar.set(Calendar.SECOND,0);
+
+        return calendar.getTimeInMillis();
+    }
+
+
+
+
+
 
 
     /**

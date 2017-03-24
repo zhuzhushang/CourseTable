@@ -14,10 +14,14 @@ public class UpClassTimeModel {
     /*所属类型  晨读、上午、下午、晚上*/
     private int timeType;
 
+    //课程开始和结束的小时分钟
     private int startHour,endHour,startMinute,endMinute;
 
     /**课程数量*/
     private int classNum;
+    /**判断是第几节课  从0开始*/
+    private int classIndex;
+
 
     public int getClassNum() {
         return classNum;
@@ -25,6 +29,14 @@ public class UpClassTimeModel {
 
     public void setClassNum(int classNum) {
         this.classNum = classNum;
+    }
+
+    public int getClassIndex() {
+        return classIndex;
+    }
+
+    public void setClassIndex(int classIndex) {
+        this.classIndex = classIndex;
     }
 
     public int getEndHour() {

@@ -12,6 +12,7 @@
         >
 
         <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/how_long_up_class"
             style="@style/default_appbar_left_tv"
             android:layout_marginLeft="10dp"
             android:text="距离上课还有10分钟哦"

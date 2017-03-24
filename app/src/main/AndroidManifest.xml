@@ -2,14 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.coursetable">
 
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="25"
+        />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
 
+        android:theme="@style/AppTheme">
+
+        <!--闹钟服务-->
+        <service android:name=".service.AlarmService" >
+
+
+
+        </service>
+        <receiver android:name=".receiver.AlarmReceiver"/>
+
+        <!--主界面-->
+        <activity android:name=".activity.MainActivity">
         </activity>
         <!--欢迎界面-->
         <activity
@@ -64,9 +80,6 @@
         <activity android:name=".activity.SetTimeActivity"
                   android:screenOrientation="portrait"
             />
-
-
-
 
 
     </application>

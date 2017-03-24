@@ -14,6 +14,7 @@ import com.example.administrator.coursetable.fragment.TabOneFragment;
 import com.example.administrator.coursetable.fragment.TabThreeFragment;
 import com.example.administrator.coursetable.fragment.TabTwoFragment;
 import com.example.administrator.coursetable.model.UpClassTimeModel;
+import com.example.administrator.coursetable.service.AlarmService;
 import com.example.administrator.coursetable.sqlite.MySqliteHelper;
 import com.example.administrator.coursetable.utils.SharedPreferencesUtils;
 
@@ -45,6 +46,18 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         ViewInit();
         dataInit();
         eventInit();
+
+        startAlarm();
+
+    }
+
+    /**
+     * 启动闹钟
+     */
+    private void startAlarm() {
+
+        Intent intent = new Intent(context, AlarmService.class);
+        startService(intent);
 
     }
 
@@ -207,7 +220,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             model.setStartHour(startHourArray[i]);
             model.setStartMinute(startMinuteArray[i]);
             model.setClassNum(classNumArray[i]);
-
+            model.setClassIndex(i);
 
             if(i == 0 || i == 1)
             {
