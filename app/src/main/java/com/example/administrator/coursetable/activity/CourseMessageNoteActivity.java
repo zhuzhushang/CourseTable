@@ -183,16 +183,16 @@ public class CourseMessageNoteActivity extends BaseActivity implements View.OnCl
     {
         if(timeType == Constants.UP_CLASS_TIME_TYPE_MOR_READ)
         {
-            return 2;
+            return Constants.MAX_COURESE_MORNING_READ;
         }else if(timeType == Constants.UP_CLASS_TIME_TYPE_MORNING)
         {
-            return 4;
+            return Constants.MAX_COURESE_MORNING;
         }else if(timeType == Constants.UP_CLASS_TIME_TYPE_AFTERNOON)
         {
-            return 3;
+            return Constants.MAX__COURESE_AFTERNONG;
         }else if(timeType == Constants.UP_CLASS_TIME_TYPE_AFTERNOON)
         {
-            return 2;
+            return Constants.MAX_COURESE_EVENING_READ;
         }
 
         return 0;

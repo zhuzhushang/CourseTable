@@ -21,11 +21,15 @@
     <dimen name="week_class_width">80dp</dimen>
 
     <!--一格的高度-->
-    <dimen name="base_heigth_x3">144dp</dimen>
+    <dimen name="base_heigth_x1">48dp</dimen>
     <!--一格的高度-->
     <dimen name="base_heigth_x2">96dp</dimen>
     <!--一格的高度-->
+    <dimen name="base_heigth_x3">144dp</dimen>
+    <!--一格的高度-->
     <dimen name="base_heigth_x4">192dp</dimen>
+    <!--一格的高度-->
+    <dimen name="base_heigth_x5">240dp</dimen>
 
     <!--中间间隔的高-->
     <dimen name="divider_heigth">16dp</dimen>

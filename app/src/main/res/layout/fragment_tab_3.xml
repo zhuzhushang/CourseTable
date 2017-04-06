@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <RelativeLayout
         style="@style/default_appbar_container_relative"
         android:layout_height="48dp"
-        android:background="@mipmap/appbar_header"
-        >
+        android:background="@mipmap/appbar_header">
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/how_long_up_class"
             style="@style/default_appbar_left_tv"
             android:layout_marginLeft="10dp"
             android:text="距离上课还有10分钟哦"
-            android:textSize="@dimen/textsize_small"
-            />
+            android:textSize="@dimen/textsize_small" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/appbar_center_tv"
@@ -27,28 +25,24 @@
             />
 
 
-        <LinearLayout
-            style="@style/default_appbar_right_linear">
+        <LinearLayout style="@style/default_appbar_right_linear">
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/appbar_change"
                 style="@style/appbar_right_img"
-                android:src="@mipmap/appbar_change"
                 android:clickable="true"
-                />
+                android:src="@mipmap/appbar_change" />
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/appbar_note"
                 style="@style/appbar_right_img"
-                android:src="@mipmap/appbar_note"
-                />
+                android:src="@mipmap/appbar_note" />
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/appbar_more"
                 style="@style/appbar_right_img"
                 android:paddingRight="10dp"
-                android:src="@mipmap/appbar_edit"
-                />
+                android:src="@mipmap/appbar_edit" />
         </LinearLayout>
 
     </RelativeLayout>
@@ -60,28 +54,25 @@
         android:id="@+id/current_day_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingRight="@dimen/course_margin_left_right"
-        android:paddingLeft="@dimen/course_margin_left_right"
         android:layout_marginTop="@dimen/course_margin_top"
-        android:visibility="gone"
-        >
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/course_margin_left_right"
+        android:paddingRight="@dimen/course_margin_left_right"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/week_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="周三"
-            android:textSize="20sp"
-            android:textColor="#1f2423"
             android:layout_marginLeft="@dimen/course_margin_left_right"
-            />
+            android:text="周三"
+            android:textColor="#1f2423"
+            android:textSize="20sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#8095a1"
-            />
+            android:background="#8095a1" />
 
         <ListView
             android:id="@+id/current_day_listview"
@@ -93,8 +84,6 @@
             ></ListView>
 
     </LinearLayout>
-
-
 
 
     <!--课程表-->
@@ -111,10 +100,10 @@
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="2dp"
                 android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal"
 
                 >
@@ -130,38 +119,31 @@
                     <TextView
                         style="@style/time_interval_tv"
                         android:text="晨   读"
-
+                        android:layout_height="@dimen/base_heigth_x4"
                         />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         style="@style/time_interval_tv"
-                        android:layout_height="@dimen/base_heigth_x4"
+                        android:layout_height="@dimen/base_heigth_x5"
                         android:text="上   午"
 
                         />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         style="@style/time_interval_tv"
-                        android:text="下   午"
-                        />
+                        android:layout_height="@dimen/base_heigth_x5"
+                        android:text="下   午" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         style="@style/time_interval_tv"
-                        android:layout_height="@dimen/base_heigth_x2"
-                        android:text="晚   上"
-                        />
+                        android:layout_height="@dimen/base_heigth_x3"
+                        android:text="晚   上" />
 
 
                 </LinearLayout>
@@ -169,85 +151,104 @@
                 <LinearLayout
                     android:layout_width="@dimen/time_width"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/time_title"
-                        android:text="课程/星期"
                         style="@style/time_tv"
-                        />
+                        android:text="课程/星期" />
 
 
                     <TextView
                         android:id="@+id/morning_reading_1"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/morning_reading_2"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/morning_reading_3"
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/morning_1"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/morning_2"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/morning_3"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/morning_4"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/morning_5"
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/afternoon_1"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/afternoon_2"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/afternoon_3"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/afternoon_4"
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
+                    <TextView
+                        android:id="@+id/afternoon_5"
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/evening_1"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
 
                     <TextView
                         android:id="@+id/evening_2"
-                        android:text="07:00-07:30"
-                        style="@style/time_tv"/>
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
+                    <TextView
+                        android:id="@+id/evening_3"
+                        style="@style/time_tv"
+                        android:text="07:00-07:30" />
+
 
                 </LinearLayout>
 
+                <!--星期一-->
                 <LinearLayout
                     android:id="@+id/xq_1_ll"
                     style="@style/course_linear_contain">
@@ -255,80 +256,98 @@
                     <TextView
                         android:id="@+id/xq_tv_1"
                         style="@style/week_tv"
-                        android:text="星期一"
-                        />
+                        android:text="星期一" />
 
                     <TextView
                         android:id="@+id/mon_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_mor_read_tv_2"
-                        android:text="@string/math"
-                        
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/mon_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/mon_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/mon_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/mon_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/mon_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/mon_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/mon_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/mon_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/mon_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
 
                 </LinearLayout>
 
+                <!--  星期二     -->
                 <LinearLayout
                     android:id="@+id/xq_2_ll"
                     style="@style/course_linear_contain">
@@ -342,76 +361,93 @@
 
                     <TextView
                         android:id="@+id/tues_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/tues_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/tues_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/tues_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/tues_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/tues_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/tues_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/tues_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/tues_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-
+                    <TextView
+                        android:id="@+id/tues_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                 </LinearLayout>
 
+                <!--   星期三  -->
                 <LinearLayout
                     android:id="@+id/xq_3_ll"
                     style="@style/course_linear_contain">
@@ -419,81 +455,98 @@
                     <TextView
                         android:id="@+id/xq_tv_3"
                         style="@style/week_tv"
-                        android:text="星期三"
-                        />
+                        android:text="星期三" />
 
                     <TextView
                         android:id="@+id/wed_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/wed_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/wed_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/wed_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/wed_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/wed_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/wed_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/wed_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/wed_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-
+                    <TextView
+                        android:id="@+id/wed_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                 </LinearLayout>
 
+
+                <!--   星期四  -->
                 <LinearLayout
                     android:id="@+id/xq_4_ll"
                     style="@style/course_linear_contain">
@@ -501,80 +554,96 @@
                     <TextView
                         android:id="@+id/xq_tv_4"
                         style="@style/week_tv"
-                        android:text="星期四"
-                        />
+                        android:text="星期四" />
 
                     <TextView
                         android:id="@+id/thur_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/thur_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/thur_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/thur_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/thur_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/thur_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/thur_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/thur_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/thur_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
-
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+                    <TextView
+                        android:id="@+id/thur_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                 </LinearLayout>
 
+                <!--星期五-->
                 <LinearLayout
                     android:id="@+id/xq_5_ll"
                     style="@style/course_linear_contain">
@@ -582,77 +651,93 @@
                     <TextView
                         android:id="@+id/xq_tv_5"
                         style="@style/week_tv"
-                        android:text="星期五"
-                        />
+                        android:text="星期五" />
 
                     <TextView
                         android:id="@+id/fri_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/fri_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/fri_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/fri_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/fri_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/fri_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/fri_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/fri_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/fri_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
+                    <TextView
+                        android:id="@+id/fri_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                 </LinearLayout>
 
@@ -663,76 +748,93 @@
                     <TextView
                         android:id="@+id/xq_tv_6"
                         style="@style/week_tv"
-                        android:text="星期六"
-                        />
+                        android:text="星期六" />
 
                     <TextView
                         android:id="@+id/sat_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/sat_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sat_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/sat_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sat_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/sat_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/sat_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sat_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sat_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/sat_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
 
                 </LinearLayout>
@@ -744,77 +846,93 @@
                     <TextView
                         android:id="@+id/xq_tv_7"
                         style="@style/week_tv"
-                        android:text="星期日"
-                        />
+                        android:text="星期日" />
 
                     <TextView
                         android:id="@+id/sun_mor_read_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_mor_read_tv_2"
-                        android:text="@string/math"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                        style="@style/class_tv"/>
+                    <TextView
+                        android:id="@+id/sun_mor_read_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sun_morning_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_morning_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_morning_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_morning_tv_4"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/sun_morning_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sun_afternoon_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_afternoon_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_afternoon_tv_3"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
-                    <View
-                        style="@style/course_divider_all"
-                        />
+                    <TextView
+                        android:id="@+id/sun_afternoon_tv_4"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <TextView
+                        android:id="@+id/sun_afternoon_tv_5"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
+
+                    <View style="@style/course_divider_all" />
 
                     <TextView
                         android:id="@+id/sun_evening_tv_1"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                     <TextView
                         android:id="@+id/sun_evening_tv_2"
-                        android:text="@string/math"
-                        style="@style/class_tv"/>
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
+                    <TextView
+                        android:id="@+id/sun_evening_tv_3"
+                        style="@style/class_tv"
+                        android:text="@string/math" />
 
                 </LinearLayout>
 
@@ -823,10 +941,6 @@
 
         </HorizontalScrollView>
     </ScrollView>
-
-
-
-
 
 
 </LinearLayout>

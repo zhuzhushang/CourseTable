@@ -6,6 +6,11 @@ package com.example.administrator.coursetable.constants;
 
 public class Constants {
 
+    /**每一天的课程总数  就是一天上多少节课*/
+    public final static int TOTAL_COURSE = 16;
+
+
+
     /**跳转到课程信息/笔记界面传递位置*/
     public final static String CLASS_NAME_NOTE_CHILD_POSITION = "class_name_note_child_position";
     /**跳转到课程信息/笔记界面传递数组*/
@@ -79,5 +84,17 @@ public class Constants {
     public static final String EXAM_REMIND = "exam_remind";
     /*自动添加背景色*/
     public static final String AUTO_ADD_BG_COLOR = "auto_add_bg_color";
+
+
+    /**晨读课程类型的最大课时*/
+    public static final int MAX_COURESE_MORNING_READ = 3;
+    /**上午课程类型的最大课时*/
+    public static final int MAX_COURESE_MORNING = 5;
+    /**下午课程类型的最大课时*/
+    public static final int MAX__COURESE_AFTERNONG = 5;
+    /*晚上课程类型的最大课时*/
+    public static final int MAX_COURESE_EVENING_READ = 3;
+
+
 
 }

@@ -57,47 +57,76 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     private AppCompatTextView how_long_up_class;
 
     //课程表控件
-    private TextView mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2;
-    private TextView tues_mor_read_tv_1, tues_mor_read_tv_2, tues_morning_tv_1, tues_morning_tv_2, tues_morning_tv_3, tues_morning_tv_4, tues_afternoon_tv_1, tues_afternoon_tv_2, tues_afternoon_tv_3, tues_evening_tv_1, tues_evening_tv_2;
-    private TextView wed_mor_read_tv_1, wed_mor_read_tv_2, wed_morning_tv_1, wed_morning_tv_2, wed_morning_tv_3, wed_morning_tv_4, wed_afternoon_tv_1, wed_afternoon_tv_2, wed_afternoon_tv_3, wed_evening_tv_1, wed_evening_tv_2;
-    private TextView thur_mor_read_tv_1, thur_mor_read_tv_2, thur_morning_tv_1, thur_morning_tv_2, thur_morning_tv_3, thur_morning_tv_4, thur_afternoon_tv_1, thur_afternoon_tv_2, thur_afternoon_tv_3, thur_evening_tv_1, thur_evening_tv_2;
-    private TextView fri_mor_read_tv_1, fri_mor_read_tv_2, fri_morning_tv_1, fri_morning_tv_2, fri_morning_tv_3, fri_morning_tv_4, fri_afternoon_tv_1, fri_afternoon_tv_2, fri_afternoon_tv_3, fri_evening_tv_1, fri_evening_tv_2;
-    private TextView sat_mor_read_tv_1, sat_mor_read_tv_2, sat_morning_tv_1, sat_morning_tv_2, sat_morning_tv_3, sat_morning_tv_4, sat_afternoon_tv_1, sat_afternoon_tv_2, sat_afternoon_tv_3, sat_evening_tv_1, sat_evening_tv_2;
-    private TextView sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2;
+//    private TextView mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2;
+//    private TextView tues_mor_read_tv_1, tues_mor_read_tv_2, tues_morning_tv_1, tues_morning_tv_2, tues_morning_tv_3, tues_morning_tv_4, tues_afternoon_tv_1, tues_afternoon_tv_2, tues_afternoon_tv_3, tues_evening_tv_1, tues_evening_tv_2;
+//    private TextView wed_mor_read_tv_1, wed_mor_read_tv_2, wed_morning_tv_1, wed_morning_tv_2, wed_morning_tv_3, wed_morning_tv_4, wed_afternoon_tv_1, wed_afternoon_tv_2, wed_afternoon_tv_3, wed_evening_tv_1, wed_evening_tv_2;
+//    private TextView thur_mor_read_tv_1, thur_mor_read_tv_2, thur_morning_tv_1, thur_morning_tv_2, thur_morning_tv_3, thur_morning_tv_4, thur_afternoon_tv_1, thur_afternoon_tv_2, thur_afternoon_tv_3, thur_evening_tv_1, thur_evening_tv_2;
+//    private TextView fri_mor_read_tv_1, fri_mor_read_tv_2, fri_morning_tv_1, fri_morning_tv_2, fri_morning_tv_3, fri_morning_tv_4, fri_afternoon_tv_1, fri_afternoon_tv_2, fri_afternoon_tv_3, fri_evening_tv_1, fri_evening_tv_2;
+//    private TextView sat_mor_read_tv_1, sat_mor_read_tv_2, sat_morning_tv_1, sat_morning_tv_2, sat_morning_tv_3, sat_morning_tv_4, sat_afternoon_tv_1, sat_afternoon_tv_2, sat_afternoon_tv_3, sat_evening_tv_1, sat_evening_tv_2;
+//    private TextView sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2;
+//
+//    private TextView monTvArray[] = {mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2};
+//    private int monTvArrayID[] = {R.id.mon_mor_read_tv_1, R.id.mon_mor_read_tv_2, R.id.mon_morning_tv_1, R.id.mon_morning_tv_2, R.id.mon_morning_tv_3, R.id.mon_morning_tv_4, R.id.mon_afternoon_tv_1, R.id.mon_afternoon_tv_2, R.id.mon_afternoon_tv_3, R.id.mon_evening_tv_1, R.id.mon_evening_tv_2};
+//
+//    private TextView tuesTvArray[] = {tues_mor_read_tv_1, tues_mor_read_tv_2, tues_morning_tv_1, tues_morning_tv_2, tues_morning_tv_3, tues_morning_tv_4, tues_afternoon_tv_1, tues_afternoon_tv_2, tues_afternoon_tv_3, tues_evening_tv_1, tues_evening_tv_2};
+//    private int tuesTvArrayID[] = {R.id.tues_mor_read_tv_1, R.id.tues_mor_read_tv_2, R.id.tues_morning_tv_1, R.id.tues_morning_tv_2, R.id.tues_morning_tv_3, R.id.tues_morning_tv_4, R.id.tues_afternoon_tv_1, R.id.tues_afternoon_tv_2, R.id.tues_afternoon_tv_3, R.id.tues_evening_tv_1, R.id.tues_evening_tv_2};
+//
+//
+//    private TextView wedTvArray[] = {wed_mor_read_tv_1, wed_mor_read_tv_2, wed_morning_tv_1, wed_morning_tv_2, wed_morning_tv_3, wed_morning_tv_4, wed_afternoon_tv_1, wed_afternoon_tv_2, wed_afternoon_tv_3, wed_evening_tv_1, wed_evening_tv_2};
+//    private int wedTvArrayID[] = {R.id.wed_mor_read_tv_1, R.id.wed_mor_read_tv_2, R.id.wed_morning_tv_1, R.id.wed_morning_tv_2, R.id.wed_morning_tv_3, R.id.wed_morning_tv_4, R.id.wed_afternoon_tv_1, R.id.wed_afternoon_tv_2, R.id.wed_afternoon_tv_3, R.id.wed_evening_tv_1, R.id.wed_evening_tv_2};
+//
+//
+//    private TextView thurTvArray[] = {thur_mor_read_tv_1, thur_mor_read_tv_2, thur_morning_tv_1, thur_morning_tv_2, thur_morning_tv_3, thur_morning_tv_4, thur_afternoon_tv_1, thur_afternoon_tv_2, thur_afternoon_tv_3, thur_evening_tv_1, thur_evening_tv_2};
+//    private int thurTvArrayID[] = {R.id.thur_mor_read_tv_1, R.id.thur_mor_read_tv_2, R.id.thur_morning_tv_1, R.id.thur_morning_tv_2, R.id.thur_morning_tv_3, R.id.thur_morning_tv_4, R.id.thur_afternoon_tv_1, R.id.thur_afternoon_tv_2, R.id.thur_afternoon_tv_3, R.id.thur_evening_tv_1, R.id.thur_evening_tv_2};
+//
+//    private TextView friTvArray[] = {fri_mor_read_tv_1, fri_mor_read_tv_2, fri_morning_tv_1, fri_morning_tv_2, fri_morning_tv_3, fri_morning_tv_4, fri_afternoon_tv_1, fri_afternoon_tv_2, fri_afternoon_tv_3, fri_evening_tv_1, fri_evening_tv_2};
+//    private int friTvArrayID[] = {R.id.fri_mor_read_tv_1, R.id.fri_mor_read_tv_2, R.id.fri_morning_tv_1, R.id.fri_morning_tv_2, R.id.fri_morning_tv_3, R.id.fri_morning_tv_4, R.id.fri_afternoon_tv_1, R.id.fri_afternoon_tv_2, R.id.fri_afternoon_tv_3, R.id.fri_evening_tv_1, R.id.fri_evening_tv_2};
+//
+//
+//    private TextView satTvArray[] = {sat_mor_read_tv_1, sat_mor_read_tv_2, sat_morning_tv_1, sat_morning_tv_2, sat_morning_tv_3, sat_morning_tv_4, sat_afternoon_tv_1, sat_afternoon_tv_2, sat_afternoon_tv_3, sat_evening_tv_1, sat_evening_tv_2};
+//    private int satTvArrayID[] = {R.id.sat_mor_read_tv_1, R.id.sat_mor_read_tv_2, R.id.sat_morning_tv_1, R.id.sat_morning_tv_2, R.id.sat_morning_tv_3, R.id.sat_morning_tv_4, R.id.sat_afternoon_tv_1, R.id.sat_afternoon_tv_2, R.id.sat_afternoon_tv_3, R.id.sat_evening_tv_1, R.id.sat_evening_tv_2};
+//
+//    private TextView sunTvArray[] = {sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2};
+//    private int sunTvArrayID[] = {R.id.sun_mor_read_tv_1, R.id.sun_mor_read_tv_2, R.id.sun_morning_tv_1, R.id.sun_morning_tv_2, R.id.sun_morning_tv_3, R.id.sun_morning_tv_4, R.id.sun_afternoon_tv_1, R.id.sun_afternoon_tv_2, R.id.sun_afternoon_tv_3, R.id.sun_evening_tv_1, R.id.sun_evening_tv_2};
 
-    private TextView monTvArray[] = {mon_mor_read_tv_1, mon_mor_read_tv_2, mon_morning_tv_1, mon_morning_tv_2, mon_morning_tv_3, mon_morning_tv_4, mon_afternoon_tv_1, mon_afternoon_tv_2, mon_afternoon_tv_3, mon_evening_tv_1, mon_evening_tv_2};
-    private int monTvArrayID[] = {R.id.mon_mor_read_tv_1, R.id.mon_mor_read_tv_2, R.id.mon_morning_tv_1, R.id.mon_morning_tv_2, R.id.mon_morning_tv_3, R.id.mon_morning_tv_4, R.id.mon_afternoon_tv_1, R.id.mon_afternoon_tv_2, R.id.mon_afternoon_tv_3, R.id.mon_evening_tv_1, R.id.mon_evening_tv_2};
 
-    private TextView tuesTvArray[] = {tues_mor_read_tv_1, tues_mor_read_tv_2, tues_morning_tv_1, tues_morning_tv_2, tues_morning_tv_3, tues_morning_tv_4, tues_afternoon_tv_1, tues_afternoon_tv_2, tues_afternoon_tv_3, tues_evening_tv_1, tues_evening_tv_2};
-    private int tuesTvArrayID[] = {R.id.tues_mor_read_tv_1, R.id.tues_mor_read_tv_2, R.id.tues_morning_tv_1, R.id.tues_morning_tv_2, R.id.tues_morning_tv_3, R.id.tues_morning_tv_4, R.id.tues_afternoon_tv_1, R.id.tues_afternoon_tv_2, R.id.tues_afternoon_tv_3, R.id.tues_evening_tv_1, R.id.tues_evening_tv_2};
+    /*星期一的textview*/
+    private TextView monTvArray[];
+    private int monTvArrayID[] = {R.id.mon_mor_read_tv_1, R.id.mon_mor_read_tv_2, R.id.mon_mor_read_tv_3, R.id.mon_morning_tv_1, R.id.mon_morning_tv_2, R.id.mon_morning_tv_3, R.id.mon_morning_tv_4, R.id.mon_morning_tv_5, R.id.mon_afternoon_tv_1, R.id.mon_afternoon_tv_2, R.id.mon_afternoon_tv_3, R.id.mon_afternoon_tv_4, R.id.mon_afternoon_tv_5, R.id.mon_evening_tv_1, R.id.mon_evening_tv_2, R.id.mon_evening_tv_3};
 
+    /*星期二的textview*/
+    private TextView tuesTvArray[];
+    private int tuesTvArrayID[] = {R.id.tues_mor_read_tv_1, R.id.tues_mor_read_tv_2, R.id.tues_mor_read_tv_3, R.id.tues_morning_tv_1, R.id.tues_morning_tv_2, R.id.tues_morning_tv_3, R.id.tues_morning_tv_4, R.id.tues_morning_tv_5, R.id.tues_afternoon_tv_1, R.id.tues_afternoon_tv_2, R.id.tues_afternoon_tv_3, R.id.tues_afternoon_tv_4, R.id.tues_afternoon_tv_5, R.id.tues_evening_tv_1, R.id.tues_evening_tv_2, R.id.tues_evening_tv_3};
 
-    private TextView wedTvArray[] = {wed_mor_read_tv_1, wed_mor_read_tv_2, wed_morning_tv_1, wed_morning_tv_2, wed_morning_tv_3, wed_morning_tv_4, wed_afternoon_tv_1, wed_afternoon_tv_2, wed_afternoon_tv_3, wed_evening_tv_1, wed_evening_tv_2};
-    private int wedTvArrayID[] = {R.id.wed_mor_read_tv_1, R.id.wed_mor_read_tv_2, R.id.wed_morning_tv_1, R.id.wed_morning_tv_2, R.id.wed_morning_tv_3, R.id.wed_morning_tv_4, R.id.wed_afternoon_tv_1, R.id.wed_afternoon_tv_2, R.id.wed_afternoon_tv_3, R.id.wed_evening_tv_1, R.id.wed_evening_tv_2};
+    /*星期三的textview*/
+    private TextView wedTvArray[];
+    private int wedTvArrayID[] = {R.id.wed_mor_read_tv_1, R.id.wed_mor_read_tv_2, R.id.wed_mor_read_tv_3, R.id.wed_morning_tv_1, R.id.wed_morning_tv_2, R.id.wed_morning_tv_3, R.id.wed_morning_tv_4, R.id.wed_morning_tv_5, R.id.wed_afternoon_tv_1, R.id.wed_afternoon_tv_2, R.id.wed_afternoon_tv_3, R.id.wed_afternoon_tv_4, R.id.wed_afternoon_tv_5, R.id.wed_evening_tv_1, R.id.wed_evening_tv_2, R.id.wed_evening_tv_3};
 
+    /*星期四的textview*/
+    private TextView thurTvArray[];
+    private int thurTvArrayID[] = {R.id.thur_mor_read_tv_1, R.id.thur_mor_read_tv_2, R.id.thur_mor_read_tv_3, R.id.thur_morning_tv_1, R.id.thur_morning_tv_2, R.id.thur_morning_tv_3, R.id.thur_morning_tv_4, R.id.thur_morning_tv_5, R.id.thur_afternoon_tv_1, R.id.thur_afternoon_tv_2, R.id.thur_afternoon_tv_3, R.id.thur_afternoon_tv_4, R.id.thur_afternoon_tv_5, R.id.thur_evening_tv_1, R.id.thur_evening_tv_2, R.id.thur_evening_tv_3};
 
-    private TextView thurTvArray[] = {thur_mor_read_tv_1, thur_mor_read_tv_2, thur_morning_tv_1, thur_morning_tv_2, thur_morning_tv_3, thur_morning_tv_4, thur_afternoon_tv_1, thur_afternoon_tv_2, thur_afternoon_tv_3, thur_evening_tv_1, thur_evening_tv_2};
-    private int thurTvArrayID[] = {R.id.thur_mor_read_tv_1, R.id.thur_mor_read_tv_2, R.id.thur_morning_tv_1, R.id.thur_morning_tv_2, R.id.thur_morning_tv_3, R.id.thur_morning_tv_4, R.id.thur_afternoon_tv_1, R.id.thur_afternoon_tv_2, R.id.thur_afternoon_tv_3, R.id.thur_evening_tv_1, R.id.thur_evening_tv_2};
+    /*星期五的textview*/
+    private TextView friTvArray[];
+    private int friTvArrayID[] = {R.id.fri_mor_read_tv_1, R.id.fri_mor_read_tv_2, R.id.fri_mor_read_tv_3, R.id.fri_morning_tv_1, R.id.fri_morning_tv_2, R.id.fri_morning_tv_3, R.id.fri_morning_tv_4, R.id.fri_morning_tv_5, R.id.fri_afternoon_tv_1, R.id.fri_afternoon_tv_2, R.id.fri_afternoon_tv_3, R.id.fri_afternoon_tv_4, R.id.fri_afternoon_tv_5, R.id.fri_evening_tv_1, R.id.fri_evening_tv_2, R.id.fri_evening_tv_3};
 
-    private TextView friTvArray[] = {fri_mor_read_tv_1, fri_mor_read_tv_2, fri_morning_tv_1, fri_morning_tv_2, fri_morning_tv_3, fri_morning_tv_4, fri_afternoon_tv_1, fri_afternoon_tv_2, fri_afternoon_tv_3, fri_evening_tv_1, fri_evening_tv_2};
-    private int friTvArrayID[] = {R.id.fri_mor_read_tv_1, R.id.fri_mor_read_tv_2, R.id.fri_morning_tv_1, R.id.fri_morning_tv_2, R.id.fri_morning_tv_3, R.id.fri_morning_tv_4, R.id.fri_afternoon_tv_1, R.id.fri_afternoon_tv_2, R.id.fri_afternoon_tv_3, R.id.fri_evening_tv_1, R.id.fri_evening_tv_2};
+    /*星期六的textview*/
+    private TextView satTvArray[];
+    private int satTvArrayID[] = {R.id.sat_mor_read_tv_1, R.id.sat_mor_read_tv_2, R.id.sat_mor_read_tv_3, R.id.sat_morning_tv_1, R.id.sat_morning_tv_2, R.id.sat_morning_tv_3, R.id.sat_morning_tv_4, R.id.sat_morning_tv_5, R.id.sat_afternoon_tv_1, R.id.sat_afternoon_tv_2, R.id.sat_afternoon_tv_3, R.id.sat_afternoon_tv_4, R.id.sat_afternoon_tv_5, R.id.sat_evening_tv_1, R.id.sat_evening_tv_2, R.id.sat_evening_tv_3};
 
+    /*星期天的textview*/
+    private TextView sunTvArray[];
+    private int sunTvArrayID[] = {R.id.sun_mor_read_tv_1, R.id.sun_mor_read_tv_2, R.id.sun_mor_read_tv_3, R.id.sun_morning_tv_1, R.id.sun_morning_tv_2, R.id.sun_morning_tv_3, R.id.sun_morning_tv_4, R.id.sun_morning_tv_5, R.id.sun_afternoon_tv_1, R.id.sun_afternoon_tv_2, R.id.sun_afternoon_tv_3, R.id.sun_afternoon_tv_4, R.id.sun_afternoon_tv_5, R.id.sun_evening_tv_1, R.id.sun_evening_tv_2, R.id.sun_evening_tv_3};
 
-    private TextView satTvArray[] = {sat_mor_read_tv_1, sat_mor_read_tv_2, sat_morning_tv_1, sat_morning_tv_2, sat_morning_tv_3, sat_morning_tv_4, sat_afternoon_tv_1, sat_afternoon_tv_2, sat_afternoon_tv_3, sat_evening_tv_1, sat_evening_tv_2};
-    private int satTvArrayID[] = {R.id.sat_mor_read_tv_1, R.id.sat_mor_read_tv_2, R.id.sat_morning_tv_1, R.id.sat_morning_tv_2, R.id.sat_morning_tv_3, R.id.sat_morning_tv_4, R.id.sat_afternoon_tv_1, R.id.sat_afternoon_tv_2, R.id.sat_afternoon_tv_3, R.id.sat_evening_tv_1, R.id.sat_evening_tv_2};
-
-    private TextView sunTvArray[] = {sun_mor_read_tv_1, sun_mor_read_tv_2, sun_morning_tv_1, sun_morning_tv_2, sun_morning_tv_3, sun_morning_tv_4, sun_afternoon_tv_1, sun_afternoon_tv_2, sun_afternoon_tv_3, sun_evening_tv_1, sun_evening_tv_2};
-    private int sunTvArrayID[] = {R.id.sun_mor_read_tv_1, R.id.sun_mor_read_tv_2, R.id.sun_morning_tv_1, R.id.sun_morning_tv_2, R.id.sun_morning_tv_3, R.id.sun_morning_tv_4, R.id.sun_afternoon_tv_1, R.id.sun_afternoon_tv_2, R.id.sun_afternoon_tv_3, R.id.sun_evening_tv_1, R.id.sun_evening_tv_2};
 
     /**
      * 二维数组
      */
-    private TextView qrArray[][] = {monTvArray, tuesTvArray, wedTvArray, thurTvArray, friTvArray, satTvArray, sunTvArray};
+    private TextView qrArray[][];
 
     /*上课时间设置*/
-    private TextView morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2;
-    private TextView classTimeTvArray[] = {morning_reading_1, morning_reading_2, morning_1, morning_2, morning_3, morning_4, afternoon_1, afternoon_2, afternoon_3, evening_1, evening_2};
-    private int classTimeTvArrayID[] = {R.id.morning_reading_1, R.id.morning_reading_2, R.id.morning_1, R.id.morning_2, R.id.morning_3, R.id.morning_4, R.id.afternoon_1, R.id.afternoon_2, R.id.afternoon_3, R.id.evening_1, R.id.evening_2};
+   private TextView classTimeTvArray[];
+    private int classTimeTvArrayID[] = {R.id.morning_reading_1, R.id.morning_reading_2, R.id.morning_reading_3, R.id.morning_1, R.id.morning_2, R.id.morning_3, R.id.morning_4, R.id.morning_5, R.id.afternoon_1, R.id.afternoon_2, R.id.afternoon_3, R.id.afternoon_4, R.id.afternoon_5, R.id.evening_1, R.id.evening_2, R.id.evening_3};
 
 
     private MySqliteHelper mySqliteHelper;
@@ -105,10 +134,12 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     private Random random;
 
-    /**星期数组*/
-    private int xqLlID[] = { R.id.xq_1_ll,R.id.xq_2_ll,R.id.xq_3_ll,R.id.xq_4_ll,R.id.xq_5_ll,R.id.xq_6_ll,R.id.xq_7_ll};
+    /**
+     * 星期数组
+     */
+    private int xqLlID[] = {R.id.xq_1_ll, R.id.xq_2_ll, R.id.xq_3_ll, R.id.xq_4_ll, R.id.xq_5_ll, R.id.xq_6_ll, R.id.xq_7_ll};
     private LinearLayout xqLl[] = new LinearLayout[xqLlID.length];
-    
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -140,6 +171,18 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     private void ViewInit(View view) {
 
+        //初始化Textview
+        monTvArray = new TextView[monTvArrayID.length];
+        tuesTvArray = new TextView[tuesTvArrayID.length];
+        wedTvArray = new TextView[wedTvArrayID.length];
+        thurTvArray = new TextView[thurTvArrayID.length];
+        friTvArray = new TextView[friTvArrayID.length];
+        satTvArray = new TextView[satTvArrayID.length];
+        sunTvArray = new TextView[sunTvArrayID.length];
+        classTimeTvArray = new TextView[classTimeTvArrayID.length];
+
+        qrArray = new TextView[][]{monTvArray, tuesTvArray, wedTvArray, thurTvArray, friTvArray, satTvArray, sunTvArray};
+
         for (int i = 0; i < xqLlID.length; i++) {
 
             xqLl[i] = (LinearLayout) view.findViewById(xqLlID[i]);
@@ -166,14 +209,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             sunTvArray[i] = (TextView) view.findViewById(sunTvArrayID[i]);
             classTimeTvArray[i] = (TextView) view.findViewById(classTimeTvArrayID[i]);
 
-            monTvArray[i].setOnClickListener(this);
-            tuesTvArray[i].setOnClickListener(this);
-            wedTvArray[i].setOnClickListener(this);
-            thurTvArray[i].setOnClickListener(this);
-            friTvArray[i].setOnClickListener(this);
-            satTvArray[i].setOnClickListener(this);
-            sunTvArray[i].setOnClickListener(this);
-            classTimeTvArray[i].setOnClickListener(this);
+            monTvArray[i].setOnClickListener(courseOnClick);
+            tuesTvArray[i].setOnClickListener(courseOnClick);
+            wedTvArray[i].setOnClickListener(courseOnClick);
+            thurTvArray[i].setOnClickListener(courseOnClick);
+            friTvArray[i].setOnClickListener(courseOnClick);
+            satTvArray[i].setOnClickListener(courseOnClick);
+            sunTvArray[i].setOnClickListener(courseOnClick);
+            classTimeTvArray[i].setOnClickListener(upClassClick);
 
         }
 
@@ -181,11 +224,10 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-
     private void dataInit() {
 
         baseHeigth = getActivity().getResources().getDimensionPixelOffset(R.dimen.base_heigth);
-        mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME,null,Constants.DB_VERSION);
+        mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME, null, Constants.DB_VERSION);
 
         mListCurrentDay = new ArrayList<>();
 //        listInit();
@@ -196,9 +238,10 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     }
 
-    /**设置时间和课时*/
-    private void setUpClassTimeData()
-    {
+    /**
+     * 设置时间和课时
+     */
+    private void setUpClassTimeData() {
         mListUpClassTime = mySqliteHelper.queryUpClassTimeAllData();
 
         for (int i = 0; i < mListUpClassTime.size(); i++) {
@@ -209,11 +252,9 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
             int startMinute = model.getStartMinute();
             int endMinute = model.getEndMinute();
 
-            if(startHour != -1)
-            {
-                classTimeTvArray[i].setText(formatTime(startHour) + ":"+ formatTime(startMinute)+" - "+formatTime(endHour)+":"+formatTime(endMinute));
-            }else
-            {
+            if (startHour != -1) {
+                classTimeTvArray[i].setText(formatTime(startHour) + ":" + formatTime(startMinute) + " - " + formatTime(endHour) + ":" + formatTime(endMinute));
+            } else {
                 classTimeTvArray[i].setText("");
             }
         }
@@ -222,17 +263,15 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     /**
      * @param i
-     * @return  格式化时间，不足两位补0
+     * @return 格式化时间，不足两位补0
      */
-    private String formatTime(int i)
-    {
+    private String formatTime(int i) {
 
-        if(i < 10)
-        {
-            return "0"+i;
+        if (i < 10) {
+            return "0" + i;
         }
 
-        return ""+i;
+        return "" + i;
     }
 
     private void listInit() {
@@ -277,8 +316,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         mListCourseTable = mySqliteHelper.queryCourseTableAllData();
         List<UpClassTimeModel> list = mySqliteHelper.queryUpClassTimeAllDataById();
 
-        if (mListCourseTable == null || mListCourseTable.size() == 0)
-        {
+        if (mListCourseTable == null || mListCourseTable.size() == 0) {
             addCourseTableData();
             mListCourseTable = mySqliteHelper.queryCourseTableAllData();
         }
@@ -286,20 +324,17 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         Calendar calendar = Calendar.getInstance();
         int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
 
-        for (int i = 0; i < qrArray.length ; i++) {
+        for (int i = 0; i < qrArray.length; i++) {
 
-            for (int j = 0 ; j < qrArray[i].length ; j++)
-            {
+            for (int j = 0; j < qrArray[i].length; j++) {
 
 
-                CourseTableModel model = getGroupChildPositionData(i,j);
+                CourseTableModel model = getGroupChildPositionData(i, j);
                 qrArray[i][j].setText(model.getClassName());
-                setTvBg(qrArray[i][j],model.getBgColor());
-                if(model.getClassNum()  < 1)
-                {
+                setTvBg(qrArray[i][j], model.getBgColor());
+                if (model.getClassNum() < 1) {
                     qrArray[i][j].setVisibility(View.GONE);
-                }else
-                {
+                } else {
                     qrArray[i][j].setVisibility(View.VISIBLE);
 
                     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) qrArray[i][j].getLayoutParams();
@@ -308,19 +343,16 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                     qrArray[i][j].setLayoutParams(params);
 
                     //判断是否是今天，如果是，就设置最近一堂课距离的时间
-                    if(dow == i)
-                    {
+                    if (dow == i) {
                         //得到这节课的上课时间
                         for (int k = 0; k < list.size(); k++) {
 
                             UpClassTimeModel upModel = list.get(k);
-                            if(model.getClassIndex() == upModel.getClassIndex())
-                            {
-                                long howlong = getUpClassTime(upModel.getStartHour(),upModel.getStartMinute());
-                                if( howlong > System.currentTimeMillis())
-                                {
-                                    String  uplong = millis2FitTimeSpan(howlong - System.currentTimeMillis(),3);
-                                    how_long_up_class.setText("距离上课还有"+uplong+"哦");
+                            if (model.getClassIndex() == upModel.getClassIndex()) {
+                                long howlong = getUpClassTime(upModel.getStartHour(), upModel.getStartMinute());
+                                if (howlong > System.currentTimeMillis()) {
+                                    String uplong = millis2FitTimeSpan(howlong - System.currentTimeMillis(), 3);
+                                    how_long_up_class.setText("距离上课还有" + uplong + "哦");
                                     return;
 
                                 }
@@ -372,17 +404,14 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-
     private void hideWeek() {
 
         String data[] = getHideWeekData();
         for (int i = 0; i < data.length; i++) {
 
-            if("1".equals(data[i]))
-            {
+            if ("1".equals(data[i])) {
                 xqLl[i].setVisibility(View.VISIBLE);
-            }else
-            {
+            } else {
                 xqLl[i].setVisibility(View.GONE);
             }
         }
@@ -393,23 +422,21 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     /*默认不隐藏*/
     private String ww = "1,1,1,1,1,1,1";
 
-    private String[] getHideWeekData()
-    {
-        String str = (String) SharedPreferencesUtils.getParam(getActivity(),Constants.HIDE_WEEK_DATA,ww);
+    private String[] getHideWeekData() {
+        String str = (String) SharedPreferencesUtils.getParam(getActivity(), Constants.HIDE_WEEK_DATA, ww);
 
         return str.split(",");
     }
 
     /**
-     *设置课程表数据
+     * 设置课程表数据
      */
     private void setCourseTableData() {
 
         mListCourseTable = mySqliteHelper.queryCourseTableAllData();
 //        List<UpClassTimeModel> list = mySqliteHelper.queryUpClassTimeAllDataById();
 
-        if (mListCourseTable == null || mListCourseTable.size() == 0)
-        {
+        if (mListCourseTable == null || mListCourseTable.size() == 0) {
             addCourseTableData();
             mListCourseTable = mySqliteHelper.queryCourseTableAllData();
         }
@@ -417,42 +444,23 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         Calendar calendar = Calendar.getInstance();
         int dow = transformWeek(calendar.get(Calendar.DAY_OF_WEEK));
 
-        for (int i = 0; i < qrArray.length ; i++) {
+        for (int i = 0; i < qrArray.length; i++) {
 
-            for (int j = 0 ; j < qrArray[i].length ; j++)
-            {
+            for (int j = 0; j < qrArray[i].length; j++) {
 
 
-                CourseTableModel model = getGroupChildPositionData(i,j);
+                CourseTableModel model = getGroupChildPositionData(i, j);
                 qrArray[i][j].setText(model.getClassName());
-                setTvBg(qrArray[i][j],model.getBgColor());
-                if(model.getClassNum()  < 1)
-                {
+                setTvBg(qrArray[i][j], model.getBgColor());
+                if (model.getClassNum() < 1) {
                     qrArray[i][j].setVisibility(View.GONE);
-                }else
-                {
+                } else {
                     qrArray[i][j].setVisibility(View.VISIBLE);
 
                     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) qrArray[i][j].getLayoutParams();
                     params.height = baseHeigth * model.getClassNum();
                     params.gravity = Gravity.CENTER;
                     qrArray[i][j].setLayoutParams(params);
-
-                    //判断是否是今天，如果是，就设置最近一堂课距离的时间
-//                    if(dow == i)
-//                    {
-//                        //得到这节课的上课时间
-//                        for (int k = 0; k < list.size(); k++) {
-//
-//                            UpClassTimeModel upModel = list.get(k);
-//                            if(model.getClassIndex() == upModel.getClassIndex())
-//                            {
-//                                if(getUpClassTime(upModel.getStartHour(),upModel.getStartMinute()) > cu)
-//
-//                            }
-//                        }
-//
-//                    }
 
                 }
             }
@@ -463,38 +471,27 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     /**
      * 得到这节课的世界
      */
-    private long getUpClassTime(int hour,int minute)
-    {
+    private long getUpClassTime(int hour, int minute) {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY,hour);
-        calendar.set(Calendar.MINUTE,minute);
-        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.SECOND, 0);
 
         return calendar.getTimeInMillis();
     }
 
 
-
-
-
-
-
     /**
-     *
      * 这个方法是由于 我们这里第一天是星期一   手机的第一天是星期天
-     *
+     * <p>
      * 这里转化一下
-     *
+     * <p>
      * 把手机的转化成我们自己的
-     *
-     *
      */
-    private int transformWeek(int  phoneDayOfWeek)
-    {
+    private int transformWeek(int phoneDayOfWeek) {
         int week = 1;
 
-        switch (phoneDayOfWeek)
-        {
+        switch (phoneDayOfWeek) {
             case 1:
                 week = 7;
                 break;
@@ -524,13 +521,12 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
     /*颜色列表*/
 
-    private int ctBgColor[] = {R.color.ct_bg_color_2,R.color.ct_bg_color_3,R.color.ct_bg_color_4,R.color.ct_bg_color_5,R.color.ct_bg_color_6,R.color.ct_bg_color_7,R.color.ct_bg_color_8,R.color.ct_bg_color_9,R.color.ct_bg_color_10};
-    private int colorDrawable[] = {R.drawable.shape_choice_color_2,R.drawable.shape_choice_color_3,R.drawable.shape_choice_color_4,R.drawable.shape_choice_color_5,R.drawable.shape_choice_color_6,R.drawable.shape_choice_color_7,R.drawable.shape_choice_color_8,R.drawable.shape_choice_color_9,R.drawable.shape_choice_color_10};
+    private int ctBgColor[] = {R.color.ct_bg_color_2, R.color.ct_bg_color_3, R.color.ct_bg_color_4, R.color.ct_bg_color_5, R.color.ct_bg_color_6, R.color.ct_bg_color_7, R.color.ct_bg_color_8, R.color.ct_bg_color_9, R.color.ct_bg_color_10};
+    private int colorDrawable[] = {R.drawable.shape_choice_color_2, R.drawable.shape_choice_color_3, R.drawable.shape_choice_color_4, R.drawable.shape_choice_color_5, R.drawable.shape_choice_color_6, R.drawable.shape_choice_color_7, R.drawable.shape_choice_color_8, R.drawable.shape_choice_color_9, R.drawable.shape_choice_color_10};
 
     private void setTvBg(TextView textView, int bgColor) {
 
-        switch (bgColor)
-        {
+        switch (bgColor) {
             case Constants.COLOR_DEFAULT:
 
                 textView.setBackgroundResource(R.drawable.shape_line);
@@ -559,14 +555,12 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-    private CourseTableModel getGroupChildPositionData(int groupPosition,int childPosotion)
-    {
+    private CourseTableModel getGroupChildPositionData(int groupPosition, int childPosotion) {
         for (int i = 0; i < mListCourseTable.size(); i++) {
 
             CourseTableModel model = mListCourseTable.get(i);
 
-            if(model.getGroupPosition() == groupPosition && model.getChildPosition() == childPosotion)
-            {
+            if (model.getGroupPosition() == groupPosition && model.getChildPosition() == childPosotion) {
 
                 return model;
             }
@@ -577,22 +571,57 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-
     /**
      * 添加默认课程表数据
      */
     private void addCourseTableData() {
 
-        MySqliteHelper mySqliteHelper = new MySqliteHelper(getActivity(),Constants.DB_NAME,null,Constants.DB_VERSION);
+        MySqliteHelper mySqliteHelper = new MySqliteHelper(getActivity(), Constants.DB_NAME, null, Constants.DB_VERSION);
 
-        boolean isAdd = (boolean) SharedPreferencesUtils.getParam(getActivity(),Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,false);
-        if(!isAdd)
-        {
+        boolean isAdd = (boolean) SharedPreferencesUtils.getParam(getActivity(), Constants.IS_ONCE_ADD_COURSE_TABLE_DATA, false);
+        if (!isAdd) {
             mySqliteHelper.deleteCourseTableAllData();
             mySqliteHelper.addCourseTableAllData();
-            SharedPreferencesUtils.putParam(getActivity(),Constants.IS_ONCE_ADD_COURSE_TABLE_DATA,true);
+            SharedPreferencesUtils.putParam(getActivity(), Constants.IS_ONCE_ADD_COURSE_TABLE_DATA, true);
         }
     }
+
+
+    /**给课程设置点击事件*/
+    View.OnClickListener courseOnClick = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+
+            for (int i = 0; i < qrArray.length; i++) {
+
+                for (int j = 0; j < qrArray[i].length; j++) {
+
+                    if(v.getId() == qrArray[i][j].getId())
+                    {
+                        onWeekClick(i, j);
+                    }
+                }
+            }
+        }
+    };
+
+    /**给上课事件设置点击事件*/
+    View.OnClickListener upClassClick = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+
+            for (int i = 0; i < classTimeTvArray.length; i++) {
+
+                if(v.getId() == classTimeTvArray[i].getId())
+                {
+
+                    onUpClassTimeClick(i);
+                }
+
+            }
+        }
+    };
+
 
     @Override
     public void onClick(View view) {
@@ -618,369 +647,16 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
                 }
 
 
-
-
                 break;
             case R.id.appbar_more:
 
                 startActivity(new Intent(getActivity(), SetActivity.class));
 
                 break;
-            //========上课时间================================
-            case R.id.morning_reading_1:
-
-                onUpClassTimeClick(0);
-
-                break;
-            case R.id.morning_reading_2:
-                onUpClassTimeClick(1);
-                break;
-            case R.id.morning_1:
-                onUpClassTimeClick(2);
-                break;
-            case R.id.morning_2:
-                onUpClassTimeClick(3);
-                break;
-            case R.id.morning_3:
-                onUpClassTimeClick(4);
-                break;
-            case R.id.morning_4:
-                onUpClassTimeClick(5);
-                break;
-            case R.id.afternoon_1:
-                onUpClassTimeClick(6);
-                break;
-            case R.id.afternoon_2:
-                onUpClassTimeClick(7);
-                break;
-            case R.id.afternoon_3:
-                onUpClassTimeClick(8);
-                break;
-            case R.id.evening_1:
-                onUpClassTimeClick(9);
-                break;
-            case R.id.evening_2:
-                onUpClassTimeClick(10);
-                break;
-
-            //====================================
-            case R.id.mon_mor_read_tv_1:
-
-                onWeekClick(0, 0);
-                break;
-            case R.id.mon_mor_read_tv_2:
-                onWeekClick(0, 1);
-                break;
-            case R.id.mon_morning_tv_1:
-                onWeekClick(0, 2);
-
-                break;
-            case R.id.mon_morning_tv_2:
-
-                onWeekClick(0, 3);
-                break;
-            case R.id.mon_morning_tv_3:
-
-                onWeekClick(0, 4);
-                break;
-            case R.id.mon_morning_tv_4:
-
-                onWeekClick(0, 5);
-                break;
-            case R.id.mon_afternoon_tv_1:
-
-                onWeekClick(0, 6);
-                break;
-            case R.id.mon_afternoon_tv_2:
-
-                onWeekClick(0, 7);
-                break;
-            case R.id.mon_afternoon_tv_3:
-
-                onWeekClick(0, 8);
-                break;
-            case R.id.mon_evening_tv_1:
-
-                onWeekClick(0, 9);
-                break;
-            case R.id.mon_evening_tv_2:
-
-                onWeekClick(0, 10);
-                break;
-            //===================================
-            case R.id.tues_mor_read_tv_1:
-
-                onWeekClick(1, 0);
-                break;
-            case R.id.tues_mor_read_tv_2:
-                onWeekClick(1, 1);
-                break;
-            case R.id.tues_morning_tv_1:
-                onWeekClick(1, 2);
-
-                break;
-            case R.id.tues_morning_tv_2:
-
-                onWeekClick(1, 3);
-                break;
-            case R.id.tues_morning_tv_3:
-
-                onWeekClick(1, 4);
-                break;
-            case R.id.tues_morning_tv_4:
-
-                onWeekClick(1, 5);
-                break;
-            case R.id.tues_afternoon_tv_1:
-
-                onWeekClick(1, 6);
-                break;
-            case R.id.tues_afternoon_tv_2:
-
-                onWeekClick(1, 7);
-                break;
-            case R.id.tues_afternoon_tv_3:
-
-                onWeekClick(1, 8);
-                break;
-            case R.id.tues_evening_tv_1:
-
-                onWeekClick(1, 9);
-                break;
-            case R.id.tues_evening_tv_2:
-
-                onWeekClick(1, 10);
-                break;
-            //========================
-            case R.id.wed_mor_read_tv_1:
-
-                onWeekClick(2, 0);
-                break;
-            case R.id.wed_mor_read_tv_2:
-                onWeekClick(2, 1);
-                break;
-            case R.id.wed_morning_tv_1:
-                onWeekClick(2, 2);
-
-                break;
-            case R.id.wed_morning_tv_2:
-
-                onWeekClick(2, 3);
-                break;
-            case R.id.wed_morning_tv_3:
-
-                onWeekClick(2, 4);
-                break;
-            case R.id.wed_morning_tv_4:
-
-                onWeekClick(2, 5);
-                break;
-            case R.id.wed_afternoon_tv_1:
-
-                onWeekClick(2, 6);
-                break;
-            case R.id.wed_afternoon_tv_2:
-
-                onWeekClick(2, 7);
-                break;
-            case R.id.wed_afternoon_tv_3:
-
-                onWeekClick(2, 8);
-                break;
-            case R.id.wed_evening_tv_1:
-
-                onWeekClick(2, 9);
-                break;
-            case R.id.wed_evening_tv_2:
-
-                onWeekClick(2, 10);
-                break;
-
-            //========================
-            case R.id.thur_mor_read_tv_1:
-
-                onWeekClick(3, 0);
-                break;
-            case R.id.thur_mor_read_tv_2:
-                onWeekClick(3, 1);
-                break;
-            case R.id.thur_morning_tv_1:
-                onWeekClick(3, 2);
-
-                break;
-            case R.id.thur_morning_tv_2:
-
-                onWeekClick(3, 3);
-                break;
-            case R.id.thur_morning_tv_3:
-
-                onWeekClick(3, 4);
-                break;
-            case R.id.thur_morning_tv_4:
-
-                onWeekClick(3, 5);
-                break;
-            case R.id.thur_afternoon_tv_1:
-
-                onWeekClick(3, 6);
-                break;
-            case R.id.thur_afternoon_tv_2:
-
-                onWeekClick(3, 7);
-                break;
-            case R.id.thur_afternoon_tv_3:
-
-                onWeekClick(3, 8);
-                break;
-            case R.id.thur_evening_tv_1:
-
-                onWeekClick(3, 9);
-                break;
-            case R.id.thur_evening_tv_2:
-
-                onWeekClick(3, 10);
-                break;
-
-            //========================
-            case R.id.fri_mor_read_tv_1:
-
-                onWeekClick(4, 0);
-                break;
-            case R.id.fri_mor_read_tv_2:
-                onWeekClick(4, 1);
-                break;
-            case R.id.fri_morning_tv_1:
-                onWeekClick(4, 2);
-
-                break;
-            case R.id.fri_morning_tv_2:
-
-                onWeekClick(4, 3);
-                break;
-            case R.id.fri_morning_tv_3:
-
-                onWeekClick(4, 4);
-                break;
-            case R.id.fri_morning_tv_4:
-
-                onWeekClick(4, 5);
-                break;
-            case R.id.fri_afternoon_tv_1:
-
-                onWeekClick(4, 6);
-                break;
-            case R.id.fri_afternoon_tv_2:
-
-                onWeekClick(4, 7);
-                break;
-            case R.id.fri_afternoon_tv_3:
-
-                onWeekClick(4, 8);
-                break;
-            case R.id.fri_evening_tv_1:
-
-                onWeekClick(4, 9);
-                break;
-            case R.id.fri_evening_tv_2:
-
-                onWeekClick(4, 10);
-                break;
-
-            //========================
-            case R.id.sat_mor_read_tv_1:
-
-                onWeekClick(5, 0);
-                break;
-            case R.id.sat_mor_read_tv_2:
-                onWeekClick(5, 1);
-                break;
-            case R.id.sat_morning_tv_1:
-                onWeekClick(5, 2);
-
-                break;
-            case R.id.sat_morning_tv_2:
-
-                onWeekClick(5, 3);
-                break;
-            case R.id.sat_morning_tv_3:
-
-                onWeekClick(5, 4);
-                break;
-            case R.id.sat_morning_tv_4:
-
-                onWeekClick(5, 5);
-                break;
-            case R.id.sat_afternoon_tv_1:
-
-                onWeekClick(5, 6);
-                break;
-            case R.id.sat_afternoon_tv_2:
-
-                onWeekClick(5, 7);
-                break;
-            case R.id.sat_afternoon_tv_3:
-
-                onWeekClick(5, 8);
-                break;
-            case R.id.sat_evening_tv_1:
-
-                onWeekClick(5, 9);
-                break;
-            case R.id.sat_evening_tv_2:
-
-                onWeekClick(5, 10);
-                break;
-
-            //========================
-            case R.id.sun_mor_read_tv_1:
-
-                onWeekClick(6, 0);
-                break;
-            case R.id.sun_mor_read_tv_2:
-                onWeekClick(6, 1);
-                break;
-            case R.id.sun_morning_tv_1:
-                onWeekClick(6, 2);
-
-                break;
-            case R.id.sun_morning_tv_2:
-
-                onWeekClick(6, 3);
-                break;
-            case R.id.sun_morning_tv_3:
-
-                onWeekClick(6, 4);
-                break;
-            case R.id.sun_morning_tv_4:
-
-                onWeekClick(6, 5);
-                break;
-            case R.id.sun_afternoon_tv_1:
-
-                onWeekClick(6, 6);
-                break;
-            case R.id.sun_afternoon_tv_2:
-
-                onWeekClick(6, 7);
-                break;
-            case R.id.sun_afternoon_tv_3:
-
-                onWeekClick(6, 8);
-                break;
-            case R.id.sun_evening_tv_1:
-
-                onWeekClick(6, 9);
-                break;
-            case R.id.sun_evening_tv_2:
-
-                onWeekClick(6, 10);
-                break;
-
         }
-
     }
 
-    private String WEEK_ARRAY[] = {"日","一","二","三","四","五","六"};
+    private String WEEK_ARRAY[] = {"日", "一", "二", "三", "四", "五", "六"};
 
     /**
      * 获取当天课程数据
@@ -990,7 +666,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
 
         int dow = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         int dayOfWeek = transformWeek(dow);
-        week_position.setText("星期"+WEEK_ARRAY[dow - 1]);
+        week_position.setText("星期" + WEEK_ARRAY[dow - 1]);
 
 
         mListCurrentDay = mySqliteHelper.queryCurrentDayData(dayOfWeek);
@@ -1023,8 +699,7 @@ public class TabThreeFragment extends BaseFragment implements View.OnClickListen
         if (requestCode == Constants.CLASS_NAME_NOTE_REQUEST_CODE && requestCode == Activity.RESULT_OK) {
 
 
-        }else if(requestCode == Constants.UP_CLASS_TIME_POSITION && requestCode == Activity.RESULT_OK)
-        {
+        } else if (requestCode == Constants.UP_CLASS_TIME_POSITION && requestCode == Activity.RESULT_OK) {
 
 
         }

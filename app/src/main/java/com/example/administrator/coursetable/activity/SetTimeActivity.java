@@ -34,27 +34,29 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
     private TextView mor_read_num_plus_reduce_tv,mor_num_plus_reduce_tv,afternoon_num_plus_reduce_tv,evening_num_plus_reduce_tv;
     /*课时的时间*/
     private TextView class_mor_read_1,class_mor_read_2,class_mor_1,class_mor_2,class_mor_3,class_mor_4,class_afternoon_1,class_afternoon_2,class_afternoon_3,class_evening_1,class_evening_2;
-    private TextView class_mor_read_1_end,class_mor_read_2_end,class_mor_1_end,class_mor_2_end,class_mor_3_end,class_mor_4_end,class_afternoon_1_end,class_afternoon_2_end,class_afternoon_3_end,class_evening_1_end,class_evening_2_end;
-
-    /*默认时间*/
-    private String startTimeArray[] = {"07:30","","08:10","09:05","10:15","11:10","14:30","15:25","16:20","17:25",""};
-    private String endTimeArray[] = {"08:00","","08:55","09:50","11:00","11:55","15:15","16:10","17:05","18:10",""};
-
-    private TextView upClassStartTime[] = {class_mor_read_1,class_mor_read_2,class_mor_1,class_mor_2,class_mor_3,class_mor_4,class_afternoon_1,class_afternoon_2,class_afternoon_3,class_evening_1,class_evening_2};
-    private TextView upClassEndTime[] = {class_mor_read_1_end,class_mor_read_2_end,class_mor_1_end,class_mor_2_end,class_mor_3_end,class_mor_4_end,class_afternoon_1_end,class_afternoon_2_end,class_afternoon_3_end,class_evening_1_end,class_evening_2_end};
-    private final int MOR_READ_MAX = 2;
-
-    private int upClassStartTimeID[] = {R.id.class_mor_read_1,R.id.class_mor_read_2,R.id.class_mor_1,R.id.class_mor_2,R.id.class_mor_3,R.id.class_mor_4,R.id.class_afternoon_1,R.id.class_afternoon_2,R.id.class_afternoon_3,R.id.class_evening_1,R.id.class_evening_2};
+//    private TextView class_mor_read_1_end,class_mor_read_2_end,class_mor_1_end,class_mor_2_end,class_mor_3_end,class_mor_4_end,class_afternoon_1_end,class_afternoon_2_end,class_afternoon_3_end,class_evening_1_end,class_evening_2_end;
 
 
-    private final int MOR_MAX = 4;
-    private final int AFTERNOON_MAX = 3;
-    private final int EVENING_MAX = 2;
+//    private TextView upClassStartTime[] = {class_mor_read_1,class_mor_read_2,class_mor_1,class_mor_2,class_mor_3,class_mor_4,class_afternoon_1,class_afternoon_2,class_afternoon_3,class_evening_1,class_evening_2};
+//    private TextView upClassEndTime[] = {class_mor_read_1_end,class_mor_read_2_end,class_mor_1_end,class_mor_2_end,class_mor_3_end,class_mor_4_end,class_afternoon_1_end,class_afternoon_2_end,class_afternoon_3_end,class_evening_1_end,class_evening_2_end};
 
-    private  int mor_read_count = 1;
-    private  int mor_count = 4;
-    private  int afternoon_count = 3;
-    private  int evening_count = 1;
+    private TextView upClassStartTime[];
+    private int upClassStartTimeID[] = {R.id.class_mor_read_1,R.id.class_mor_read_2,R.id.class_mor_read_3,R.id.class_mor_1,R.id.class_mor_2,R.id.class_mor_3,R.id.class_mor_4,R.id.class_mor_5,R.id.class_afternoon_1,R.id.class_afternoon_2,R.id.class_afternoon_3,R.id.class_afternoon_4,R.id.class_afternoon_5,R.id.class_evening_1,R.id.class_evening_2,R.id.class_evening_3};
+
+    //个性最大值
+    private final int MOR_READ_MAX = 3;
+    private final int MOR_MAX = 5;
+    private final int AFTERNOON_MAX = 5;
+    private final int EVENING_MAX = 3;
+
+    private  int mor_read_count = 3;
+    private  int mor_count = 5;
+    private  int afternoon_count = 5;
+    private  int evening_count = 3;
+
+    //统一最小值
+    private final int NORMAL_MIN = 0;
+
 
 
     @Override
@@ -85,44 +87,19 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
         afternoon_num_plus_reduce_tv = (TextView) findViewById(R.id.afternoon_num_plus_reduce_tv);
         evening_num_plus_reduce_tv = (TextView) findViewById(R.id.evening_num_plus_reduce_tv);
 
+        //初始化textview
+        upClassStartTime = new TextView[upClassStartTimeID.length];
+
         for (int i = 0; i < upClassStartTimeID.length; i++) {
 
             upClassStartTime[i] = (TextView) findViewById(upClassStartTimeID[i]);
         }
-
-        /*class_mor_read_1 = (TextView) findViewById(R.id.class_mor_read_1);
-        class_mor_read_2 = (TextView) findViewById(R.id.class_mor_read_2);
-        class_mor_1 = (TextView) findViewById(R.id.class_mor_1);
-        class_mor_2 = (TextView) findViewById(R.id.class_mor_2);
-        class_mor_3 = (TextView) findViewById(R.id.class_mor_3);
-        class_mor_4 = (TextView) findViewById(R.id.class_mor_4);
-        class_afternoon_1 = (TextView) findViewById(R.id.class_afternoon_1);
-        class_afternoon_2 = (TextView) findViewById(R.id.class_afternoon_2);
-        class_afternoon_3 = (TextView) findViewById(R.id.class_afternoon_3);
-        class_evening_1 = (TextView) findViewById(R.id.class_evening_1);
-        class_evening_2 = (TextView) findViewById(R.id.class_evening_2);*/
-
-
-        class_mor_read_1_end = (TextView) findViewById(R.id.class_mor_read_1_end);
-        class_mor_read_2_end = (TextView) findViewById(R.id.class_mor_read_2_end);
-        class_mor_1_end = (TextView) findViewById(R.id.class_mor_1_end);
-        class_mor_2_end = (TextView) findViewById(R.id.class_mor_2_end);
-        class_mor_3_end = (TextView) findViewById(R.id.class_mor_3_end);
-        class_mor_4_end = (TextView) findViewById(R.id.class_mor_4_end);
-        class_afternoon_1_end = (TextView) findViewById(R.id.class_afternoon_1_end);
-        class_afternoon_2_end = (TextView) findViewById(R.id.class_afternoon_2_end);
-        class_afternoon_3_end = (TextView) findViewById(R.id.class_afternoon_3_end);
-        class_evening_1_end = (TextView) findViewById(R.id.class_evening_1_end);
-        class_evening_2_end = (TextView) findViewById(R.id.class_evening_2_end);
-        
 
 
         mor_read = (TextView) findViewById(R.id.mor_read);
         morning = (TextView) findViewById(R.id.morning);
         afternoon = (TextView) findViewById(R.id.afternoon);
         evening = (TextView) findViewById(R.id.evening);
-
-
 
     }
 
@@ -155,8 +132,6 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
         for (int i = 0; i < upClassStartTime.length; i++) {
 
             upClassStartTime[i].setOnClickListener(onClickListenerSetUpClassTime);
-//            upClassEndTime[i].setOnClickListener(this);
-
         }
     }
 
@@ -175,9 +150,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
 
                     break;
                 }
-
             }
-
         }
     };
 
@@ -208,7 +181,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.mor_read_reduce_img:
 
-                if(mor_read_count > 1 )
+                if(mor_read_count > NORMAL_MIN )
                 {
                     mor_read_count--;
                     mor_read_num_plus_reduce_tv.setText(""+mor_read_count);
@@ -233,7 +206,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.mor_reduce_img:
 
-                if(mor_count > 1 )
+                if(mor_count > NORMAL_MIN )
                 {
                     mor_count--;
                     mor_num_plus_reduce_tv.setText(""+mor_count);
@@ -257,7 +230,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.afternoon_reduce_img:
 
-                if(afternoon_count > 1 )
+                if(afternoon_count > NORMAL_MIN )
                 {
                     afternoon_count--;
                     afternoon_num_plus_reduce_tv.setText(""+afternoon_count);
@@ -282,7 +255,7 @@ public class SetTimeActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.evening_reduce_img:
 
-                if(evening_count > 1 )
+                if(evening_count > NORMAL_MIN )
                 {
                     evening_count--;
                     evening_num_plus_reduce_tv.setText(""+evening_count);

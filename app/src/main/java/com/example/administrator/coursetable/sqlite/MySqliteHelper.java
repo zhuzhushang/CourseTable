@@ -351,7 +351,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
 
         for (int i = 0; i < 7; i++) {
 
-            for (int j = 0; j < 11; j++) {
+            for (int j = 0; j < Constants.TOTAL_COURSE; j++) {
                 CourseTableModel model = new CourseTableModel();
                 model.setGroupPosition(i);
                 model.setChildPosition(j);
@@ -363,22 +363,26 @@ public class MySqliteHelper extends SQLiteOpenHelper {
                 model.setAddress("");
                 model.setNote("");
 
-                if (j == 1 || j == 10) {
+                if (j == 1||j == 2 || j == 14|| j == 15) {
                     model.setClassNum(0);
                 }
 
-                if (j == 0 || j == 9) {
-                    model.setClassNum(2);
+                if (j == 0 || j == 13) {
+                    model.setClassNum(3);
                 }
 
 
-                if (j == 0 || j == 1) {
+                if(i >= 0 || i <= 2)
+                {
                     model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MOR_READ);
-                } else if (j > 1 && j < 6) {
+                }else if(i > 2 && i < 8)
+                {
                     model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MORNING);
-                } else if (j > 5 && j < 9) {
+                }else if(i > 7 && i < 13)
+                {
                     model.setTimeType(Constants.UP_CLASS_TIME_TYPE_AFTERNOON);
-                } else if (j > 8 && j < 11) {
+                }else if(i > 12 && i < 16)
+                {
                     model.setTimeType(Constants.UP_CLASS_TIME_TYPE_EVENING);
                 }
 

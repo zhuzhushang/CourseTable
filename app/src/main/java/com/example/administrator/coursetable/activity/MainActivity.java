@@ -160,16 +160,16 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     }
 
 
-    private String startTimeArray[] = {"07:30","","08:10","09:05","10:15","11:10","14:30","15:25","16:20","17:25",""};
-    private String endTimeArray[] = {"08:00","","08:55","09:50","11:00","11:55","15:15","16:10","17:05","18:10",""};
+//    private String startTimeArray[] = {"07:30","","08:10","09:05","10:15","11:10","14:30","15:25","16:20","17:25",""};
+//    private String endTimeArray[] = {"08:00","","08:55","09:50","11:00","11:55","15:15","16:10","17:05","18:10",""};
 
 
-    private int startHourArray[] = {7,-1,8,9,10,11,14,15,16,17,-1};
-    private int startMinuteArray[] = {30,-1,10,5,15,10,30,25,20,25,-1};
-    private int endHourArray[] = {8,-1,8,9,11,11,15,16,17,18,-1};
-    private int endMinuteArray[] = {0,-1,55,50,0,55,15,10,5,10,-1};
+    private int startHourArray[] = {7,-1,-1,8,9,10,11,-1,14,15,16,-1,-1,17,-1,-1};
+    private int startMinuteArray[] = {30,-1,-1,10,5,15,10,-1,30,25,20,-1,-1,25,-1,-1};
+    private int endHourArray[] = {8,-1,-1,8,9,11,11,-1,15,16,17,-1,-1,18,-1,-1};
+    private int endMinuteArray[] = {0,-1,-1,55,50,0,55,-1,15,10,5,-1,-1,10,-1,-1};
     /**课程数量*/
-    private int classNumArray[] = {2,0,1,1,1,1,1,1,1,2,0};
+    private int classNumArray[] = {3,0,0,1,1,1,1,1,1,1,1,1,1,3,0,0};
 
 
     /**
@@ -211,7 +211,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
         MySqliteHelper mySqliteHelper = new MySqliteHelper(context,Constants.DB_NAME,null,Constants.DB_VERSION);
 
-        for (int i = 0; i < startTimeArray.length; i++) {
+        for (int i = 0; i < startHourArray.length; i++) {
 
             UpClassTimeModel model = new UpClassTimeModel();
 
@@ -222,16 +222,16 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             model.setClassNum(classNumArray[i]);
             model.setClassIndex(i);
 
-            if(i == 0 || i == 1)
+            if(i >= 0 || i <= 2)
             {
                 model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MOR_READ);
-            }else if(i > 1 && i < 6)
+            }else if(i > 2 && i < 8)
             {
                 model.setTimeType(Constants.UP_CLASS_TIME_TYPE_MORNING);
-            }else if(i > 5 && i < 9)
+            }else if(i > 7 && i < 13)
             {
                 model.setTimeType(Constants.UP_CLASS_TIME_TYPE_AFTERNOON);
-            }else if(i > 8 && i < 11)
+            }else if(i > 12 && i < 16)
             {
                 model.setTimeType(Constants.UP_CLASS_TIME_TYPE_EVENING);
             }
